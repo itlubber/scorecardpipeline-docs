@@ -222,10 +222,11 @@
       <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
     </div>
     <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html"><code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id1">版本更新说明</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id2">环境安装准备</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id3">代码使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id2">交流</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id3">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id4">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id5">使用示例</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html">scorecardpipeline</a></li>
@@ -254,8 +255,6 @@
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ks_2samp</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">roc_curve</span>
-
-<span class="kn">from</span> <span class="nn">.merge</span> <span class="kn">import</span> <span class="n">merge</span>
 
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">feature_splits</span><span class="p">,</span>
@@ -316,6 +315,7 @@
         
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bucket&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bucket</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.merge</span> <span class="kn">import</span> <span class="n">merge</span>
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bucket&#39;</span><span class="p">],</span> <span class="n">splits</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">n_bins</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="p">,</span> <span class="n">return_splits</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>

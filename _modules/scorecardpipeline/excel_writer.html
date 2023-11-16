@@ -276,11 +276,11 @@
 <div class="viewcode-block" id="ExcelWriter"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.ExcelWriter">[文档]</a><span class="k">class</span> <span class="nc">ExcelWriter</span><span class="p">:</span>
 
 <div class="viewcode-block" id="ExcelWriter.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.ExcelWriter.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">style_excel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style_sheet_name</span><span class="o">=</span><span class="s2">&quot;初始化&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> <span class="n">theme_color</span><span class="o">=</span><span class="s1">&#39;2639E9&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        excel 文件内容写入公共方法</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;excel 写入方法</span>
 
-<span class="sd">        :param style_excel: 样式模版文件，默认当前路径下的 template.xlsx ，如果项目路径调整需要进行相应的调整</span>
+<span class="sd">        :param style_excel: 样式模版文件，默认安装包路径下的 template.xlsx ，如果路径调整需要进行相应的调整</span>
 <span class="sd">        :param style_sheet_name: 模版文件内初始样式sheet名称，默认即可</span>
+<span class="sd">        :param mode: 写入模式，默认 replace，可选 replace、append，当选择 append 模式时会将已存在的excel中的内容复制到新的文件中</span>
 <span class="sd">        :param fontsize: 插入excel文件中内容的字体大小，默认 10</span>
 <span class="sd">        :param font: 插入excel文件中内容的字体，默认 楷体</span>
 <span class="sd">        :param theme_color: 主题色，默认 2639E9，注意不包含 #</span>
@@ -356,6 +356,22 @@
             <span class="n">worksheet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">workbook</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">worksheet</span></div>
+
+<div class="viewcode-block" id="ExcelWriter.move_sheet"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.ExcelWriter.move_sheet">[文档]</a>    <span class="k">def</span> <span class="nf">move_sheet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">worksheet</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;移动 sheet 位置</span>
+
+<span class="sd">        :param worksheet: 需要移动的sheet，支持输入字符串和Worksheet</span>
+<span class="sd">        :param offset: 需要移动的相对位置，默认 0，在传入 index 时参数不生效</span>
+<span class="sd">        :param index: 需要移动到的位置索引，超出移动到最后</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_sheets</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">workbook</span><span class="o">.</span><span class="n">sheetnames</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">index</span><span class="p">:</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">total_sheets</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">index</span>
+
+            <span class="k">if</span> <span class="n">offset</span> <span class="o">&gt;=</span> <span class="n">total_sheets</span><span class="p">:</span>
+                <span class="n">offset</span> <span class="o">=</span> <span class="n">total_sheets</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">workbook</span><span class="o">.</span><span class="n">move_sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ExcelWriter.insert_value2sheet"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.ExcelWriter.insert_value2sheet">[文档]</a>    <span class="k">def</span> <span class="nf">insert_value2sheet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">worksheet</span><span class="p">,</span> <span class="n">insert_space</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="n">auto_width</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -756,7 +772,7 @@
                             <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">_workbook</span><span class="p">[</span><span class="n">_sheet_name</span><span class="p">]</span><span class="o">.</span><span class="n">max_row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
                                 <span class="n">_worksheet</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="n">get_column_letter</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">_workbook</span><span class="p">[</span><span class="n">_sheet_name</span><span class="p">]</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="n">get_column_letter</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">width</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">workbook</span><span class="o">.</span><span class="n">move_sheet</span><span class="p">(</span><span class="n">_worksheet</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">workbook</span><span class="o">.</span><span class="n">sheetnames</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="c1"># self.workbook.move_sheet(_worksheet, offset=-len(self.workbook.sheetnames) + 1)</span>
 
             <span class="n">_workbook</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 

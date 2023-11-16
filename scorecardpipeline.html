@@ -4,7 +4,7 @@
 <html class="no-js" lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-      <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+      <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
@@ -2617,12 +2617,13 @@ transformer objects.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scorecardpipeline.ExcelWriter.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'初始化'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'楷体'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.85</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.ExcelWriter.__init__" title="永久链接至目标">¶</a></dt>
-<dd><p>excel 文件内容写入公共方法</p>
+<dd><p>excel 写入方法</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>style_excel</strong> – 样式模版文件，默认当前路径下的 template.xlsx ，如果项目路径调整需要进行相应的调整</p></li>
+<li><p><strong>style_excel</strong> – 样式模版文件，默认安装包路径下的 template.xlsx ，如果路径调整需要进行相应的调整</p></li>
 <li><p><strong>style_sheet_name</strong> – 模版文件内初始样式sheet名称，默认即可</p></li>
+<li><p><strong>mode</strong> – 写入模式，默认 replace，可选 replace、append，当选择 append 模式时会将已存在的excel中的内容复制到新的文件中</p></li>
 <li><p><strong>fontsize</strong> – 插入excel文件中内容的字体大小，默认 10</p></li>
 <li><p><strong>font</strong> – 插入excel文件中内容的字体，默认 楷体</p></li>
 <li><p><strong>theme_color</strong> – 主题色，默认 2639E9，注意不包含 #</p></li>
@@ -2684,6 +2685,21 @@ transformer objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – 需要获取的工作簿名称</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ExcelWriter.move_sheet">
+<span class="sig-name descname"><span class="pre">move_sheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.move_sheet"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.ExcelWriter.move_sheet" title="永久链接至目标">¶</a></dt>
+<dd><p>移动 sheet 位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>worksheet</strong> – 需要移动的sheet，支持输入字符串和Worksheet</p></li>
+<li><p><strong>offset</strong> – 需要移动的相对位置，默认 0，在传入 index 时参数不生效</p></li>
+<li><p><strong>index</strong> – 需要移动到的位置索引，超出移动到最后</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -4378,12 +4394,13 @@ transformer objects.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="scorecardpipeline.excel_writer.ExcelWriter.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">style_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style_sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'初始化'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'楷体'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.85</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.excel_writer.ExcelWriter.__init__" title="永久链接至目标">¶</a></dt>
-<dd><p>excel 文件内容写入公共方法</p>
+<dd><p>excel 写入方法</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>style_excel</strong> – 样式模版文件，默认当前路径下的 template.xlsx ，如果项目路径调整需要进行相应的调整</p></li>
+<li><p><strong>style_excel</strong> – 样式模版文件，默认安装包路径下的 template.xlsx ，如果路径调整需要进行相应的调整</p></li>
 <li><p><strong>style_sheet_name</strong> – 模版文件内初始样式sheet名称，默认即可</p></li>
+<li><p><strong>mode</strong> – 写入模式，默认 replace，可选 replace、append，当选择 append 模式时会将已存在的excel中的内容复制到新的文件中</p></li>
 <li><p><strong>fontsize</strong> – 插入excel文件中内容的字体大小，默认 10</p></li>
 <li><p><strong>font</strong> – 插入excel文件中内容的字体，默认 楷体</p></li>
 <li><p><strong>theme_color</strong> – 主题色，默认 2639E9，注意不包含 #</p></li>
@@ -4445,6 +4462,21 @@ transformer objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – 需要获取的工作簿名称</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.excel_writer.ExcelWriter.move_sheet">
+<span class="sig-name descname"><span class="pre">move_sheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.move_sheet"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.excel_writer.ExcelWriter.move_sheet" title="永久链接至目标">¶</a></dt>
+<dd><p>移动 sheet 位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>worksheet</strong> – 需要移动的sheet，支持输入字符串和Worksheet</p></li>
+<li><p><strong>offset</strong> – 需要移动的相对位置，默认 0，在传入 index 时参数不生效</p></li>
+<li><p><strong>index</strong> – 需要移动到的位置索引，超出移动到最后</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -4893,6 +4925,7 @@ transformer objects.</p>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.set_column_width"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_column_width()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.set_number_format"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_number_format()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.get_sheet_by_name"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.get_sheet_by_name()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.move_sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.move_sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.insert_value2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_value2sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.insert_pic2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_pic2sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.insert_rows"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_rows()</span></code></a></li>
@@ -5020,6 +5053,7 @@ transformer objects.</p>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.set_column_width"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_column_width()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.set_number_format"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_number_format()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.get_sheet_by_name"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.get_sheet_by_name()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.move_sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.move_sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.insert_value2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_value2sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.insert_pic2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_pic2sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.insert_rows"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_rows()</span></code></a></li>

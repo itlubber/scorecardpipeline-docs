@@ -226,10 +226,10 @@
     </div>
     <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id2">交流</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id3">版本说明</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id4">环境安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id5">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id15">交流</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html">scorecardpipeline</a></li>
@@ -256,24 +256,13 @@
 <h1>简介<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 封装了 <code class="docutils literal notranslate"><span class="pre">toad</span></code>、<code class="docutils literal notranslate"><span class="pre">scorecardpy</span></code>、<code class="docutils literal notranslate"><span class="pre">optbinning</span></code> 等评分卡建模相关组件，<code class="docutils literal notranslate"><span class="pre">API</span></code> 风格与 <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 高度一致，支持 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 式端到端评分卡建模、模型报告输出、导出 <code class="docutils literal notranslate"><span class="pre">PMML</span></code> 文件、超参数搜索等功能。</p>
 <blockquote>
-<div><p>在线文档: <a class="reference external" href="https://itlubber.github.io/scorecardpipeline-docs/"><code class="docutils literal notranslate"><span class="pre">https://itlubber.github.io/scorecardpipeline-docs</span></code></a></p>
+<div><p>在线文档: <a class="reference external" href="https://scorecardpipeline.itlubber.art//"><code class="docutils literal notranslate"><span class="pre">https://scorecardpipeline.itlubber.art/</span></code></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">PIPY</span></code> 包: <a class="reference external" href="https://pypi.org/project/scorecardpipeline/"><code class="docutils literal notranslate"><span class="pre">https://pypi.org/project/scorecardpipeline</span></code></a></p>
 <p>仓库地址: <a class="reference external" href="https://github.com/itlubber/scorecardpipeline"><code class="docutils literal notranslate"><span class="pre">https://github.com/itlubber/scorecardpipeline</span></code></a></p>
 </div></blockquote>
 </section>
 <section id="id2">
-<h1>交流<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h1>
-<div style="display: flex; justify-content: space-around;">
-    <img width="30%" alt="itlubber" src="https://itlubber.art//upload/itlubber.png"/>
-    <img width="30%" alt="itlubber_art" src="https://itlubber.art//upload/itlubber_art.png"/>
-</div>
-<div style="display: flex; justify-content: space-around; margin-bottom: 2rem;">
-    <span>微信<code>: itlubber</code></span>
-    <span>订阅号<code>: itlubber_art</code></span>
-</div>
-</section>
-<section id="id3">
-<h1>版本说明<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h1>
+<h1>版本说明<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h1>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -305,8 +294,8 @@
 </tbody>
 </table>
 </section>
-<section id="id4">
-<h1>环境安装<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h1>
+<section id="id3">
+<h1>环境安装<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h1>
 <ol class="arabic simple">
 <li><p>安装 <code class="docutils literal notranslate"><span class="pre">python</span></code> 环境</p></li>
 </ol>
@@ -340,11 +329,11 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 <p><code class="docutils literal notranslate"><span class="pre">linux</span></code> 参考: <a class="reference external" href="https://blog.csdn.net/muzi_gao/article/details/132169159"><code class="docutils literal notranslate"><span class="pre">https://blog.csdn.net/muzi_gao/article/details/132169159</span></code></a></p>
 </div></blockquote>
 </section>
-<section id="id5">
-<h1>使用示例<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h1>
+<section id="id4">
+<h1>使用示例<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h1>
 <p>本节将就 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 的相关功能做简要介绍，并提供一个<a class="reference external" href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb"><code class="docutils literal notranslate"><span class="pre">简单的示例</span></code></a>，旨在让读者对如何使用 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 进行评分卡模型构建有一个简单的印象。</p>
-<section id="id6">
-<h2>导入依赖<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
+<section id="id5">
+<h2>导入依赖<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -357,8 +346,8 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h2>数据准备<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
+<section id="id6">
+<h2>数据准备<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 进行评分卡建模，需要您提前准备好一个包含目标变量的数据集，<code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 提供了一个德国信贷数据集 <a class="reference external" href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"><code class="docutils literal notranslate"><span class="pre">germancredit</span></code></a>，示例加载该数据集进行演示，读者可以直接替换为您本地的数据集，并修改目标变量名称为数据集中的目标变量列名</p>
 <p><a class="reference external" href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"><code class="docutils literal notranslate"><span class="pre">germancredit</span></code></a> 数据集中包含类别型变量、数值型变量、好坏标签，共1000条数据，由于数据集中不包含缺失值，为了模拟实际生产中的真实数据，笔者将在固定随机种子的情况下随机替换数据集中的部分内容为 <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></p>
 <details>
@@ -518,8 +507,8 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h2>数据拆分<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
+<section id="id7">
+<h2>数据拆分<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
 <p>通常建模过程中会将数据集拆分成训练数据集和测试数据集集，训练数据集用于模型参数的训练，测试数据集用于评估模型好坏，且在整个建模过程中实际上只能使用一次（任何针对测试数据集调模型的，都存在模型过拟合的情况，除非你的数据不包含任何噪声数据）。而为了弥补测试数据集只能用一次用于评估模型好坏的尴尬，大多都会再拆分一个验证数据集，用于模型训练过程中判别模型是否向好的方向进行优化。</p>
 <p>在金融建模场景中，上述三个数据集通常被称为训练数据集、测试数据集（即上述三个数据集中的验证集）、跨时间验证集（即上述三个数据集中的测试集）。同时，在金融场景中，跨时间验证集的拆分方式通常使用类似时间序列数据集的拆分方法，按照时间将数据集拆分为建模集（包含训练集和测试集）、跨时间验证集（<code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">Time，OOT</span></code>），以保证模型在不同时间段内的泛化能力。</p>
 <p>简单起见，示例只拆分训练集、测试集，OOT直接拷贝训练集来演示评分卡建模完整过程。</p>
@@ -529,14 +518,230 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h2>数据预处理<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h2>
+<section id="id8">
+<h2>数据预处理<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
 <p>在评分卡建模标准流程中，会先针对每个变量分箱后转WOE，再筛选特征训练逻辑回归模型，训练完后转评分卡，当数据集的特征个数比较多时，可以再分箱之前先进行特征初筛，以降低分箱时的计算耗时。评分卡建模完整流程可以参照如下流程:</p>
 <div style="display: flex; justify-content: space-around;">
     <img src="https://itlubber.art/upload/scorecard-modeling-process.png" style="width: 70%; "/>
 </div>
+<section id="id9">
+<h3>特征筛选<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h3>
+<p>特征筛选主要从几个方面来评估特征是否有效：</p>
+<ol class="arabic simple">
+<li><p>单一值占比</p></li>
+<li><p>缺失值占比</p></li>
+<li><p>特征相关性</p></li>
+<li><p>特征 <code class="docutils literal notranslate"><span class="pre">IV（information</span> <span class="pre">value）</span></code> 值</p></li>
+<li><p>特征稳定性 <code class="docutils literal notranslate"><span class="pre">PSI（population</span> <span class="pre">stability</span> <span class="pre">index）</span></code></p></li>
+<li><p>特征重要性</p></li>
+<li><p>方差膨胀因子 <code class="docutils literal notranslate"><span class="pre">VIF（variance</span> <span class="pre">inflation</span> <span class="pre">factor）</span></code></p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 提供了几种常见的特征筛选方法（<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>、<code class="docutils literal notranslate"><span class="pre">4</span></code>），可以通过实例化的方式进行配置，并在训练数据集中训练完成后应用到不同数据集中。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化筛选器</span>
+<span class="n">select</span> <span class="o">=</span> <span class="n">FeatureSelection</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;toad&quot;</span><span class="p">,</span> <span class="n">identical</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">empty</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">iv</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">corr</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="c1"># 训练数据上训练</span>
+<span class="n">select</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="c1"># 应用到不同数据集</span>
+<span class="n">train_select</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">test_select</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，所有筛选器都包含 <code class="docutils literal notranslate"><span class="pre">dropped</span></code> 属性，用来存放特征被剔除的原因。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 输出特征筛选信息</span>
+<span class="n">select</span><span class="o">.</span><span class="n">dropped</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">variable</th>
+<th style="text-align: center;">rm_reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">number_of_existing_credits_at_this_bank</td>
+<td style="text-align: center;">iv</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">job</td>
+<td style="text-align: center;">iv</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">number_of_people_being_liable_to_provide_maintenance_for</td>
+<td style="text-align: center;">iv</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">telephone</td>
+<td style="text-align: center;">iv</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">duration_in_month</td>
+<td style="text-align: center;">corr</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h3>特征分箱<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h3>
+<p>特征分箱能够提升模型的鲁棒性，特征分箱时通常对每个箱内的样本个数或占比有要求，数据中的异常值和极端值会被分到某个箱中，在转化为 <code class="docutils literal notranslate"><span class="pre">WOE</span></code> 之后能够很大程度上避免异常值或极端值对模型训练时造成偏差。同时，特征分箱转 <code class="docutils literal notranslate"><span class="pre">WOE</span></code> 之后，所有特征的值域都被缩放到了某个固定尺度下，逻辑回归模型的系数在一定程度上能够代表特征的重要程度。</p>
+<ul class="simple">
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，集成了 <code class="docutils literal notranslate"><span class="pre">toad</span></code> 和 <code class="docutils literal notranslate"><span class="pre">optbinning</span></code> 两个库中提供的分箱方法，后续会陆续增加更多的分箱方法，相关内容参考: <a class="reference internal" href="#/scorecardpipeline.html#scorecardpipeline.Combiner"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scorecardpipeline.Combiner</span></code></span></a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化分箱器</span>
+<span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">min_bin_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="c1"># 训练</span>
+<span class="n">combiner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_select</span><span class="p">)</span>
+<span class="c1"># 对数据集进行分箱</span>
+<span class="n">train_bins</span> <span class="o">=</span> <span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_select</span><span class="p">)</span>
+<span class="n">test_bins</span> <span class="o">=</span> <span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_select</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>为了方便调整分箱，<a class="reference internal" href="#"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scorecardpipeline.Combiner</span></code></span></a> 提供了输出分箱图和分箱统计信息的功能，方便快速手工调整分箱。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看 credit_amount 信用额度 的分箱信息，并显示分箱统计信息</span>
+<span class="n">combiner</span><span class="o">.</span><span class="n">bin_plot</span><span class="p">(</span><span class="n">train_select</span><span class="p">,</span> <span class="s2">&quot;credit_amount&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;信用额度&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_credit_amount.png" />
+</div>
+<ul class="simple">
+<li><p>当特征分箱不符合业务逻辑或者单调性不满足时，可以通过自定义规则的方式查看分箱效果。（此时不会对 <code class="docutils literal notranslate"><span class="pre">Combiner</span></code> 中的规则进行更新）</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过 rule 字段传入自定义规则，实时查看分箱效果</span>
+<span class="n">combiner</span><span class="o">.</span><span class="n">bin_plot</span><span class="p">(</span><span class="n">train_select</span><span class="p">,</span> <span class="s2">&quot;credit_amount&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;信用额度&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="p">[</span><span class="mf">4000.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+</pre></div>
+</div>
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_credit_amount_rule.png" />
+</div>
+<ul class="simple">
+<li><p>当特征分箱调整到符合业务预期或者单调满足建模需求时，可以通过 <code class="docutils literal notranslate"><span class="pre">update</span></code> 方法更新规则 <code class="docutils literal notranslate"><span class="pre">Combiner</span></code> 中的规则。</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 更新 credit_amount 的分箱规则</span>
+<span class="n">combiner</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;credit_amount&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4000.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]})</span>
+<span class="c1"># 打印分箱规则</span>
+<span class="n">combiner</span><span class="p">[</span><span class="s2">&quot;credit_amount&quot;</span><span class="p">]</span> <span class="c1"># array([4000.,   nan])</span>
+</pre></div>
+</div>
+</section>
+<section id="woe">
+<h3><code class="docutils literal notranslate"><span class="pre">WOE</span></code> 转换<a class="headerlink" href="#woe" title="此标题的永久链接">¶</a></h3>
+<p>特征分箱后，只是将特征离散化为几箱，每一箱的值被赋予了一个标签，例如0、1、2、3、…，尽管这些标签在一定程度上也能够表征客户的风险水平，能够作为训练数据训练出一个模型，但在评估客户风险状况时很难精准刻画客户的风险状况。</p>
+<p>通常使用 <code class="docutils literal notranslate"><span class="pre">WOE（Weight</span> <span class="pre">of</span> <span class="pre">Evidence）编码</span></code> 对分箱后的特征进行编码。<code class="docutils literal notranslate"><span class="pre">WOE编码</span></code> 将每个分箱内的坏样本占比除以好样本占比后取对数来编码，能够反映每个分箱内客户的坏客户分布与好客户分布之间的差异以及该箱内坏好比与总体的坏好比之间的差异性。</p>
+<p>特征 <code class="docutils literal notranslate"><span class="pre">WOE（Weight</span> <span class="pre">of</span> <span class="pre">Evidence）编码</span></code> 后，有如下好处：</p>
+<ul class="simple">
+<li><p>能够将每个特征的值域放缩到同样的尺度下</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">woe</span></code> 中包含了样本好坏信息，比原始值和分箱序号更能反应客户违约概率大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">woe</span></code> 的计算公式 <span class="math notranslate nohighlight">\(woe = ln(\frac{bad_i}{bad}/\frac{good_i}{good} )\)</span> 中引入了非线性，一定程度能够增强逻辑回归拟合非线性模型的能力</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化 WOE 转换器</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">WOETransformer</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+<span class="c1"># 训练</span>
+<span class="n">transform</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_bins</span><span class="p">)</span>
+<span class="c1"># 转换分箱为WOE</span>
+<span class="n">train_woe</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_bins</span><span class="p">)</span>
+<span class="n">test_woe</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_bins</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">WOE（Weight</span> <span class="pre">of</span> <span class="pre">Evidence）编码器</span></code> 提供了方法允许使用者通过如下方式查看每个分箱对应的 <code class="docutils literal notranslate"><span class="pre">woe</span></code> 值。</p>
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_woetransformer.png" />
+</div>
+<p>在特征从原始值编码为 <code class="docutils literal notranslate"><span class="pre">woe</span></code> 的过程中，特征的值从连续值或者分类值映射到了有限的几个分箱对应的 <code class="docutils literal notranslate"><span class="pre">woe</span></code> 值，同时值域也统一到了一个基于样本好坏分布情况为基准的空间中，会造成特征之间的相关性增大、单一值占比上升、特征 <code class="docutils literal notranslate"><span class="pre">iv</span></code> 值较前筛时小幅度下降，所以推荐在 <code class="docutils literal notranslate"><span class="pre">WOE编码</span></code> 后，再进行一次特征精筛，以保证后续模型结果的稳定性和整体可解释性。</p>
+</section>
+<section id="id11">
+<h3>逐步回归特征筛选<a class="headerlink" href="#id11" title="此标题的永久链接">¶</a></h3>
+<p>在正式训练 <code class="docutils literal notranslate"><span class="pre">逻辑回归（logistic</span> <span class="pre">regression，LR）模型</span></code> 前，通常会再使用逐步回归来剔除特征，能够一定程度上解决特征之间的多重共线性，以及在剔除尽可能多的特征的同时保证 <code class="docutils literal notranslate"><span class="pre">LR模型</span></code> 效果的有效性。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化逐步回归特征筛选器</span>
+<span class="n">stepwise</span> <span class="o">=</span> <span class="n">StepwiseSelection</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+<span class="c1"># 训练</span>
+<span class="n">stepwise</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_woe</span><span class="p">)</span>
+<span class="c1"># 应用逐步回归特征筛选器</span>
+<span class="n">train_woe_stepwise</span> <span class="o">=</span> <span class="n">stepwise</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_woe</span><span class="p">)</span>
+<span class="n">test_woe_stepwise</span> <span class="o">=</span> <span class="n">stepwise</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_woe</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>与 <code class="docutils literal notranslate"><span class="pre">FeatureSelection</span></code> 类似，<code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中所有特征筛选器都包含了 <code class="docutils literal notranslate"><span class="pre">dropped</span></code> 属性，可以直接输出每个特征被剔除的原因。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 逐步回归特征筛选明细信息</span>
+<span class="n">stepwise</span><span class="o">.</span><span class="n">dropped</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">variable</th>
+<th style="text-align: center;">rm_reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">present_residence_since</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">savings_account_and_bonds</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">other_debtors_or_guarantors</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">property</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">other_installment_plans</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">foreign_worker</td>
+<td style="text-align: center;">stepwise</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
+<section id="lr">
+<h2>训练 <code class="docutils literal notranslate"><span class="pre">LR</span></code> 模型<a class="headerlink" href="#lr" title="此标题的永久链接">¶</a></h2>
+<p>对数据集预处理完成后，可以训练二分类模型。</p>
+</section>
+<section id="id12">
+<h2>评分卡转换<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h2>
+</section>
+<section id="id13">
+<h2>模型报告输出<a class="headerlink" href="#id13" title="此标题的永久链接">¶</a></h2>
+</section>
+<section id="id14">
+<h2>模型持久化存储<a class="headerlink" href="#id14" title="此标题的永久链接">¶</a></h2>
+</section>
+</section>
+<section id="id15">
+<h1>交流<a class="headerlink" href="#id15" title="此标题的永久链接">¶</a></h1>
+<div style="display: flex; justify-content: space-around;">
+    <img width="30%" alt="itlubber" src="https://itlubber.art//upload/itlubber.png"/>
+    <img width="30%" alt="itlubber_art" src="https://itlubber.art//upload/itlubber_art.png"/>
+</div>
+<div style="display: flex; justify-content: space-around; margin-bottom: 2rem;">
+    <span>微信<code>: itlubber</code></span>
+    <span>订阅号<code>: itlubber_art</code></span>
+</div></section>
 
 </article>
         
@@ -552,16 +757,26 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
                 <nav id="TableOfContents">
                   <ul>
 <li><a class="reference internal" href="#">简介</a></li>
-<li><a class="reference internal" href="#id2">交流</a></li>
-<li><a class="reference internal" href="#id3">版本说明</a></li>
-<li><a class="reference internal" href="#id4">环境安装</a></li>
-<li><a class="reference internal" href="#id5">使用示例</a><ul>
-<li><a class="reference internal" href="#id6">导入依赖</a></li>
-<li><a class="reference internal" href="#id7">数据准备</a></li>
-<li><a class="reference internal" href="#id8">数据拆分</a></li>
-<li><a class="reference internal" href="#id9">数据预处理</a></li>
+<li><a class="reference internal" href="#id2">版本说明</a></li>
+<li><a class="reference internal" href="#id3">环境安装</a></li>
+<li><a class="reference internal" href="#id4">使用示例</a><ul>
+<li><a class="reference internal" href="#id5">导入依赖</a></li>
+<li><a class="reference internal" href="#id6">数据准备</a></li>
+<li><a class="reference internal" href="#id7">数据拆分</a></li>
+<li><a class="reference internal" href="#id8">数据预处理</a><ul>
+<li><a class="reference internal" href="#id9">特征筛选</a></li>
+<li><a class="reference internal" href="#id10">特征分箱</a></li>
+<li><a class="reference internal" href="#woe"><code class="docutils literal notranslate"><span class="pre">WOE</span></code> 转换</a></li>
+<li><a class="reference internal" href="#id11">逐步回归特征筛选</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#lr">训练 <code class="docutils literal notranslate"><span class="pre">LR</span></code> 模型</a></li>
+<li><a class="reference internal" href="#id12">评分卡转换</a></li>
+<li><a class="reference internal" href="#id13">模型报告输出</a></li>
+<li><a class="reference internal" href="#id14">模型持久化存储</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">交流</a></li>
 </ul>
 
                 </nav>
@@ -649,6 +864,8 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
     <script src="_static/copybutton.js"></script>
     <script src="_static/translations.js"></script>
     <script src="_static/design-tabs.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script type="text/javascript" src="_static/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="_static/sphinx-nefertiti.min.js"></script>

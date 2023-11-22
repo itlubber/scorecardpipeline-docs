@@ -2,24 +2,11 @@
 
 `scorecardpipeline` 封装了 `toad`、`scorecardpy`、`optbinning` 等评分卡建模相关组件，`API` 风格与 `sklearn` 高度一致，支持 `pipeline` 式端到端评分卡建模、模型报告输出、导出 `PMML` 文件、超参数搜索等功能。
 
-> 在线文档: [`https://itlubber.github.io/scorecardpipeline-docs`](https://itlubber.github.io/scorecardpipeline-docs/)
+> 在线文档: [`https://scorecardpipeline.itlubber.art/`](https://scorecardpipeline.itlubber.art//)
 > 
 > `PIPY` 包: [`https://pypi.org/project/scorecardpipeline`](https://pypi.org/project/scorecardpipeline/)
 >
 > 仓库地址: [`https://github.com/itlubber/scorecardpipeline`](https://github.com/itlubber/scorecardpipeline)
-
-
-## 交流
-
-<div style="display: flex; justify-content: space-around;">
-    <img width="30%" alt="itlubber" src="https://itlubber.art//upload/itlubber.png"/>
-    <img width="30%" alt="itlubber_art" src="https://itlubber.art//upload/itlubber_art.png"/>
-</div>
-
-<div style="display: flex; justify-content: space-around; margin-bottom: 2rem;">
-    <span>微信<code>: itlubber</code></span>
-    <span>订阅号<code>: itlubber_art</code></span>
-</div>
 
 
 ## 版本说明
@@ -163,3 +150,186 @@ oot = train.copy()
     <img src="https://itlubber.art/upload/scorecard-modeling-process.png" style="width: 70%; "/>
 </div>
 
+
+#### 特征筛选
+
+特征筛选主要从几个方面来评估特征是否有效：
+
+1. 单一值占比
+2. 缺失值占比
+3. 特征相关性
+4. 特征 `IV（information value）` 值
+5. 特征稳定性 `PSI（population stability index）`
+6. 特征重要性
+7. 方差膨胀因子 `VIF（variance inflation factor）`
+
+
+`scorecardpipeline` 提供了几种常见的特征筛选方法（`1`、`2`、`3`、`4`），可以通过实例化的方式进行配置，并在训练数据集中训练完成后应用到不同数据集中。
+
+```python
+# 初始化筛选器
+select = FeatureSelection(target=target, engine="toad", identical=0.95, empty=0.95, iv=0.02, corr=0.6)
+# 训练数据上训练
+select.fit(train)
+# 应用到不同数据集
+train_select = select.transform(train)
+test_select = select.transform(test)
+```
+
+在 `scorecardpipeline` 中，所有筛选器都包含 `dropped` 属性，用来存放特征被剔除的原因。
+
+```python
+# 输出特征筛选信息
+select.dropped
+```
+
+|    | variable                                                 | rm_reason   |
+|:---:|:---------------------------------------------------------:|:------------:|
+|  0 | number_of_existing_credits_at_this_bank                  | iv          |
+|  1 | job                                                      | iv          |
+|  2 | number_of_people_being_liable_to_provide_maintenance_for | iv          |
+|  3 | telephone                                                | iv          |
+|  4 | duration_in_month                                        | corr        |
+
+
+#### 特征分箱
+
+
+特征分箱能够提升模型的鲁棒性，特征分箱时通常对每个箱内的样本个数或占比有要求，数据中的异常值和极端值会被分到某个箱中，在转化为 `WOE` 之后能够很大程度上避免异常值或极端值对模型训练时造成偏差。同时，特征分箱转 `WOE` 之后，所有特征的值域都被缩放到了某个固定尺度下，逻辑回归模型的系数在一定程度上能够代表特征的重要程度。
+
++ 在 `scorecardpipeline` 中，集成了 `toad` 和 `optbinning` 两个库中提供的分箱方法，后续会陆续增加更多的分箱方法，相关内容参考: [`scorecardpipeline.Combiner`](/scorecardpipeline.html#scorecardpipeline.Combiner)
+
+
+```python
+# 初始化分箱器
+combiner = Combiner(target=target, min_bin_size=0.2)
+# 训练
+combiner.fit(train_select)
+# 对数据集进行分箱
+train_bins = combiner.transform(train_select)
+test_bins = combiner.transform(test_select)
+```
+
++ 为了方便调整分箱，[`scorecardpipeline.Combiner`]() 提供了输出分箱图和分箱统计信息的功能，方便快速手工调整分箱。
+
+```python
+# 查看 credit_amount 信用额度 的分箱信息，并显示分箱统计信息
+combiner.bin_plot(train_select, "credit_amount", result=True, desc="信用额度")
+```
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_credit_amount.png" />
+</div>
+
+
++ 当特征分箱不符合业务逻辑或者单调性不满足时，可以通过自定义规则的方式查看分箱效果。（此时不会对 `Combiner` 中的规则进行更新）
+
+```python
+# 通过 rule 字段传入自定义规则，实时查看分箱效果
+combiner.bin_plot(train_select, "credit_amount", result=True, desc="信用额度", rule=[4000.0, np.nan])
+```
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_credit_amount_rule.png" />
+</div>
+
+
++ 当特征分箱调整到符合业务预期或者单调满足建模需求时，可以通过 `update` 方法更新规则 `Combiner` 中的规则。
+
+```python
+# 更新 credit_amount 的分箱规则
+combiner.update({"credit_amount": [4000.0, np.nan]})
+# 打印分箱规则
+combiner["credit_amount"] # array([4000.,   nan])
+```
+
+
+#### `WOE` 转换
+
+特征分箱后，只是将特征离散化为几箱，每一箱的值被赋予了一个标签，例如0、1、2、3、...，尽管这些标签在一定程度上也能够表征客户的风险水平，能够作为训练数据训练出一个模型，但在评估客户风险状况时很难精准刻画客户的风险状况。
+
+通常使用 `WOE（Weight of Evidence）编码` 对分箱后的特征进行编码。`WOE编码` 将每个分箱内的坏样本占比除以好样本占比后取对数来编码，能够反映每个分箱内客户的坏客户分布与好客户分布之间的差异以及该箱内坏好比与总体的坏好比之间的差异性。
+
+
+特征 `WOE（Weight of Evidence）编码` 后，有如下好处：
+
++ 能够将每个特征的值域放缩到同样的尺度下
++ `woe` 中包含了样本好坏信息，比原始值和分箱序号更能反应客户违约概率大小
++ `woe` 的计算公式 $woe = ln(\frac{bad_i}{bad}/\frac{good_i}{good} )$ 中引入了非线性，一定程度能够增强逻辑回归拟合非线性模型的能力
+
+
+```python
+# 初始化 WOE 转换器
+transform = WOETransformer(target=target)
+# 训练
+transform.fit(train_bins)
+# 转换分箱为WOE
+train_woe = transform.transform(train_bins)
+test_woe = transform.transform(test_bins)
+```
+
+`WOE（Weight of Evidence）编码器` 提供了方法允许使用者通过如下方式查看每个分箱对应的 `woe` 值。
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://itlubber.art/upload/sp_woetransformer.png" />
+</div>
+
+在特征从原始值编码为 `woe` 的过程中，特征的值从连续值或者分类值映射到了有限的几个分箱对应的 `woe` 值，同时值域也统一到了一个基于样本好坏分布情况为基准的空间中，会造成特征之间的相关性增大、单一值占比上升、特征 `iv` 值较前筛时小幅度下降，所以推荐在 `WOE编码` 后，再进行一次特征精筛，以保证后续模型结果的稳定性和整体可解释性。
+
+
+#### 逐步回归特征筛选
+
+在正式训练 `逻辑回归（logistic regression，LR）模型` 前，通常会再使用逐步回归来剔除特征，能够一定程度上解决特征之间的多重共线性，以及在剔除尽可能多的特征的同时保证 `LR模型` 效果的有效性。
+
+```python
+# 初始化逐步回归特征筛选器
+stepwise = StepwiseSelection(target=target)
+# 训练
+stepwise.fit(train_woe)
+# 应用逐步回归特征筛选器
+train_woe_stepwise = stepwise.transform(train_woe)
+test_woe_stepwise = stepwise.transform(test_woe)
+```
+
+与 `FeatureSelection` 类似，`scorecardpipeline` 中所有特征筛选器都包含了 `dropped` 属性，可以直接输出每个特征被剔除的原因。
+
+```python
+# 逐步回归特征筛选明细信息
+stepwise.dropped
+```
+
+|    | variable                    | rm_reason   |
+|:--:|:---------------------------:|:-----------:|
+|  0 | present_residence_since     | stepwise    |
+|  1 | savings_account_and_bonds   | stepwise    |
+|  2 | other_debtors_or_guarantors | stepwise    |
+|  3 | property                    | stepwise    |
+|  4 | other_installment_plans     | stepwise    |
+|  5 | foreign_worker              | stepwise    |
+
+
+### 训练 `LR` 模型
+
+对数据集预处理完成后，可以训练二分类模型。
+
+
+### 评分卡转换
+
+
+### 模型报告输出
+
+
+### 模型持久化存储
+
+
+## 交流
+
+<div style="display: flex; justify-content: space-around;">
+    <img width="30%" alt="itlubber" src="https://itlubber.art//upload/itlubber.png"/>
+    <img width="30%" alt="itlubber_art" src="https://itlubber.art//upload/itlubber_art.png"/>
+</div>
+
+<div style="display: flex; justify-content: space-around; margin-bottom: 2rem;">
+    <span>微信<code>: itlubber</code></span>
+    <span>订阅号<code>: itlubber_art</code></span>
+</div>

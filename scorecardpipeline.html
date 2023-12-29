@@ -234,6 +234,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">scorecardpipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
@@ -5495,6 +5497,64 @@ sub-estimator of a meta-estimator, e.g. used inside a
 </dd></dl>
 
 </section>
+<section id="module-scorecardpipeline.auto_eda">
+<span id="scorecardpipeline-auto-eda"></span><h1>scorecardpipeline.auto_eda<a class="headerlink" href="#module-scorecardpipeline.auto_eda" title="此标题的永久链接">¶</a></h1>
+<p>&#64;Time    : 2023/12/29 11:17
+&#64;Author  : itlubber
+&#64;Site    : itlubber.art</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.auto_eda.auto_eda_sweetviz">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.auto_eda.</span></span><span class="sig-name descname"><span class="pre">auto_eda_sweetviz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'model_report/auto_eda.html'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pairwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cat_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_eda.html#auto_eda_sweetviz"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.auto_eda.auto_eda_sweetviz" title="永久链接至目标">¶</a></dt>
+<dd><p>对数据量和特征个数较少的数据集进行自动 EDA 产出分析报告文档</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>all_data</strong> – 需要 EDA 的数据集</p></li>
+<li><p><strong>target</strong> – 目标变量，仅支持整数型或布尔型的目标变量</p></li>
+<li><p><strong>labels</strong> – 当传入 target 时为需要对比的数据集名称 [true, false]，当不传入 target 时为数据集名字</p></li>
+<li><p><strong>save</strong> – 报告存储路径，后缀使用 .html</p></li>
+<li><p><strong>pairwise</strong> – 是否需要显示特征之间的分布情况</p></li>
+<li><p><strong>exclude</strong> – 需要排除的特征名称</p></li>
+<li><p><strong>num_features</strong> – 需要强制转为数值型的特征名称</p></li>
+<li><p><strong>cat_features</strong> – 需要强制转为类别型的特征名称</p></li>
+<li><p><strong>text_features</strong> – 需要强制转为文本的特征名称</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-scorecardpipeline.auto_report">
+<span id="scorecardpipeline-auto-report"></span><h1>scorecardpipeline.auto_report<a class="headerlink" href="#module-scorecardpipeline.auto_report" title="此标题的永久链接">¶</a></h1>
+<p>&#64;Time    : 2023/12/29 11:17
+&#64;Author  : itlubber
+&#64;Site    : itlubber.art</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.auto_report.auto_data_testing_report">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.auto_report.</span></span><span class="sig-name descname"><span class="pre">auto_data_testing_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_summary_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'分析报告'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_report.html#auto_data_testing_report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#scorecardpipeline.auto_report.auto_data_testing_report" title="永久链接至目标">¶</a></dt>
+<dd><p>自动数据测试报告，用于三方数据评估或自有评分效果评估</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – 需要评估的数据集，需要包含目标变量</p></li>
+<li><p><strong>features</strong> – 需要进行分析的特征名称，支持单个字符串传入或列表传入</p></li>
+<li><p><strong>target</strong> – 目标变量名称</p></li>
+<li><p><strong>date</strong> – 日期列，通常为借款人申请日期或放款日期，可选字段，传入的情况下，结合字段 freq 参数输出不同时间粒度下的好坏客户分布情况</p></li>
+<li><p><strong>freq</strong> – 结合 date 日期使用，输出需要统计的粒度，默认 M，即按月统计</p></li>
+<li><p><strong>data_summary_comment</strong> – 数据样本概况中需要填入的备注信息，例如 “去除了历史最大逾期天数[0, dpd]内的灰客户” 等</p></li>
+<li><p><strong>excel_writer</strong> – 需要保存的excel文件名称或写入器</p></li>
+<li><p><strong>sheet</strong> – 需要保存的 sheet 名称，可传入已有的 worksheet 或 文字信息</p></li>
+<li><p><strong>start_col</strong> – 开始列</p></li>
+<li><p><strong>start_row</strong> – 开始行</p></li>
+<li><p><strong>writer_params</strong> – excel写入器初始化参数，仅在 excel_writer 为字符串时有效</p></li>
+<li><p><strong>bin_params</strong> – 统计分箱的参数，支持 <cite>feature_bin_stats</cite> 方法的参数</p></li>
+<li><p><strong>feature_map</strong> – 特征字典，增加文档可读性使用，默认 {}</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-scorecardpipeline.utils">
 <span id="scorecardpipeline-utils"></span><h1>scorecardpipeline.utils<a class="headerlink" href="#module-scorecardpipeline.utils" title="此标题的永久链接">¶</a></h1>
 <p>&#64;Time    : 2023/05/21 16:23
@@ -6529,6 +6589,14 @@ sub-estimator of a meta-estimator, e.g. used inside a
 <li><a class="reference internal" href="#scorecardpipeline.model.ScoreCard.set_transform_request"><code class="docutils literal notranslate"><span class="pre">ScoreCard.set_transform_request()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.auto_eda.auto_eda_sweetviz"><code class="docutils literal notranslate"><span class="pre">auto_eda_sweetviz()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.auto_report.auto_data_testing_report"><code class="docutils literal notranslate"><span class="pre">auto_data_testing_report()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-scorecardpipeline.utils">scorecardpipeline.utils</a><ul>

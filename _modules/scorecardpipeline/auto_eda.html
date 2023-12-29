@@ -10,7 +10,7 @@
     <meta name="docsearch:release" content="0.1.29" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.logger &mdash; scorecardpipeline 0.1.29 文档</title>
+      <title>scorecardpipeline.auto_eda &mdash; scorecardpipeline 0.1.29 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -249,56 +249,85 @@
       </aside>
       <main class="nftt-main">
         <article id="content" class="nftt-content" role="main">
-    <h1>scorecardpipeline.logger 源代码</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span><span class="p">,</span> <span class="n">TimedRotatingFileHandler</span>
-<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span><span class="p">,</span> <span class="n">StreamHandler</span><span class="p">,</span> <span class="n">Formatter</span><span class="p">,</span> <span class="n">DEBUG</span><span class="p">,</span> <span class="n">INFO</span><span class="p">,</span> <span class="n">ERROR</span>
+    <h1>scorecardpipeline.auto_eda 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@Time    : 2023/12/29 11:17</span>
+<span class="sd">@Author  : itlubber</span>
+<span class="sd">@Site    : itlubber.art</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="kn">import</span> <span class="nn">sweetviz</span> <span class="k">as</span> <span class="nn">sv</span>
 
 
-<div class="viewcode-block" id="init_logger"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.init_logger">[文档]</a><span class="k">def</span> <span class="nf">init_logger</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;[ </span><span class="si">%(asctime)s</span><span class="s2"> ][ </span><span class="si">%(levelname)s</span><span class="s2"> ][ </span><span class="si">%(filename)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> ] </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    初始化日志</span>
+<div class="viewcode-block" id="auto_eda_sweetviz"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.auto_eda_sweetviz">[文档]</a><span class="k">def</span> <span class="nf">auto_eda_sweetviz</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="s2">&quot;model_report/auto_eda.html&quot;</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cat_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">text_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;对数据量和特征个数较少的数据集进行自动 EDA 产出分析报告文档</span>
 
-<span class="sd">    :param filename: 日志文件存储地址，如果不传不记录日志到文件中，默认为 None</span>
-<span class="sd">    :param stream: 是否显示在终端中，默认 True</span>
-<span class="sd">    :param fmt: 日志格式，参考：https://docs.python.org/3/library/logging.html#formatter-objects</span>
-<span class="sd">    :param datefmt: 日期格式</span>
-<span class="sd">    :return: logging.Logger</span>
+<span class="sd">    :param all_data: 需要 EDA 的数据集</span>
+<span class="sd">    :param target: 目标变量，仅支持整数型或布尔型的目标变量</span>
+<span class="sd">    :param labels: 当传入 target 时为需要对比的数据集名称 [true, false]，当不传入 target 时为数据集名字</span>
+<span class="sd">    :param save: 报告存储路径，后缀使用 .html</span>
+<span class="sd">    :param pairwise: 是否需要显示特征之间的分布情况</span>
+<span class="sd">    :param exclude: 需要排除的特征名称</span>
+<span class="sd">    :param num_features: 需要强制转为数值型的特征名称</span>
+<span class="sd">    :param cat_features: 需要强制转为类别型的特征名称</span>
+<span class="sd">    :param text_features: 需要强制转为文本的特征名称</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;scorecardpipeline&quot;</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
-    <span class="n">formatter</span> <span class="o">=</span> <span class="n">Formatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="n">datefmt</span><span class="p">)</span>
+    <span class="c1"># 配置文件初始化</span>
+    <span class="n">sv</span><span class="o">.</span><span class="n">config_parser</span><span class="o">.</span><span class="n">read_dict</span><span class="p">({</span><span class="s2">&quot;Layout&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;show_logo&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}})</span>
 
-    <span class="k">if</span> <span class="n">filename</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">)):</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;错误 &gt;&gt; 创建日志目录失败,清手动创建目录文件位置,运行 sudo mkdir -p </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;错误 &gt;&gt; 报错信息 : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+    <span class="c1"># 设置跳过某些列</span>
+    <span class="n">feature_config</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">FeatureConfig</span><span class="p">(</span><span class="n">skip</span><span class="o">=</span><span class="n">exclude</span><span class="p">,</span> <span class="n">force_num</span><span class="o">=</span><span class="n">num_features</span><span class="p">,</span> <span class="n">force_cat</span><span class="o">=</span><span class="n">cat_features</span><span class="p">,</span> <span class="n">force_text</span><span class="o">=</span><span class="n">text_features</span><span class="p">)</span>
 
-        <span class="c1"># fh = TimedRotatingFileHandler(filename=filename, when=&#39;D&#39;, backupCount=30, encoding=&quot;utf-8&quot;)</span>
-        <span class="n">fh</span> <span class="o">=</span> <span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">INFO</span><span class="p">)</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
-        <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">stream</span><span class="p">:</span>
-        <span class="n">ch</span> <span class="o">=</span> <span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-        <span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">INFO</span><span class="p">)</span>
-        <span class="n">ch</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-        <span class="n">ch</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">)):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">logger</span></div>
+    <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">report_all</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">all_data</span><span class="p">,</span> <span class="n">labels</span><span class="p">]</span> <span class="k">if</span> <span class="n">labels</span> <span class="k">else</span> <span class="n">all_data</span>
+            <span class="p">,</span> <span class="n">pairwise_analysis</span><span class="o">=</span><span class="s2">&quot;on&quot;</span> <span class="k">if</span> <span class="n">pairwise</span> <span class="k">else</span> <span class="s2">&quot;off&quot;</span>
+            <span class="p">,</span> <span class="n">feat_cfg</span><span class="o">=</span><span class="n">feature_config</span>
+        <span class="p">)</span>
+        <span class="n">report_all</span><span class="o">.</span><span class="n">show_html</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">open_browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># 自动 eda 两个数据集，根据数据集中某个字段区分</span>
+        <span class="n">report</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">compare_intra</span><span class="p">(</span>
+            <span class="n">all_data</span>
+            <span class="p">,</span> <span class="n">all_data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+            <span class="p">,</span> <span class="n">labels</span> <span class="k">if</span> <span class="n">labels</span> <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;坏客户&quot;</span><span class="p">,</span> <span class="s2">&quot;好客户&quot;</span><span class="p">]</span>
+            <span class="p">,</span> <span class="n">feat_cfg</span><span class="o">=</span><span class="n">feature_config</span>
+            <span class="p">,</span> <span class="n">pairwise_analysis</span><span class="o">=</span><span class="s2">&quot;on&quot;</span>
+        <span class="p">)</span>
+        <span class="n">report</span><span class="o">.</span><span class="n">show_html</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">open_browser</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">logger</span> <span class="o">=</span> <span class="n">init_logger</span><span class="p">()</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">logger</span><span class="p">))</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;import scorecardpipeline as sp&quot;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">from</span> <span class="nn">scorecardpipeline</span> <span class="kn">import</span> <span class="n">germancredit</span>
+
+    <span class="c1"># 加载数据集</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">germancredit</span><span class="p">()</span>
+
+    <span class="c1"># 设置目标变量名称 &amp; 映射目标变量值域为 {0, 1}</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;creditability&quot;</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;good&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;bad&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+    <span class="c1"># 随机替换 20% 的数据为 np.nan</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># 自动 eda 并保存文件</span>
+    <span class="n">auto_eda_sweetviz</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
 </pre></div>
 </article>
         

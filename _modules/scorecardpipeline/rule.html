@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="scorecardpipeline" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1.31" />
+    <meta name="docsearch:version" content="" />
+    
+      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.31 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+          <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/colorsets/sphinx-nefertiti-indigo.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+        <link rel="index" title="索引" href="../../genindex.html" />
+        <link rel="search" title="搜索" href="../../search.html" />
+        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
+        <link rel="up" title="模块代码" href="../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-documentation-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Nunito", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-xxl visually-hidden-focusable overflow-hidden justify-content-start">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2"
+          ><span class="brand-text">scorecardpipeline</span></a>
+        
+        <div class="d-flex d-lg-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-lg-0 px-lg-3">
+    <hr class="d-lg-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-lg-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title text-white fw-bold" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Nefertiti for Sphinx</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-lg-0">
+            <hr class="d-lg-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+              
+              <li class="nav-item col-12 col-lg-auto">
+                <a class="nav-link py-2 py-lg-0 px-0 px-lg-2" href="https://github.com/itlubber/scorecardpipeline" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/itlubber/scorecardpipeline">
+                      itlubber/scorecardpipeline
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none text-white-50">
+              </li>
+              
+              <!-- version_dropdown.html -->
+
+  
+    <li class="nav-item dropdown">
+      <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
+        <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
+        <li>
+          <h6 class="dropdown-header">Versions</h6>
+        </li>
+        
+          <li>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
+              <span class="small ms-2">v0.1.31</span>
+              <i class="bi bi-check ms-auto"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+
+  <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-lg-none small ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="small ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="small ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="small ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-xxl nftt-gutter nftt-layout">
+      <aside class="nftt-sidebar">
+        <div class="title d-none d-md-block">
+          <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Table of contents</span>
+        </div>
+        <div id="sidebar" tabindex="-1" class="offcanvas-lg offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+            <!-- danirus sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id2">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id3">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id4">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id16">交流</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html">scorecardpipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+        </div>
+      </aside>
+      <main class="nftt-main">
+        <article id="content" class="nftt-content" role="main">
+    <h1>scorecardpipeline.rule 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@Time    : 2024/2/26 12:00</span>
+<span class="sd">@Author  : itlubber</span>
+<span class="sd">@Site    : itlubber.art</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_array</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span>
+
+<span class="kn">from</span> <span class="nn">.processing</span> <span class="kn">import</span> <span class="n">feature_bin_stats</span><span class="p">,</span> <span class="n">Combiner</span>
+
+
+<span class="k">def</span> <span class="nf">_get_context</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_names</span><span class="p">)}</span>
+
+
+<span class="k">def</span> <span class="nf">_apply_expr_on_array</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">_get_context</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RuleState"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleState">[文档]</a><span class="k">class</span> <span class="nc">RuleState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">INITIALIZED</span> <span class="o">=</span> <span class="s2">&quot;initialized&quot;</span>
+    <span class="n">APPLIED</span> <span class="o">=</span> <span class="s2">&quot;applied&quot;</span></div>
+
+
+<div class="viewcode-block" id="RuleStateError"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleStateError">[文档]</a><span class="k">class</span> <span class="nc">RuleStateError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="RuleUnAppliedError"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleUnAppliedError">[文档]</a><span class="k">class</span> <span class="nc">RuleUnAppliedError</span><span class="p">(</span><span class="n">RuleStateError</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<span class="c1"># 中級操作符</span>
+<span class="n">op_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GT&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;LT&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;EQ&quot;</span><span class="p">:</span> <span class="s2">&quot;==&quot;</span><span class="p">,</span> <span class="s2">&quot;ADD&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;GE&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span> <span class="s2">&quot;LE&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;=&quot;</span><span class="p">,</span> <span class="s2">&quot;SUBTRACT&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;MULTIPLY&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;DIVIDE&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;OR&quot;</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="s2">&quot;AND&quot;</span><span class="p">:</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">}</span>
+<span class="c1"># 数据类型 int, float--&gt;float, 目前不支持 str</span>
+<span class="n">value_type_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;int&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">}</span>
+<span class="c1"># if_part, then_part, else_part</span>
+<span class="n">part_dict</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;if&quot;</span><span class="p">,</span> <span class="s2">&quot;then&quot;</span><span class="p">,</span> <span class="s2">&quot;else&quot;</span><span class="p">]</span>
+
+
+<span class="c1"># max_index: 数据的列数     feature_list: 列的名称</span>
+<div class="viewcode-block" id="json2expr"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.json2expr">[文档]</a><span class="k">def</span> <span class="nf">json2expr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">max_index</span><span class="p">,</span> <span class="n">feature_list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">.</span><span class="n">_contains_</span><span class="p">(</span><span class="s2">&quot;operator&quot;</span><span class="p">):</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;operator&quot;</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;params&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;FEATURE_INDEX&quot;</span><span class="p">:</span>  <span class="c1"># 取变量，一个值{判断变量，索引是否正常}</span>
+            <span class="n">feature</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;feature&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_index</span><span class="p">:</span>  <span class="c1"># json中的索引异常: index &gt;= 数据列数</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;index error&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">feature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">feature_list</span><span class="p">:</span>  <span class="c1"># 变量异常:变量名不在数据的列名中</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> do not belong to the data &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">feature</span>
+        <span class="k">elif</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_dict</span><span class="p">:</span>  <span class="c1"># 两个值，递归</span>
+            <span class="n">value_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">json2expr</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">max_index</span><span class="p">,</span> <span class="n">feature_list</span><span class="p">),</span> <span class="n">json2expr</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">max_index</span><span class="p">,</span> <span class="n">feature_list</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">op_dict</span><span class="p">[</span><span class="n">op</span><span class="p">]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># op 不在op_dict报错</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The operator: </span><span class="si">{}</span><span class="s2"> is invalid&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">):</span>
+        <span class="n">value_type</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+        <span class="c1"># 对取到值的类型做转换， 不在类型字典中的值报错</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">value_type_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value_type</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data type error!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value_type_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value_type</span><span class="p">)(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Rule"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule">[文档]</a><span class="k">class</span> <span class="nc">Rule</span><span class="p">:</span>
+<div class="viewcode-block" id="Rule.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>  <span class="c1"># expr 既可以传递字符串，也可以传递dict</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;规则集</span>
+
+<span class="sd">        :param expr: 类似 DataFrame 的 query 方法传参方式即可，目前仅支持数值型变量规则</span>
+
+<span class="sd">        **参考样例**</span>
+
+<span class="sd">        &gt;&gt;&gt; from scorecardpipeline import *</span>
+<span class="sd">        &gt;&gt;&gt; target = &quot;creditability&quot;</span>
+<span class="sd">        &gt;&gt;&gt; data = germancredit()</span>
+<span class="sd">        &gt;&gt;&gt; data[target] = data[target].map({&quot;good&quot;: 0, &quot;bad&quot;: 1})</span>
+<span class="sd">        &gt;&gt;&gt; data = data.select_dtypes(&quot;number&quot;) # 暂不支持字符型规则</span>
+<span class="sd">        &gt;&gt;&gt; rule1 = Rule(&quot;duration_in_month &lt; 10&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; rule2 = Rule(&quot;credit_amount &lt; 500&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; rule1.report(data, target=target)</span>
+<span class="sd">        &gt;&gt;&gt; rule2.report(data, target=target)</span>
+<span class="sd">        &gt;&gt;&gt; (rule1 | rule2).report(data, target=target)</span>
+<span class="sd">        &gt;&gt;&gt; (rule1 &amp; rule2).report(data, target=target)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span></div>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rule(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rule(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="Rule.predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.predict">[文档]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">part</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>  <span class="c1"># dict预测对应part_dict 、字符串表达式对应&quot;、&quot;其他情况报错</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Rule can only predict on DataFrame.&quot;</span><span class="p">)</span>
+        <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>  <span class="c1"># 取数据的列名</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="s2">&quot;allow-nan&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># dict部分</span>
+            <span class="k">if</span> <span class="n">part</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">part_dict</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Part : </span><span class="si">{}</span><span class="s2"> not in [&#39;if&#39;,&#39;then&#39;,&#39;else&#39;]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">part</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="n">part</span><span class="p">]:</span>  <span class="c1"># 没有返回值的情况[]</span>
+                <span class="k">return</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">dict2expr</span> <span class="o">=</span> <span class="n">json2expr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="n">part</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">feature_names</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dict2expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># 返回Value (类型已经做过转换),对其扩充 --&gt; [value] * Len(X)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict2expr</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># 表达式在进行计算</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">_apply_expr_on_array</span><span class="p">(</span><span class="n">dict2expr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>  <span class="c1"># result 只有一个数值时，对其扩充 --&gt; [value] * len(X)</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># 字符串表达式部分</span>
+            <span class="k">if</span> <span class="n">part</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;The part of the expression must be &quot;&quot;&#39;</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">_apply_expr_on_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Rule currently only supports dict and expression&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="Rule.report"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.report">[文档]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">overdue</span><span class="o">=</span><span class="s2">&quot;overdue&quot;</span><span class="p">,</span> <span class="n">dpd</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">del_grey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">return_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prior_rules</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;规则效果报告表格输出</span>
+
+<span class="sd">        :param datasets: 数据集，需要包含 目标变量 或 逾期天数，当不包含目标变量时，会通过逾期天数计算目标变量，同时需要传入逾期定义的DPD天数</span>
+<span class="sd">        :param target: 目标变量名称，默认 target</span>
+<span class="sd">        :param desc: 规则相关的描述，会出现在返回的表格当中</span>
+<span class="sd">        :param return_cols: 指定返回的字段列表，默认不传</span>
+<span class="sd">        :param prior_rules: 先验规则，可以传入先验规则先筛选数据后再评估规则效果</span>
+<span class="sd">        :param overdue: 逾期天数字读名称</span>
+<span class="sd">        :param dpd: 逾期定义方式，逾期天数 &gt; DPD 为 1，其他为 0，仅 overdue 字段起作用时有用</span>
+<span class="sd">        :param del_grey: 是否删除逾期天数 (0, dpd] 的数据，仅 overdue 字段起作用时有用</span>
+
+<span class="sd">        :return: pd.DataFrame，规则效果评估表</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">return_cols</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">return_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;指标名称&#39;</span><span class="p">,</span> <span class="s2">&quot;指标含义&quot;</span><span class="p">,</span> <span class="s1">&#39;分箱&#39;</span><span class="p">,</span> <span class="s1">&#39;样本总数&#39;</span><span class="p">,</span> <span class="s1">&#39;样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本率&#39;</span><span class="p">,</span> <span class="s1">&#39;LIFT值&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">desc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">desc</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="s2">&quot;指标含义&quot;</span> <span class="ow">in</span> <span class="n">return_cols</span><span class="p">:</span>
+                <span class="n">return_cols</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;指标含义&quot;</span><span class="p">)</span>
+
+        <span class="n">datasets</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">overdue</span> <span class="ow">in</span> <span class="n">datasets</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">dpd</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">datasets</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="n">overdue</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dpd</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">del_grey</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">del_grey</span><span class="p">:</span>
+                <span class="n">grey</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[(</span><span class="n">datasets</span><span class="p">[</span><span class="n">overdue</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="n">overdue</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">dpd</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">datasets</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[(</span><span class="n">datasets</span><span class="p">[</span><span class="n">overdue</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="n">overdue</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dpd</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">rule_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span>
+
+        <span class="k">if</span> <span class="n">prior_rules</span><span class="p">:</span>
+            <span class="n">prior_tables</span> <span class="o">=</span> <span class="n">prior_rules</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">overdue</span><span class="o">=</span><span class="n">overdue</span><span class="p">,</span> <span class="n">dpd</span><span class="o">=</span><span class="n">dpd</span><span class="p">,</span> <span class="n">del_grey</span><span class="o">=</span><span class="n">del_grey</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">return_cols</span><span class="o">=</span><span class="n">return_cols</span><span class="p">,</span> <span class="n">prior_rules</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="o">~</span><span class="n">prior_rules</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">datasets</span><span class="p">)]</span>
+            <span class="n">rule_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">temp</span><span class="p">),</span> <span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prior_tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">return_cols</span><span class="p">)</span>
+            <span class="n">rule_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">datasets</span><span class="p">),</span> <span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">datasets</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
+
+        <span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+        <span class="n">combiner</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;命中&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;未命中&quot;</span><span class="p">]]})</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">feature_bin_stats</span><span class="p">(</span><span class="n">rule_result</span><span class="p">,</span> <span class="n">rule_expr</span><span class="p">,</span> <span class="n">combiner</span><span class="o">=</span><span class="n">combiner</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">return_cols</span><span class="o">=</span><span class="n">return_cols</span><span class="p">)</span>
+
+        <span class="c1"># 准确率、精确率、召回率、F1分数</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+            <span class="s2">&quot;分箱&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;准确率&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})),</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))],</span>
+            <span class="s2">&quot;精确率&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">precision_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})),</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))],</span>
+            <span class="s2">&quot;召回率&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">recall_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})),</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))],</span>
+            <span class="s2">&quot;F1分数&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">f1_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})),</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">rule_result</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">rule_result</span><span class="p">[</span><span class="n">rule_expr</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;命中&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))],</span>
+        <span class="p">})</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;分箱&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+        <span class="c1"># 规则上线后增益评估</span>
+        <span class="c1"># 坏账率变化情况: 上线后拒绝多少比例的坏客户同时拒绝后坏账水平多少，在原始数据基础上换张改善多少</span>
+        <span class="n">total_bad</span><span class="p">,</span> <span class="n">total</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;样本总数&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">total_bad_rate</span> <span class="o">=</span> <span class="n">total_bad</span> <span class="o">/</span> <span class="n">total</span>
+        <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏账改善&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">total_bad_rate</span> <span class="o">-</span> <span class="p">(</span><span class="n">total_bad</span> <span class="o">-</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">total</span> <span class="o">-</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;样本总数&quot;</span><span class="p">]))</span> <span class="o">/</span> <span class="n">total_bad_rate</span>
+
+        <span class="k">if</span> <span class="n">prior_rules</span><span class="p">:</span>
+            <span class="n">prior_tables</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;规则分类&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;先验规则&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">prior_tables</span><span class="p">))</span>
+            <span class="n">prior_tables</span><span class="p">[</span><span class="s2">&quot;坏账改善&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;规则分类&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;验证规则&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">prior_tables</span><span class="p">,</span> <span class="n">table</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;规则分类&quot;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">table</span></div>
+
+<div class="viewcode-block" id="Rule.result"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.result">[文档]</a>    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RuleUnAppliedError</span><span class="p">(</span><span class="s2">&quot;Invoke `predict` to make a rule applied.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result_</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Rule</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input should be of type Rule, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">_state</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RuleStateError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input rule should be of the same state.&quot;</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">return</span> <span class="n">res</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+
+    <span class="c1"># rule combinations</span>
+    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Rule</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input should be of type Rule, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">_state</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RuleStateError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input rule should be of the same state.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">) | (</span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">(),</span> <span class="n">other</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># 汇总成新的json</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; || &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span>
+
+            <span class="c1"># if_part</span>
+            <span class="n">if_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;OR&quot;</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">))</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;if&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">if_dict</span>
+
+            <span class="c1"># then_part</span>
+            <span class="n">then_part</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>  <span class="c1"># 两条规则的then都为空</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>  <span class="c1"># 一条规则的then存在</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># 两条规则的then都存在</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则then_part类型要一致&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则之间or运算, 类型需要设置为bool类型&quot;</span><span class="p">)</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;OR&quot;</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">))</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;then&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">then_part</span>
+
+        <span class="c1"># else_part</span>
+        <span class="n">else_part</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># self.else或者other.else存在为空的情况</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>
+            <span class="n">else_part</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>  <span class="c1"># 一条规则的then存在</span>
+            <span class="n">else_part</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>
+            <span class="n">else_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则else part类型要一致&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则之间or运算, 类型需要设置为bool类型&quot;</span><span class="p">)</span>
+            <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+            <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;OR&quot;</span>
+            <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">))</span>
+            <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;else&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">else_part</span>
+
+        <span class="k">return</span> <span class="n">Rule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Rule</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input should be of type Rule, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">_state</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RuleStateError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input rule should be of the same state.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># 表达式</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">) &amp; (</span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">(),</span> <span class="n">other</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># dict</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># 汇总成新的json</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; &amp;&amp; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">)</span>
+
+            <span class="c1"># if_part</span>
+            <span class="n">if_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;AND&quot;</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">))</span>
+            <span class="n">if_dict</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;if&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;if&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">if_dict</span>
+
+            <span class="c1"># then_part</span>
+            <span class="n">then_part</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>  <span class="c1"># 两条规则的then都为空</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>  <span class="c1"># 一条规则的then存在</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">):</span>
+                <span class="n">then_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># 两条规则的then都存在</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="s2">&quot;then&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="s2">&quot;then&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则then_part类型要一致&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则之间and运算, 类型需要设置为bool类型&quot;</span><span class="p">)</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;AND&quot;</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">))</span>
+                <span class="n">then_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;then&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">then_part</span>
+
+            <span class="c1"># else_part</span>
+            <span class="n">else_part</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># self.else 或者other.else 存在为空的情况</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>
+                <span class="n">else_part</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>  <span class="c1"># 一条规则的then存在</span>
+                <span class="n">else_part</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">):</span>
+                <span class="n">else_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则else_part类型要一致&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;then&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value_type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;两个规则之间and运算, 类型需要设置为bool类型&quot;</span><span class="p">)</span>
+                <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;value_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bool&quot;</span>
+                <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;operator&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;AND&quot;</span>
+                <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+                <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">))</span>
+                <span class="n">else_part</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;else&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">[</span><span class="s2">&quot;else&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">else_part</span>
+
+            <span class="k">return</span> <span class="n">Rule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_dict</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__xor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Rule</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input should be of type Rule, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">_state</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">RuleStateError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input rule should be of the same state.&quot;</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">) ^ (</span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_xor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">(),</span> <span class="n">other</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_or_</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;~(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">==</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">INITIALIZED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span>
+        <span class="k">return</span> <span class="n">r</span></div>
+</pre></div>
+</article>
+        
+      </main>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://itlubber.art" class="list-item">itlubber</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline" class="list-item">github</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb" class="list-item">examples</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">scorecardpipeline</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2023, itlubber</li>
+          </ul>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+
+    <script type="text/javascript" src="../../_static/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinx-nefertiti.min.js"></script>
+    
+  </body>
+</html>

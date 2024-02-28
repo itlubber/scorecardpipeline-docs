@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.30" />
+    <meta name="docsearch:release" content="0.1.31" />
     <meta name="docsearch:version" content="" />
     
-      <title>索引 &mdash; scorecardpipeline 0.1.30 文档</title>
+      <title>索引 &mdash; scorecardpipeline 0.1.31 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="#" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.30 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
     <style>
       :root {
         --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
@@ -133,7 +133,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.30">v0.1.30</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -141,8 +141,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.30">
-              <span class="small ms-2">v0.1.30</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
+              <span class="small ms-2">v0.1.31</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -235,6 +235,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
 </ul>
 
@@ -262,6 +263,7 @@
             | <a href="#G"><strong>G</strong></a>
             | <a href="#H"><strong>H</strong></a>
             | <a href="#I"><strong>I</strong></a>
+            | <a href="#J"><strong>J</strong></a>
             | <a href="#K"><strong>K</strong></a>
             | <a href="#L"><strong>L</strong></a>
             | <a href="#M"><strong>M</strong></a>
@@ -308,13 +310,13 @@
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.__init__">__init__() （scorecardpipeline.model.ScoreCard 方法）</a>
 </li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.__init__">__init__() （scorecardpipeline.Pipeline 方法）</a>
+</li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                                <li>
-                                    <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.__init__">__init__() （scorecardpipeline.Pipeline 方法）</a>
-</li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.__init__">__init__() （scorecardpipeline.processing.Combiner 方法）</a>
 </li>
@@ -329,6 +331,12 @@
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.__init__">__init__() （scorecardpipeline.processing.WOETransformer 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Rule.__init__">__init__() （scorecardpipeline.Rule 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.Rule.__init__">__init__() （scorecardpipeline.rule.Rule 方法）</a>
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.ScoreCard.__init__">__init__() （scorecardpipeline.ScoreCard 方法）</a>
@@ -354,6 +362,9 @@
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.add_conditional_formatting">add_conditional_formatting() （scorecardpipeline.ExcelWriter 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.RuleState.APPLIED">APPLIED（scorecardpipeline.rule.RuleState 属性）</a>
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.astype_insertvalue">astype_insertvalue()（scorecardpipeline.excel_writer.ExcelWriter 静态方法）</a>
@@ -621,10 +632,16 @@
                                     <a href="scorecardpipeline.html#scorecardpipeline.feature_bin_stats">feature_bin_stats()（在 scorecardpipeline 模块中）</a>
 </li>
                                 <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.feature_bin_stats">feature_bin_stats()（在 scorecardpipeline.processing 模块中）</a>
+</li>
+                                <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.feature_bins">feature_bins()（在 scorecardpipeline 模块中）</a>
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.utils.feature_bins">feature_bins()（在 scorecardpipeline.utils 模块中）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.feature_names_in_">feature_names_in_（scorecardpipeline.FeatureUnion 属性）</a>
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.feature_names_in_">feature_names_in_（scorecardpipeline.Pipeline 属性）</a>
@@ -650,13 +667,13 @@
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.fit">fit() （scorecardpipeline.FeatureImportanceSelector 方法）</a>
 </li>
-                                <li>
-                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.fit">fit() （scorecardpipeline.FeatureSelection 方法）</a>
-</li>
                         </ul>
                     </td>
                     <td>
                         <ul>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.fit">fit() （scorecardpipeline.FeatureSelection 方法）</a>
+</li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.fit">fit() （scorecardpipeline.FeatureUnion 方法）</a>
 </li>
@@ -807,6 +824,9 @@
                                     <a href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.init_style">init_style() （scorecardpipeline.ExcelWriter 方法）</a>
 </li>
                                 <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.RuleState.INITIALIZED">INITIALIZED（scorecardpipeline.rule.RuleState 属性）</a>
+</li>
+                                <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.insert_df2sheet">insert_df2sheet() （scorecardpipeline.excel_writer.ExcelWriter 方法）</a>
 </li>
                                 <li>
@@ -854,6 +874,19 @@
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression">ITLubberLogisticRegression（scorecardpipeline.model 中的类）</a>
+</li>
+                        </ul>
+                    </td>
+            </tr>
+        </table>
+    
+        <h2 id="J">J</h2>
+        <table class="indextable genindextable">
+            <tr>
+                    <td>
+                        <ul>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.json2expr">json2expr()（在 scorecardpipeline.rule 模块中）</a>
 </li>
                         </ul>
                     </td>
@@ -1028,10 +1061,16 @@
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.predict">predict() （scorecardpipeline.Pipeline 方法）</a>
 </li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Rule.predict">predict() （scorecardpipeline.Rule 方法）</a>
+</li>
                         </ul>
                     </td>
                     <td>
                         <ul>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.Rule.predict">predict() （scorecardpipeline.rule.Rule 方法）</a>
+</li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.predict_log_proba">predict_log_proba() （scorecardpipeline.Pipeline 方法）</a>
 </li>
@@ -1076,12 +1115,30 @@
                                     <a href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.report">report() （scorecardpipeline.model.ITLubberLogisticRegression 方法）</a>
 </li>
                                 <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Rule.report">report() （scorecardpipeline.Rule 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.Rule.report">report() （scorecardpipeline.rule.Rule 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Rule.result">result() （scorecardpipeline.Rule 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.Rule.result">result() （scorecardpipeline.rule.Rule 方法）</a>
+</li>
+                                <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.utils.round_float">round_float()（在 scorecardpipeline.utils 模块中）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.RuleStateError">RuleStateError</a>
 </li>
                         </ul>
                     </td>
                     <td>
                         <ul>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.RuleState">RuleState（scorecardpipeline.rule 中的类）</a>
+</li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.Combiner.rules">rules（scorecardpipeline.Combiner 属性）</a>
 </li>
@@ -1093,6 +1150,15 @@
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.WOETransformer.rules">rules（scorecardpipeline.WOETransformer 属性）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.RuleUnAppliedError">RuleUnAppliedError</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Rule">Rule（scorecardpipeline 中的类）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.rule.Rule">Rule（scorecardpipeline.rule 中的类）</a>
 </li>
                         </ul>
                     </td>
@@ -1192,10 +1258,6 @@
                                                 <li><a href="scorecardpipeline.html#module-scorecardpipeline.logger">模块</a>
 </li>
                                         </ul></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
                                 <li>
                                     
         scorecardpipeline.model
@@ -1210,6 +1272,14 @@
 
                                         <ul>
                                                 <li><a href="scorecardpipeline.html#module-scorecardpipeline.processing">模块</a>
+</li>
+                                        </ul></li>
+                                <li>
+                                    
+        scorecardpipeline.rule
+
+                                        <ul>
+                                                <li><a href="scorecardpipeline.html#module-scorecardpipeline.rule">模块</a>
 </li>
                                         </ul></li>
                                 <li>
@@ -1242,6 +1312,58 @@
                                     <a href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.set_column_width">set_column_width()（scorecardpipeline.ExcelWriter 静态方法）</a>
 </li>
                                 <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_decision_function_request">set_decision_function_request() （scorecardpipeline.ITLubberLogisticRegression 方法）</a>
+</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_decision_function_request">set_decision_function_request() （scorecardpipeline.model.ITLubberLogisticRegression 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Combiner.set_fit_request">set_fit_request() （scorecardpipeline.Combiner 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.set_fit_request">set_fit_request() （scorecardpipeline.FeatureImportanceSelector 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.set_fit_request">set_fit_request() （scorecardpipeline.FeatureSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_fit_request">set_fit_request() （scorecardpipeline.ITLubberLogisticRegression 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_fit_request">set_fit_request() （scorecardpipeline.model.ITLubberLogisticRegression 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.set_fit_request">set_fit_request() （scorecardpipeline.model.ScoreCard 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.set_fit_request">set_fit_request() （scorecardpipeline.processing.Combiner 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.set_fit_request">set_fit_request() （scorecardpipeline.processing.FeatureImportanceSelector 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.set_fit_request">set_fit_request() （scorecardpipeline.processing.FeatureSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.set_fit_request">set_fit_request() （scorecardpipeline.processing.StepwiseSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.set_fit_request">set_fit_request() （scorecardpipeline.processing.WOETransformer 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.ScoreCard.set_fit_request">set_fit_request() （scorecardpipeline.ScoreCard 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.set_fit_request">set_fit_request() （scorecardpipeline.StepwiseSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.WOETransformer.set_fit_request">set_fit_request() （scorecardpipeline.WOETransformer 方法）</a>
+</li>
+                                <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.set_number_format">set_number_format()（scorecardpipeline.excel_writer.ExcelWriter 静态方法）</a>
 </li>
                                 <li>
@@ -1260,10 +1382,52 @@
                                     <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.set_params">set_params() （scorecardpipeline.Pipeline 方法）</a>
 </li>
                                 <li>
-                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.steps">steps（scorecardpipeline.FeatureUnion 属性）</a>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_score_request">set_score_request() （scorecardpipeline.ITLubberLogisticRegression 方法）</a>
 </li>
                                 <li>
-                                    <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.steps">steps（scorecardpipeline.Pipeline 属性）</a>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_score_request">set_score_request() （scorecardpipeline.model.ITLubberLogisticRegression 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Pipeline.set_score_request">set_score_request() （scorecardpipeline.Pipeline 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.Combiner.set_transform_request">set_transform_request() （scorecardpipeline.Combiner 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.set_transform_request">set_transform_request() （scorecardpipeline.FeatureImportanceSelector 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.set_transform_request">set_transform_request() （scorecardpipeline.FeatureSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.set_transform_request">set_transform_request() （scorecardpipeline.model.ScoreCard 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.set_transform_request">set_transform_request() （scorecardpipeline.processing.Combiner 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.set_transform_request">set_transform_request() （scorecardpipeline.processing.FeatureImportanceSelector 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.set_transform_request">set_transform_request() （scorecardpipeline.processing.FeatureSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.set_transform_request">set_transform_request() （scorecardpipeline.processing.StepwiseSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.set_transform_request">set_transform_request() （scorecardpipeline.processing.WOETransformer 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.ScoreCard.set_transform_request">set_transform_request() （scorecardpipeline.ScoreCard 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.set_transform_request">set_transform_request() （scorecardpipeline.StepwiseSelection 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.WOETransformer.set_transform_request">set_transform_request() （scorecardpipeline.WOETransformer 方法）</a>
+</li>
+                                <li>
+                                    <a href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.steps">steps（scorecardpipeline.FeatureUnion 属性）</a>
 </li>
                                 <li>
                                     <a href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection">StepwiseSelection（scorecardpipeline 中的类）</a>
@@ -1407,6 +1571,8 @@
                                                 <li><a href="scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a>
 </li>
                                                 <li><a href="scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a>
+</li>
+                                                <li><a href="scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a>
 </li>
                                                 <li><a href="scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a>
 </li>

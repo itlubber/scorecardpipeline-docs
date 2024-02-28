@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.30" />
+    <meta name="docsearch:release" content="0.1.31" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.processing &mdash; scorecardpipeline 0.1.30 文档</title>
+      <title>scorecardpipeline.processing &mdash; scorecardpipeline 0.1.31 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.30 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.30">v0.1.30</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.30">
-              <span class="small ms-2">v0.1.30</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
+              <span class="small ms-2">v0.1.31</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -236,6 +236,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
 </ul>
 
@@ -810,14 +811,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">to_json</span><span class="o">=</span><span class="n">to_json</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Combiner.load"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Combiner.load">[文档]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_json</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Combiner.load"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Combiner.load">[文档]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_json</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;特征分箱器加载离线保存的 json 文件</span>
 
 <span class="sd">        :param from_json: json 文件的路径</span>
 
 <span class="sd">        :return: Combiner，特征分箱器</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">from_json</span><span class="o">=</span><span class="n">from_json</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">from_json</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 <div class="viewcode-block" id="Combiner.feature_bin_stats"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Combiner.feature_bin_stats">[文档]</a>    <span class="nd">@classmethod</span>
@@ -1055,6 +1056,9 @@
 <span class="sd">        :return: iter，迭代器</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">_rules</span><span class="p">)</span></div>
+
+
+<span class="n">feature_bin_stats</span> <span class="o">=</span> <span class="n">Combiner</span><span class="o">.</span><span class="n">feature_bin_stats</span>
 
 
 <div class="viewcode-block" id="WOETransformer"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.WOETransformer">[文档]</a><span class="k">class</span> <span class="nc">WOETransformer</span><span class="p">(</span><span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">BaseEstimator</span><span class="p">):</span>

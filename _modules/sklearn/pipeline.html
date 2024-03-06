@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.31" />
+    <meta name="docsearch:release" content="0.1.33" />
     <meta name="docsearch:version" content="" />
     
-      <title>sklearn.pipeline &mdash; scorecardpipeline 0.1.31 文档</title>
+      <title>sklearn.pipeline &mdash; scorecardpipeline 0.1.33 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
-              <span class="small ms-2">v0.1.31</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
+              <span class="small ms-2">v0.1.33</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -302,7 +302,7 @@
     <span class="k">return</span> <span class="n">check</span>
 
 
-<div class="viewcode-block" id="Pipeline"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline">[文档]</a><span class="k">class</span> <span class="nc">Pipeline</span><span class="p">(</span><span class="n">_BaseComposition</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Pipeline</span><span class="p">(</span><span class="n">_BaseComposition</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pipeline of transforms with a final estimator.</span>
 
@@ -408,12 +408,12 @@
         <span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;boolean&quot;</span><span class="p">],</span>
     <span class="p">}</span>
 
-<div class="viewcode-block" id="Pipeline.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="n">steps</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="n">memory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
 
-<div class="viewcode-block" id="Pipeline.set_output"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.set_output">[文档]</a>    <span class="k">def</span> <span class="nf">set_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the output container when `&quot;transform&quot;` and `&quot;fit_transform&quot;` are called.</span>
 
 <span class="sd">        Calling `set_output` will set the output of all estimators in `steps`.</span>
@@ -434,9 +434,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">():</span>
             <span class="n">_safe_set_output</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="Pipeline.get_params"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.get_params">[文档]</a>    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get parameters for this estimator.</span>
 
 <span class="sd">        Returns the parameters given in the constructor as well as the</span>
@@ -453,9 +453,9 @@
 <span class="sd">        params : mapping of string to any</span>
 <span class="sd">            Parameter names mapped to their values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_params</span><span class="p">(</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_params</span><span class="p">(</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.set_params"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.set_params">[文档]</a>    <span class="k">def</span> <span class="nf">set_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the parameters of this estimator.</span>
 
 <span class="sd">        Valid parameter keys can be listed with ``get_params()``. Note that</span>
@@ -475,7 +475,7 @@
 <span class="sd">            Pipeline class instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_params</span><span class="p">(</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">_validate_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">names</span><span class="p">,</span> <span class="n">estimators</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span>
@@ -644,7 +644,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fitted_transformer</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">X</span>
 
-<div class="viewcode-block" id="Pipeline.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.fit">[文档]</a>    <span class="nd">@_fit_context</span><span class="p">(</span>
+    <span class="nd">@_fit_context</span><span class="p">(</span>
         <span class="c1"># estimators in Pipeline.steps are not validated yet</span>
         <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
@@ -681,7 +681,7 @@
                 <span class="n">fit_params_last_step</span> <span class="o">=</span> <span class="n">fit_params_steps</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">_can_fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -690,7 +690,7 @@
             <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span><span class="p">,</span> <span class="s2">&quot;fit_transform&quot;</span><span class="p">)</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.fit_transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.fit_transform">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_fit_transform</span><span class="p">)</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_fit_transform</span><span class="p">)</span>
     <span class="nd">@_fit_context</span><span class="p">(</span>
         <span class="c1"># estimators in Pipeline.steps are not validated yet</span>
         <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">False</span>
@@ -733,9 +733,9 @@
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">last_step</span><span class="p">,</span> <span class="s2">&quot;fit_transform&quot;</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">last_step</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">last_step</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span></div>
+                <span class="k">return</span> <span class="n">last_step</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.predict">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_params</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `predict` with the final estimator.</span>
 
@@ -767,9 +767,9 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_params</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_params</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.fit_predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.fit_predict">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;fit_predict&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;fit_predict&quot;</span><span class="p">))</span>
     <span class="nd">@_fit_context</span><span class="p">(</span>
         <span class="c1"># estimators in Pipeline.steps are not validated yet</span>
         <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">False</span>
@@ -808,9 +808,9 @@
         <span class="n">fit_params_last_step</span> <span class="o">=</span> <span class="n">fit_params_steps</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
         <span class="k">with</span> <span class="n">_print_elapsed_time</span><span class="p">(</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
             <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">y_pred</span></div>
+        <span class="k">return</span> <span class="n">y_pred</span>
 
-<div class="viewcode-block" id="Pipeline.predict_proba"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.predict_proba">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict_proba&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict_proba&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_params</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `predict_proba` with the final estimator.</span>
 
@@ -837,9 +837,9 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_params</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_proba_params</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.decision_function"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.decision_function">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;decision_function&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;decision_function&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">decision_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `decision_function` with the final estimator.</span>
 
@@ -862,9 +862,9 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.score_samples"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.score_samples">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;score_samples&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;score_samples&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">score_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `score_samples` with the final estimator.</span>
 
@@ -887,9 +887,9 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">transformer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transformer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">score_samples</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.predict_log_proba"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.predict_log_proba">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict_log_proba&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;predict_log_proba&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">predict_log_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_log_proba_params</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `predict_log_proba` with the final estimator.</span>
 
@@ -916,14 +916,14 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">(</span><span class="n">with_final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict_log_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_log_proba_params</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">predict_log_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="o">**</span><span class="n">predict_log_proba_params</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_can_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span> <span class="o">==</span> <span class="s2">&quot;passthrough&quot;</span> <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span><span class="p">,</span> <span class="s2">&quot;transform&quot;</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="Pipeline.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.transform">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_transform</span><span class="p">)</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_transform</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `transform` with the final estimator.</span>
 
@@ -949,12 +949,12 @@
         <span class="n">Xt</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">():</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Xt</span></div>
+        <span class="k">return</span> <span class="n">Xt</span>
 
     <span class="k">def</span> <span class="nf">_can_inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;inverse_transform&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">())</span>
 
-<div class="viewcode-block" id="Pipeline.inverse_transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.inverse_transform">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_inverse_transform</span><span class="p">)</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_can_inverse_transform</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Xt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply `inverse_transform` for each step in a reverse order.</span>
 
@@ -977,9 +977,9 @@
         <span class="n">reverse_iter</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">()))</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">transform</span> <span class="ow">in</span> <span class="n">reverse_iter</span><span class="p">:</span>
             <span class="n">Xt</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Xt</span></div>
+        <span class="k">return</span> <span class="n">Xt</span>
 
-<div class="viewcode-block" id="Pipeline.score"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.score">[文档]</a>    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">))</span>
+    <span class="nd">@available_if</span><span class="p">(</span><span class="n">_final_estimator_has</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">))</span>
     <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform the data, and apply `score` with the final estimator.</span>
 
@@ -1012,7 +1012,7 @@
         <span class="n">score_params</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">score_params</span><span class="p">[</span><span class="s2">&quot;sample_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_weight</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">classes_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1049,7 +1049,7 @@
 
         <span class="k">return</span> <span class="n">tags</span>
 
-<div class="viewcode-block" id="Pipeline.get_feature_names_out"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Pipeline.get_feature_names_out">[文档]</a>    <span class="k">def</span> <span class="nf">get_feature_names_out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_feature_names_out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get output feature names for transformation.</span>
 
 <span class="sd">        Transform input features using the pipeline.</span>
@@ -1073,7 +1073,7 @@
                     <span class="s2">&quot;()?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
                 <span class="p">)</span>
             <span class="n">feature_names_out</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">feature_names_out</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">feature_names_out</span></div>
+        <span class="k">return</span> <span class="n">feature_names_out</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">n_features_in_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1116,7 +1116,7 @@
             <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
             <span class="n">name_details</span><span class="o">=</span><span class="n">name_details</span><span class="p">,</span>
             <span class="n">dash_wrapped</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_name_estimators</span><span class="p">(</span><span class="n">estimators</span><span class="p">):</span>
@@ -1226,7 +1226,7 @@
         <span class="k">return</span> <span class="n">transformer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="FeatureUnion"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion">[文档]</a><span class="k">class</span> <span class="nc">FeatureUnion</span><span class="p">(</span><span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">_BaseComposition</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">FeatureUnion</span><span class="p">(</span><span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">_BaseComposition</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Concatenates results of multiple transformer objects.</span>
 
 <span class="sd">    This estimator applies a list of transformer objects in parallel to the</span>
@@ -1324,15 +1324,15 @@
 
     <span class="n">_required_parameters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;transformer_list&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="FeatureUnion.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">transformer_list</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transformer_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">transformer_list</span> <span class="o">=</span> <span class="n">transformer_list</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span> <span class="o">=</span> <span class="n">n_jobs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">transformer_weights</span> <span class="o">=</span> <span class="n">transformer_weights</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
 
-<div class="viewcode-block" id="FeatureUnion.set_output"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.set_output">[文档]</a>    <span class="k">def</span> <span class="nf">set_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the output container when `&quot;transform&quot;` and `&quot;fit_transform&quot;` are called.</span>
 
 <span class="sd">        `set_output` will set the output of all estimators in `transformer_list`.</span>
@@ -1354,14 +1354,14 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_output</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iter</span><span class="p">():</span>
             <span class="n">_safe_set_output</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">named_transformers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Use Bunch object to improve autocomplete</span>
         <span class="k">return</span> <span class="n">Bunch</span><span class="p">(</span><span class="o">**</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transformer_list</span><span class="p">))</span>
 
-<div class="viewcode-block" id="FeatureUnion.get_params"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.get_params">[文档]</a>    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get parameters for this estimator.</span>
 
 <span class="sd">        Returns the parameters given in the constructor as well as the</span>
@@ -1379,9 +1379,9 @@
 <span class="sd">        params : mapping of string to any</span>
 <span class="sd">            Parameter names mapped to their values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_params</span><span class="p">(</span><span class="s2">&quot;transformer_list&quot;</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_params</span><span class="p">(</span><span class="s2">&quot;transformer_list&quot;</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FeatureUnion.set_params"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.set_params">[文档]</a>    <span class="k">def</span> <span class="nf">set_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the parameters of this estimator.</span>
 
 <span class="sd">        Valid parameter keys can be listed with ``get_params()``. Note that</span>
@@ -1401,7 +1401,7 @@
 <span class="sd">            FeatureUnion class instance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_params</span><span class="p">(</span><span class="s2">&quot;transformer_list&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">_validate_transformers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">names</span><span class="p">,</span> <span class="n">transformers</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">transformer_list</span><span class="p">)</span>
@@ -1448,7 +1448,7 @@
                 <span class="n">trans</span> <span class="o">=</span> <span class="n">FunctionTransformer</span><span class="p">(</span><span class="n">feature_names_out</span><span class="o">=</span><span class="s2">&quot;one-to-one&quot;</span><span class="p">)</span>
             <span class="k">yield</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">get_weight</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-<div class="viewcode-block" id="FeatureUnion.get_feature_names_out"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.get_feature_names_out">[文档]</a>    <span class="k">def</span> <span class="nf">get_feature_names_out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_feature_names_out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get output feature names for transformation.</span>
 
 <span class="sd">        Parameters</span>
@@ -1471,9 +1471,9 @@
             <span class="n">feature_names</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
                 <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">__</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">trans</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">(</span><span class="n">input_features</span><span class="p">)]</span>
             <span class="p">)</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
 
-<div class="viewcode-block" id="FeatureUnion.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit all transformers using X.</span>
 
 <span class="sd">        Parameters</span>
@@ -1498,9 +1498,9 @@
             <span class="k">return</span> <span class="bp">self</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_transformer_list</span><span class="p">(</span><span class="n">transformers</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="FeatureUnion.fit_transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.fit_transform">[文档]</a>    <span class="k">def</span> <span class="nf">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit all transformers, transform the data and concatenate results.</span>
 
 <span class="sd">        Parameters</span>
@@ -1529,7 +1529,7 @@
         <span class="n">Xs</span><span class="p">,</span> <span class="n">transformers</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_transformer_list</span><span class="p">(</span><span class="n">transformers</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hstack</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hstack</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_log_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
@@ -1556,7 +1556,7 @@
             <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">transformer</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">transformers</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="FeatureUnion.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureUnion.transform">[文档]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform X separately by each transformer, concatenate results.</span>
 
 <span class="sd">        Parameters</span>
@@ -1579,7 +1579,7 @@
             <span class="c1"># All transformers are None</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hstack</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hstack</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_hstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Xs</span><span class="p">):</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">_get_output_config</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
@@ -1627,7 +1627,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return transformer with name.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Only string keys are supported&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">named_transformers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">named_transformers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="make_union"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.make_union">[文档]</a><span class="k">def</span> <span class="nf">make_union</span><span class="p">(</span><span class="o">*</span><span class="n">transformers</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>

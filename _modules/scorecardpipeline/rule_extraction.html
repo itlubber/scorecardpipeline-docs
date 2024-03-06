@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="scorecardpipeline" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1.33" />
+    <meta name="docsearch:version" content="" />
+    
+      <title>scorecardpipeline.rule_extraction &mdash; scorecardpipeline 0.1.33 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+          <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/colorsets/sphinx-nefertiti-indigo.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+        <link rel="index" title="索引" href="../../genindex.html" />
+        <link rel="search" title="搜索" href="../../search.html" />
+        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
+        <link rel="up" title="模块代码" href="../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-documentation-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Nunito", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-xxl visually-hidden-focusable overflow-hidden justify-content-start">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2"
+          ><span class="brand-text">scorecardpipeline</span></a>
+        
+        <div class="d-flex d-lg-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-lg-0 px-lg-3">
+    <hr class="d-lg-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-lg-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title text-white fw-bold" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Nefertiti for Sphinx</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-lg-0">
+            <hr class="d-lg-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+              
+              <li class="nav-item col-12 col-lg-auto">
+                <a class="nav-link py-2 py-lg-0 px-0 px-lg-2" href="https://github.com/itlubber/scorecardpipeline" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/itlubber/scorecardpipeline">
+                      itlubber/scorecardpipeline
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none text-white-50">
+              </li>
+              
+              <!-- version_dropdown.html -->
+
+  
+    <li class="nav-item dropdown">
+      <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
+        <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
+        <li>
+          <h6 class="dropdown-header">Versions</h6>
+        </li>
+        
+          <li>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
+              <span class="small ms-2">v0.1.33</span>
+              <i class="bi bi-check ms-auto"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+
+  <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-lg-none small ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="small ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="small ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="small ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-xxl nftt-gutter nftt-layout">
+      <aside class="nftt-sidebar">
+        <div class="title d-none d-md-block">
+          <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Table of contents</span>
+        </div>
+        <div id="sidebar" tabindex="-1" class="offcanvas-lg offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+            <!-- danirus sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id2">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id3">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id4">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id16">交流</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html">scorecardpipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+        </div>
+      </aside>
+      <main class="nftt-main">
+        <article id="content" class="nftt-content" role="main">
+    <h1>scorecardpipeline.rule_extraction 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@Time    : 2024/2/29 13:29</span>
+<span class="sd">@Author  : itlubber</span>
+<span class="sd">@Site    : itlubber.art</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+<span class="kn">import</span> <span class="nn">dtreeviz</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span>
+<span class="kn">from</span> <span class="nn">openpyxl.worksheet.worksheet</span> <span class="kn">import</span> <span class="n">Worksheet</span>
+
+<span class="kn">import</span> <span class="nn">category_encoders</span> <span class="k">as</span> <span class="nn">ce</span>
+<span class="kn">from</span> <span class="nn">optbinning</span> <span class="kn">import</span> <span class="n">OptimalBinning</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">init_setting</span>
+<span class="kn">from</span> <span class="nn">.excel_writer</span> <span class="kn">import</span> <span class="n">ExcelWriter</span><span class="p">,</span> <span class="n">dataframe2excel</span>
+
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor">[文档]</a><span class="k">class</span> <span class="nc">DecisionTreeRuleExtractor</span><span class="p">:</span>
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;positive&quot;</span><span class="p">,</span> <span class="s2">&quot;negative&quot;</span><span class="p">],</span> <span class="n">feature_map</span><span class="o">=</span><span class="p">{},</span> <span class="n">nan</span><span class="o">=-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combiner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">theme_color</span><span class="o">=</span><span class="s2">&quot;2639E9&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;决策树自动规则挖掘工具包</span>
+
+<span class="sd">        :param target: 数据集中好坏样本标签列名称，默认 target</span>
+<span class="sd">        :param labels: 好坏样本标签名称，传入一个长度为2的列表，第0个元素为好样本标签，第1个元素为坏样本标签，默认 [&quot;positive&quot;, &quot;negative&quot;]</span>
+<span class="sd">        :param feature_map: 变量名称及其含义，在后续输出报告和策略信息时增加可读性，默认 {}</span>
+<span class="sd">        :param nan: 在决策树策略挖掘时，默认空值填充的值，默认 -1</span>
+<span class="sd">        :param max_iter: 最多支持在数据集上训练多少颗树模型，每次生成一棵树后，会剔除特征重要性最高的特征后，再生成树，默认 128</span>
+<span class="sd">        :param writer: 在之前程序运行时生成的 ExcelWriter，可以支持传入一个已有的writer，后续所有内容将保存至该workbook中，默认 None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nan</span> <span class="o">=</span> <span class="n">nan</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theme_color</span> <span class="o">=</span> <span class="n">theme_color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span> <span class="o">=</span> <span class="n">feature_map</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decision_trees</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span> <span class="o">=</span> <span class="n">max_iter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">describe_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">,</span> <span class="s2">&quot;命中数&quot;</span><span class="p">,</span> <span class="s2">&quot;命中率&quot;</span><span class="p">,</span> <span class="s2">&quot;好样本数&quot;</span><span class="p">,</span> <span class="s2">&quot;好样本占比&quot;</span><span class="p">,</span> <span class="s2">&quot;坏样本数&quot;</span><span class="p">,</span> <span class="s2">&quot;坏样本占比&quot;</span><span class="p">,</span> <span class="s2">&quot;坏率&quot;</span><span class="p">,</span> <span class="s2">&quot;样本整体坏率&quot;</span><span class="p">,</span> <span class="s2">&quot;LIFT值&quot;</span><span class="p">]</span>
+
+        <span class="n">init_setting</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">writer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">writer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">ExcelWriter</span><span class="p">(</span><span class="n">theme_color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme_color</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.encode_cat_features"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.encode_cat_features">[文档]</a>    <span class="k">def</span> <span class="nf">encode_cat_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">cat_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="nb">object</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">CategoricalDtype</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        <span class="n">cat_features_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">cat_features</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat_features</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span> <span class="o">=</span> <span class="n">ce</span><span class="o">.</span><span class="n">TargetEncoder</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="n">cat_features</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">cat_features</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span><span class="o">.</span><span class="n">target_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">cat_features</span><span class="p">])</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s1">&#39;_target&#39;</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cat_features</span><span class="p">:</span>
+                    <span class="n">mapping</span> <span class="o">=</span> <span class="n">X_TE</span><span class="p">[[</span><span class="n">col</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_target&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span><span class="o">.</span><span class="n">target_mapping</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">mapping</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">mapping</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">_target&quot;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_enc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">cat_features</span><span class="p">])</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s1">&#39;_target&#39;</span><span class="p">))</span>
+
+            <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X_TE</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cat_features</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">X_TE</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_target&quot;</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cat_features</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">X</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.get_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.get_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">get_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">total_bad_rate</span><span class="p">,</span> <span class="n">total_count</span><span class="p">):</span>
+        <span class="n">tree_</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_left</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_right</span>
+        <span class="n">feature_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">2</span> <span class="k">else</span> <span class="s2">&quot;undefined!&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">]</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="n">result_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>  <span class="c1"># 搜每个节点的规则</span>
+            <span class="k">nonlocal</span> <span class="n">result_dataframe</span>
+
+            <span class="k">if</span> <span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>  <span class="c1"># 非叶子节点,搜索每个节点的规则</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">feature_name</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+                <span class="n">thd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &lt;= </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">thd</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+                <span class="c1"># 左子</span>
+                <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">s</span>
+                <span class="n">recurse</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">thd</span><span class="p">)</span>
+                <span class="c1"># 右子</span>
+                <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">s</span>
+                <span class="n">recurse</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;组合策略&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="n">parent</span><span class="p">],</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;好样本占比&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">total_count</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">total_bad_rate</span><span class="p">))</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree_</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏样本占比&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">total_count</span> <span class="o">*</span> <span class="n">total_bad_rate</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;命中率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_count</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;样本整体坏率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_bad_rate</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;LIFT值&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;坏率&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;样本整体坏率&#39;</span><span class="p">]</span>
+
+                <span class="n">result_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">result_dataframe</span><span class="p">,</span> <span class="n">result</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">recurse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">result_dataframe</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;LIFT值&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="bp">self</span><span class="o">.</span><span class="n">describe_columns</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.select_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.select_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">select_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decision_tree</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dt_rules</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+        <span class="n">total_rules</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">viz_model</span> <span class="o">=</span> <span class="n">dtreeviz</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
+                                       <span class="n">X_train</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                                       <span class="n">y_train</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                                       <span class="n">feature_names</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                                       <span class="n">target_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+                                       <span class="n">class_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+                                       <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="s2">&quot;请检查 dtreeviz 版本&quot;</span>
+
+        <span class="n">rules</span> <span class="o">=</span> <span class="n">rules</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LIFT值 &gt;= </span><span class="si">{</span><span class="n">lift</span><span class="si">}</span><span class="s2"> &amp; 命中率 &lt;= </span><span class="si">{</span><span class="n">max_samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># font_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), &#39;matplot_chinese.ttf&#39;)</span>
+            <span class="c1"># font_manager.fontManager.addfont(font_path)</span>
+            <span class="c1"># plt.rcParams[&#39;font.family&#39;] = font_manager.FontProperties(fname=font_path).get_name()</span>
+            <span class="c1"># plt.rcParams[&#39;axes.unicode_minus&#39;] = False</span>
+
+            <span class="n">decision_tree_viz</span> <span class="o">=</span> <span class="n">viz_model</span><span class="o">.</span><span class="n">view</span><span class="p">(</span>
+                <span class="n">scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+                <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span>
+                <span class="n">colors</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;#2639E9&quot;</span><span class="p">,</span> <span class="s2">&quot;#F76E6C&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;#2639E9&quot;</span><span class="p">,</span> <span class="s2">&quot;#F76E6C&quot;</span><span class="p">,</span> <span class="s2">&quot;#FE7715&quot;</span><span class="p">,</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">]],</span>
+                    <span class="s2">&quot;arrow&quot;</span><span class="p">:</span> <span class="s2">&quot;#2639E9&quot;</span><span class="p">,</span>
+                    <span class="s1">&#39;text_wedge&#39;</span><span class="p">:</span> <span class="s2">&quot;#F76E6C&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pie&quot;</span><span class="p">:</span> <span class="s2">&quot;#2639E9&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;tile_alpha&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;legend_edge&quot;</span><span class="p">:</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">ticks_fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">label_fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">fontname</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">IPython.core.display_functions</span> <span class="kn">import</span> <span class="n">display</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">rules</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">decision_tree_viz</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">)):</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save</span><span class="p">))</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">decision_tree_viz</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache.svg&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">execute</span><span class="o">.</span><span class="n">ExecutableNotFound</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;请确保您已安装 graphviz 程序并且正确配置了 PATH 路径。可参考: https://stackoverflow.com/questions/35064304/runtimeerror-make-sure-the-graphviz-executables-are-on-your-systems-path-aft&quot;</span><span class="p">)</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="kn">import</span> <span class="nn">cairosvg</span>
+                    <span class="n">cairosvg</span><span class="o">.</span><span class="n">svg2png</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;combine_rules_cache.svg&quot;</span><span class="p">,</span> <span class="n">write_to</span><span class="o">=</span><span class="n">save</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">240</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="kn">from</span> <span class="nn">reportlab.graphics</span> <span class="kn">import</span> <span class="n">renderPDF</span>
+                    <span class="kn">from</span> <span class="nn">svglib.svglib</span> <span class="kn">import</span> <span class="n">svg2rlg</span>
+                    <span class="n">drawing</span> <span class="o">=</span> <span class="n">svg2rlg</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache.svg&quot;</span><span class="p">)</span>
+                    <span class="n">renderPDF</span><span class="o">.</span><span class="n">drawToFile</span><span class="p">(</span><span class="n">drawing</span><span class="p">,</span> <span class="n">save</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;PNG&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache.svg&quot;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache.svg&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache&quot;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;combine_rules_cache&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">drop</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">rules</span><span class="p">,</span> <span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">))],</span> <span class="n">total_rules</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">rules</span><span class="p">,</span> <span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">))],</span> <span class="n">total_rules</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rules</span><span class="p">,</span> <span class="n">total_rules</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.query_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.query_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">query_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">parsed_rules</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">total_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">total_bad_rate</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="n">rules</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parsed_rules</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">parsed_rules</span> <span class="o">=</span> <span class="n">parsed_rules</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">parsed_rules</span><span class="p">:</span>
+            <span class="n">select_index</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">select_index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">y_select</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">select_index</span><span class="p">]</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">()</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;组合策略&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rule</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_select</span><span class="p">)</span> <span class="o">-</span> <span class="n">y_select</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;好样本占比&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">total_count</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">total_bad_rate</span><span class="p">))</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_select</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏样本占比&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">total_count</span> <span class="o">*</span> <span class="n">total_bad_rate</span><span class="p">)</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;好样本数&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;命中率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_count</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏样本数&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;命中数&#39;</span><span class="p">]</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;样本整体坏率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_bad_rate</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LIFT值&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;坏率&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;样本整体坏率&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;组合策略&#39;</span><span class="p">:</span> <span class="n">rule</span><span class="p">,</span> <span class="s1">&#39;好样本数&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;好样本占比&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;坏样本数&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;坏样本占比&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;命中数&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;命中率&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;坏率&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;样本整体坏率&#39;</span><span class="p">:</span> <span class="n">total_bad_rate</span><span class="p">,</span> <span class="s1">&#39;LIFT值&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="p">})</span>
+
+            <span class="n">rules</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">rules</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">rules</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">describe_columns</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.insert_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.insert_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">insert_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parsed_rules</span><span class="p">,</span> <span class="n">end_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">350</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">Worksheet</span><span class="p">):</span>
+            <span class="n">worksheet</span> <span class="o">=</span> <span class="n">sheet</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">worksheet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">get_sheet_by_name</span><span class="p">(</span><span class="n">sheet</span> <span class="ow">or</span> <span class="s2">&quot;决策树组合策略挖掘&quot;</span><span class="p">)</span>
+
+        <span class="n">end_row</span><span class="p">,</span> <span class="n">end_col</span> <span class="o">=</span> <span class="n">dataframe2excel</span><span class="p">(</span><span class="n">parsed_rules</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="n">worksheet</span><span class="p">,</span> <span class="n">start_row</span><span class="o">=</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="n">start_col</span><span class="p">,</span> <span class="n">percent_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;好样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;命中率&#39;</span><span class="p">,</span> <span class="s1">&#39;坏率&#39;</span><span class="p">,</span> <span class="s1">&#39;样本整体坏率&#39;</span><span class="p">,</span> <span class="s1">&#39;LIFT值&#39;</span><span class="p">],</span> <span class="n">condition_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;坏率&quot;</span><span class="p">,</span> <span class="s2">&quot;LIFT值&quot;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">save</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">end_row</span><span class="p">,</span> <span class="n">end_col</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">insert_pic2sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="n">save</span><span class="p">,</span> <span class="p">(</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">start_col</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">end_row</span><span class="p">,</span> <span class="n">end_col</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">min_score</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;组合策略挖掘</span>
+
+<span class="sd">        :param x: 包含标签的数据集</span>
+<span class="sd">        :param max_depth: 决策树最大深度，即最多组合的特征个数，默认 2</span>
+<span class="sd">        :param lift: 组合策略最小的lift值，默认 0.，即全部组合策略</span>
+<span class="sd">        :param max_samples: 每条组合策略的最大样本占比，默认 1.0，即全部组合策略</span>
+<span class="sd">        :param min_score: 决策树拟合时最小的auc，如果不满足则停止后续生成决策树</span>
+<span class="sd">        :param verbose: 是否调试模式，仅在 jupyter 环境有效</span>
+<span class="sd">        :param kwargs: DecisionTreeClassifier 参数</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">worksheet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">get_sheet_by_name</span><span class="p">(</span><span class="s2">&quot;策略详情&quot;</span><span class="p">)</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
+        <span class="n">X_TE</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encode_cat_features</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]),</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X_TE</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_TE</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span><span class="p">):</span>
+            <span class="n">decision_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">max_depth</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">decision_tree</span> <span class="o">=</span> <span class="n">decision_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_TE</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">min_score</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">decision_tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_TE</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_score</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_TE</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_depth</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">parsed_rules</span><span class="p">,</span> <span class="n">remove</span><span class="p">,</span> <span class="n">total_rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_dt_rules</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span> <span class="n">X_TE</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="n">lift</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="n">max_samples</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;model_report/auto_mining_rules/combiner_rules_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed_rules</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span><span class="p">,</span> <span class="n">parsed_rules</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">parsed_rules</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parsed_rules</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_dt_rules</span><span class="p">(</span><span class="n">parsed_rules</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;model_report/auto_mining_rules/combiner_rules_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">total_rules</span><span class="p">),</span> <span class="n">sheet</span><span class="o">=</span><span class="n">worksheet</span><span class="p">)</span>
+
+                <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X_TE</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">decision_trees</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">traceback</span>
+                <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;未挖掘到有效策略, 可以考虑适当调整预设的筛选参数, 降低 lift / 提高 max_samples, 当前筛选标准为: 提取 lift &gt;= </span><span class="si">{</span><span class="n">lift</span><span class="si">}</span><span class="s2"> 且 max_samples &lt;= </span><span class="si">{</span><span class="n">max_samples</span><span class="si">}</span><span class="s2"> 的策略&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.transform">[文档]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
+        <span class="n">X_TE</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encode_cat_features</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]),</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">X_TE</span> <span class="o">=</span> <span class="n">X_TE</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">parsed_rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_dt_rules</span><span class="p">(</span><span class="n">X_TE</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">parsed_rules</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">parsed_rules</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parsed_rules</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">parsed_rules</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">describe_columns</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.report"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.report">[文档]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="s2">&quot;组合策略汇总&quot;</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;组合策略插入excel文档</span>
+
+<span class="sd">        :param valid: 验证数据集</span>
+<span class="sd">        :param sheet: 保存组合策略的表格sheet名称</span>
+<span class="sd">        :param save: 保存报告的文件路径</span>
+
+<span class="sd">        :return: 返回每个数据集组合策略命中情况</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">worksheet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">get_sheet_by_name</span><span class="p">(</span><span class="n">sheet</span> <span class="ow">or</span> <span class="s2">&quot;决策树组合策略挖掘&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">sheet</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">workbook</span><span class="o">.</span><span class="n">move_sheet</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">parsed_rules_train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt_rules</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">parsed_rules_train</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parsed_rules_train</span><span class="p">[</span><span class="s2">&quot;组合策略&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_map</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">insert_value2sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">sheet</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;组合策略: 训练集&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;header_middle&quot;</span><span class="p">,</span> <span class="n">end_space</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">sheet</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed_rules_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_dt_rules</span><span class="p">(</span><span class="n">parsed_rules_train</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="n">worksheet</span><span class="p">)</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="n">parsed_rules_train</span><span class="p">,)</span>
+
+        <span class="k">if</span> <span class="n">valid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">parsed_rules_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">valid</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">insert_value2sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;组合策略: 验证集&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;header_middle&quot;</span><span class="p">,</span> <span class="n">end_space</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_dt_rules</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="n">worksheet</span><span class="p">)</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="n">outputs</span> <span class="o">+</span> <span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">valid</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">parsed_rules_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">insert_value2sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;组合策略: 验证集 </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;header_middle&quot;</span><span class="p">,</span> <span class="n">end_space</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_dt_rules</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="n">worksheet</span><span class="p">)</span>
+                        <span class="n">outputs</span> <span class="o">=</span> <span class="n">outputs</span> <span class="o">+</span> <span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,)</span>
+
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">valid</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">parsed_rules_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">insert_value2sheet</span><span class="p">(</span><span class="n">worksheet</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;组合策略: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;header_middle&quot;</span><span class="p">,</span> <span class="n">end_space</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_row</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_dt_rules</span><span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_col</span><span class="p">,</span> <span class="n">sheet</span><span class="o">=</span><span class="n">worksheet</span><span class="p">)</span>
+                        <span class="n">outputs</span> <span class="o">=</span> <span class="n">outputs</span> <span class="o">+</span> <span class="p">(</span><span class="n">parsed_rules_val</span><span class="p">,)</span>
+
+        <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">outputs</span></div></div>
+</pre></div>
+</article>
+        
+      </main>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://itlubber.art" class="list-item">itlubber</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline" class="list-item">github</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb" class="list-item">examples</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">scorecardpipeline</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2023, itlubber</li>
+          </ul>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+
+    <script type="text/javascript" src="../../_static/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinx-nefertiti.min.js"></script>
+    
+  </body>
+</html>

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.31" />
+    <meta name="docsearch:release" content="0.1.33" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.31 文档</title>
+      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.33 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
-              <span class="small ms-2">v0.1.31</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
+              <span class="small ms-2">v0.1.33</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -280,17 +280,17 @@
     <span class="k">return</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">local_dict</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="RuleState"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleState">[文档]</a><span class="k">class</span> <span class="nc">RuleState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">RuleState</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
     <span class="n">INITIALIZED</span> <span class="o">=</span> <span class="s2">&quot;initialized&quot;</span>
-    <span class="n">APPLIED</span> <span class="o">=</span> <span class="s2">&quot;applied&quot;</span></div>
+    <span class="n">APPLIED</span> <span class="o">=</span> <span class="s2">&quot;applied&quot;</span>
 
 
-<div class="viewcode-block" id="RuleStateError"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleStateError">[文档]</a><span class="k">class</span> <span class="nc">RuleStateError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
-    <span class="k">pass</span></div>
+<span class="k">class</span> <span class="nc">RuleStateError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+    <span class="k">pass</span>
 
 
-<div class="viewcode-block" id="RuleUnAppliedError"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RuleUnAppliedError">[文档]</a><span class="k">class</span> <span class="nc">RuleUnAppliedError</span><span class="p">(</span><span class="n">RuleStateError</span><span class="p">):</span>
-    <span class="k">pass</span></div>
+<span class="k">class</span> <span class="nc">RuleUnAppliedError</span><span class="p">(</span><span class="n">RuleStateError</span><span class="p">):</span>
+    <span class="k">pass</span>
 
 
 <span class="c1"># 中級操作符</span>
@@ -401,7 +401,7 @@
 <span class="sd">        :return: pd.DataFrame，规则效果评估表</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">return_cols</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">return_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;指标名称&#39;</span><span class="p">,</span> <span class="s2">&quot;指标含义&quot;</span><span class="p">,</span> <span class="s1">&#39;分箱&#39;</span><span class="p">,</span> <span class="s1">&#39;样本总数&#39;</span><span class="p">,</span> <span class="s1">&#39;样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本率&#39;</span><span class="p">,</span> <span class="s1">&#39;LIFT值&#39;</span><span class="p">]</span>
+            <span class="n">return_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;指标名称&#39;</span><span class="p">,</span> <span class="s2">&quot;指标含义&quot;</span><span class="p">,</span> <span class="s1">&#39;分箱&#39;</span><span class="p">,</span> <span class="s1">&#39;样本总数&#39;</span><span class="p">,</span> <span class="s1">&#39;样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;好样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本占比&#39;</span><span class="p">,</span> <span class="s1">&#39;坏样本率&#39;</span><span class="p">,</span> <span class="s1">&#39;LIFT值&#39;</span><span class="p">,</span> <span class="s1">&#39;坏账改善&#39;</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">desc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">desc</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="s2">&quot;指标含义&quot;</span> <span class="ow">in</span> <span class="n">return_cols</span><span class="p">:</span>
                 <span class="n">return_cols</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;指标含义&quot;</span><span class="p">)</span>
 
@@ -439,13 +439,13 @@
 
         <span class="c1"># 规则上线后增益评估</span>
         <span class="c1"># 坏账率变化情况: 上线后拒绝多少比例的坏客户同时拒绝后坏账水平多少，在原始数据基础上换张改善多少</span>
-        <span class="n">total_bad</span><span class="p">,</span> <span class="n">total</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;样本总数&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-        <span class="n">total_bad_rate</span> <span class="o">=</span> <span class="n">total_bad</span> <span class="o">/</span> <span class="n">total</span>
-        <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏账改善&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">total_bad_rate</span> <span class="o">-</span> <span class="p">(</span><span class="n">total_bad</span> <span class="o">-</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">total</span> <span class="o">-</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;样本总数&quot;</span><span class="p">]))</span> <span class="o">/</span> <span class="n">total_bad_rate</span>
+        <span class="c1"># total_bad, total = table[&quot;坏样本数&quot;].sum(), table[&quot;样本总数&quot;].sum()</span>
+        <span class="c1"># total_bad_rate = total_bad / total</span>
+        <span class="c1"># table[&quot;坏账改善&quot;] = (total_bad_rate - (total_bad - table[&quot;坏样本数&quot;]) / (total - table[&quot;样本总数&quot;])) / total_bad_rate</span>
 
         <span class="k">if</span> <span class="n">prior_rules</span><span class="p">:</span>
             <span class="n">prior_tables</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;规则分类&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;先验规则&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">prior_tables</span><span class="p">))</span>
-            <span class="n">prior_tables</span><span class="p">[</span><span class="s2">&quot;坏账改善&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="c1"># prior_tables[&quot;坏账改善&quot;] = np.nan</span>
             <span class="n">table</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;规则分类&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;验证规则&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
             <span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">prior_tables</span><span class="p">,</span> <span class="n">table</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;规则分类&quot;</span><span class="p">])</span>
 
@@ -618,7 +618,7 @@
         <span class="k">return</span> <span class="n">r</span>
 
     <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_or_</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__or__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;~(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>

@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.31" />
+    <meta name="docsearch:release" content="0.1.33" />
     <meta name="docsearch:version" content="" />
     
-      <title>简介 &mdash; scorecardpipeline 0.1.31 文档</title>
+      <title>简介 &mdash; scorecardpipeline 0.1.33 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="genindex.html" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
         <link rel="next" title="scorecardpipeline" href="scorecardpipeline.html" />
         <link rel="prev" title="scorecardpipeline" href="index.html" />
     <style>
@@ -137,7 +137,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -145,8 +145,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
-              <span class="small ms-2">v0.1.31</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
+              <span class="small ms-2">v0.1.33</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -256,7 +256,7 @@
       <main class="nftt-main">
         <article id="content" class="nftt-content" role="main">
     <section id="id1">
-<h1>简介<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
+<h1>简介</h1>
 <p><code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 封装了 <code class="docutils literal notranslate"><span class="pre">toad</span></code>、<code class="docutils literal notranslate"><span class="pre">scorecardpy</span></code>、<code class="docutils literal notranslate"><span class="pre">optbinning</span></code> 等评分卡建模相关组件，<code class="docutils literal notranslate"><span class="pre">API</span></code> 风格与 <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 高度一致，支持 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 式端到端评分卡建模、模型报告输出、导出 <code class="docutils literal notranslate"><span class="pre">PMML</span></code> 文件、超参数搜索等功能。</p>
 <blockquote>
 <div><p>在线文档: <a class="reference external" href="https://scorecardpipeline.itlubber.art//"><code class="docutils literal notranslate"><span class="pre">https://scorecardpipeline.itlubber.art/</span></code></a></p>
@@ -265,7 +265,7 @@
 </div></blockquote>
 </section>
 <section id="id2">
-<h1>版本说明<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h1>
+<h1>版本说明</h1>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -316,7 +316,7 @@
 </table>
 </section>
 <section id="id3">
-<h1>环境安装<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h1>
+<h1>环境安装</h1>
 <ol class="arabic simple">
 <li><p>安装 <code class="docutils literal notranslate"><span class="pre">python</span></code> 环境</p></li>
 </ol>
@@ -351,10 +351,10 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </div></blockquote>
 </section>
 <section id="id4">
-<h1>使用示例<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h1>
+<h1>使用示例</h1>
 <p>本节将就 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 的相关功能做简要介绍，并提供一个<a class="reference external" href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb"><code class="docutils literal notranslate"><span class="pre">简单的示例</span></code></a>，旨在让读者对如何使用 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 进行评分卡模型构建有一个简单的印象。</p>
 <section id="id5">
-<h2>导入依赖<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h2>
+<h2>导入依赖</h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -368,7 +368,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </div>
 </section>
 <section id="id6">
-<h2>数据准备<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
+<h2>数据准备</h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 进行评分卡建模，需要您提前准备好一个包含目标变量的数据集，<code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 提供了一个德国信贷数据集 <a class="reference external" href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"><code class="docutils literal notranslate"><span class="pre">germancredit</span></code></a>，示例加载该数据集进行演示，读者可以直接替换为您本地的数据集，并修改目标变量名称为数据集中的目标变量列名</p>
 <p><a class="reference external" href="https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"><code class="docutils literal notranslate"><span class="pre">germancredit</span></code></a> 数据集中包含类别型变量、数值型变量、好坏标签，共1000条数据，由于数据集中不包含缺失值，为了模拟实际生产中的真实数据，笔者将在固定随机种子的情况下随机替换数据集中的部分内容为 <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></p>
 <!-- 
@@ -531,7 +531,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </div>
 </section>
 <section id="id7">
-<h2>数据拆分<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
+<h2>数据拆分</h2>
 <p>通常建模过程中会将数据集拆分成训练数据集和测试数据集集，训练数据集用于模型参数的训练，测试数据集用于评估模型好坏，且在整个建模过程中实际上只能使用一次（任何针对测试数据集调模型的，都存在模型过拟合的情况，除非你的数据不包含任何噪声数据）。而为了弥补测试数据集只能用一次用于评估模型好坏的尴尬，大多都会再拆分一个验证数据集，用于模型训练过程中判别模型是否向好的方向进行优化。</p>
 <p>在金融建模场景中，上述三个数据集通常被称为训练数据集、测试数据集（即上述三个数据集中的验证集）、跨时间验证集（即上述三个数据集中的测试集）。同时，在金融场景中，跨时间验证集的拆分方式通常使用类似时间序列数据集的拆分方法，按照时间将数据集拆分为建模集（包含训练集和测试集）、跨时间验证集（<code class="docutils literal notranslate"><span class="pre">Out</span> <span class="pre">of</span> <span class="pre">Time，OOT</span></code>），以保证模型在不同时间段内的泛化能力。</p>
 <p>简单起见，示例只拆分训练集、测试集，OOT直接拷贝训练集来演示评分卡建模完整过程。</p>
@@ -542,13 +542,13 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </div>
 </section>
 <section id="id8">
-<h2>数据预处理<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
+<h2>数据预处理</h2>
 <p>在评分卡建模标准流程中，会先针对每个变量分箱后转WOE，再筛选特征训练逻辑回归模型，训练完后转评分卡，当数据集的特征个数比较多时，可以再分箱之前先进行特征初筛，以降低分箱时的计算耗时。评分卡建模完整流程可以参照如下流程:</p>
 <div style="display: flex; justify-content: space-around;">
     <img src="https://itlubber.art/upload/scorecard-modeling-process.png" style="width: 70%; "/>
 </div>
 <section id="id9">
-<h3>特征筛选<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h3>
+<h3>特征筛选</h3>
 <p>特征筛选主要从几个方面来评估特征是否有效：</p>
 <ol class="arabic simple">
 <li><p>单一值占比</p></li>
@@ -612,7 +612,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </table>
 </section>
 <section id="id10">
-<h3>特征分箱<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h3>
+<h3>特征分箱</h3>
 <p>特征分箱能够提升模型的鲁棒性，特征分箱时通常对每个箱内的样本个数或占比有要求，数据中的异常值和极端值会被分到某个箱中，在转化为 <code class="docutils literal notranslate"><span class="pre">WOE</span></code> 之后能够很大程度上避免异常值或极端值对模型训练时造成偏差。同时，特征分箱转 <code class="docutils literal notranslate"><span class="pre">WOE</span></code> 之后，所有特征的值域都被缩放到了某个固定尺度下，逻辑回归模型的系数在一定程度上能够代表特征的重要程度。</p>
 <ul class="simple">
 <li><p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，集成了 <code class="docutils literal notranslate"><span class="pre">toad</span></code> 和 <code class="docutils literal notranslate"><span class="pre">optbinning</span></code> 两个库中提供的分箱方法，后续会陆续增加更多的分箱方法，相关内容参考: <a class="reference internal" href="#/scorecardpipeline.html#scorecardpipeline.Combiner"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scorecardpipeline.Combiner</span></code></span></a></p></li>
@@ -657,7 +657,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </div>
 </section>
 <section id="woe">
-<h3><code class="docutils literal notranslate"><span class="pre">WOE</span></code> 转换<a class="headerlink" href="#woe" title="此标题的永久链接">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">WOE</span></code> 转换</h3>
 <p>特征分箱后，只是将特征离散化为几箱，每一箱的值被赋予了一个标签，例如0、1、2、3、…，尽管这些标签在一定程度上也能够表征客户的风险水平，能够作为训练数据训练出一个模型，但在评估客户风险状况时很难精准刻画客户的风险状况。</p>
 <p>通常使用 <code class="docutils literal notranslate"><span class="pre">WOE（Weight</span> <span class="pre">of</span> <span class="pre">Evidence）编码</span></code> 对分箱后的特征进行编码。<code class="docutils literal notranslate"><span class="pre">WOE编码</span></code> 将每个分箱内的坏样本占比除以好样本占比后取对数来编码，能够反映每个分箱内客户的坏客户分布与好客户分布之间的差异以及该箱内坏好比与总体的坏好比之间的差异性。</p>
 <p>特征 <code class="docutils literal notranslate"><span class="pre">WOE（Weight</span> <span class="pre">of</span> <span class="pre">Evidence）编码</span></code> 后，有如下好处：</p>
@@ -682,7 +682,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 <p>在特征从原始值编码为 <code class="docutils literal notranslate"><span class="pre">woe</span></code> 的过程中，特征的值从连续值或者分类值映射到了有限的几个分箱对应的 <code class="docutils literal notranslate"><span class="pre">woe</span></code> 值，同时值域也统一到了一个基于样本好坏分布情况为基准的空间中，会造成特征之间的相关性增大、单一值占比上升、特征 <code class="docutils literal notranslate"><span class="pre">iv</span></code> 值较前筛时小幅度下降，所以推荐在 <code class="docutils literal notranslate"><span class="pre">WOE编码</span></code> 后，再进行一次特征精筛，以保证后续模型结果的稳定性和整体可解释性。</p>
 </section>
 <section id="id11">
-<h3>逐步回归特征筛选<a class="headerlink" href="#id11" title="此标题的永久链接">¶</a></h3>
+<h3>逐步回归特征筛选</h3>
 <p>在正式训练 <code class="docutils literal notranslate"><span class="pre">逻辑回归（logistic</span> <span class="pre">regression，LR）模型</span></code> 前，通常会再使用逐步回归来剔除特征，能够一定程度上解决特征之间的多重共线性，以及在剔除尽可能多的特征的同时保证 <code class="docutils literal notranslate"><span class="pre">LR模型</span></code> 效果的有效性。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化逐步回归特征筛选器</span>
 <span class="n">stepwise</span> <span class="o">=</span> <span class="n">StepwiseSelection</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
@@ -742,7 +742,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 </section>
 </section>
 <section id="lr">
-<h2>训练 <code class="docutils literal notranslate"><span class="pre">LR</span></code> 模型<a class="headerlink" href="#lr" title="此标题的永久链接">¶</a></h2>
+<h2>训练 <code class="docutils literal notranslate"><span class="pre">LR</span></code> 模型</h2>
 <p>对数据集预处理完成后，数据集中的特征的值域被映射到了一个与样本好坏息息相关的空间中，特征值的大小能够一定程度上反映出客户违约概率的高低，通过 <code class="docutils literal notranslate"><span class="pre">WOE编码</span></code> 方法对原始特征进行转换时引入的非线性能够在一定程度上弥补建模时使用简单模型拟合能力不足的问题，同时，数据集经过特征筛选后，冗余信息被尽可能多的剔除，多重共线性也在一定程度上得到解决，训练模型时能够在保证模型效果的前提下提升模型的鲁棒能力。</p>
 <p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，提供了基于 <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 重新实现的 <code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression</span></code> 逻辑回归模型，能够满足丰富的超参数设置和丰富的统计信息输出。</p>
 <p>当然，假如您想直接使用 <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 提供的 <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> 去完成评分卡模型构建和结果输出，也能够支持，但转换评分卡后，有部分扩展功能会受到限制，但不会影响评分卡模型转换、评分预测以及持久化存储的相关功能。</p>
@@ -975,7 +975,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class=
 <p><span class="math notranslate nohighlight">\(weighted\ avg = \frac{metric_1 \times \frac{support_1}{total\ count} + metric_2 \times \frac{support_2}{total\ count}}{2} = \frac{metric_1 \times support_1 + metric_2 \times support_2}{2 \times total\ count}\)</span></p>
 </section>
 <section id="id12">
-<h2>评分卡转换<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h2>
+<h2>评分卡转换</h2>
 <p>在金融领域，如果直接使用模型预测的概率作为最终的评分，可能会对业务人员造成一定程度上的理解难度，同时，<a class="reference external" href="https://scikit-learn.org/stable/modules/calibration.html#calibration">模型预测的概率其实很难代表客户真实的违约概率</a>，不同模型预测的概率与真实违约概率之间存在不同程度的偏差。</p>
 <div style="display: flex; justify-content: space-around; ">
     <img width="100%" src="https://itlubber.art/upload/sphx_glr_plot_compare_calibration_001.png" />
@@ -1428,7 +1428,7 @@ A &amp;= base\_score + \frac{pdo}{ln(rate)} \times ln(base\_odds)
 </div>
 </section>
 <section id="id13">
-<h2>模型持久化存储<a class="headerlink" href="#id13" title="此标题的永久链接">¶</a></h2>
+<h2>模型持久化存储</h2>
 <p><code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 提供了几种可选的模型持久化存储方式，可以将训练好的评分卡模型保存为 <code class="docutils literal notranslate"><span class="pre">pickle</span></code> 或 <code class="docutils literal notranslate"><span class="pre">pmml</span></code> 格式的模型文件，供后续生产部署或离线回溯使用，非常方便快捷</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将评分卡模型保存 pmml 文件</span>
 <span class="n">scorecard_pipeline</span> <span class="o">=</span> <span class="n">card</span><span class="o">.</span><span class="n">scorecard2pmml</span><span class="p">(</span><span class="n">pmml</span><span class="o">=</span><span class="s2">&quot;model_report/scorecard.pmml&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1438,7 +1438,7 @@ A &amp;= base\_score + \frac{pdo}{ln(rate)} \times ln(base\_odds)
 </div>
 </section>
 <section id="pipeline">
-<h2>评分卡 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 建模<a class="headerlink" href="#pipeline" title="此标题的永久链接">¶</a></h2>
+<h2>评分卡 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 建模</h2>
 <p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，几乎所以的模型和数据预处理步骤都支持 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 式构建模型，同时还可以与 <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 中其他的 <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> 组件一起构建模型。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 构建 pipeline</span>
 <span class="n">model_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -1621,7 +1621,7 @@ A &amp;= base\_score + \frac{pdo}{ln(rate)} \times ln(base\_odds)
 </table>
 </section>
 <section id="id14">
-<h2>评分卡全流程超参数搜索<a class="headerlink" href="#id14" title="此标题的永久链接">¶</a></h2>
+<h2>评分卡全流程超参数搜索</h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入超参数搜索方法</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 
@@ -1661,7 +1661,7 @@ A &amp;= base\_score + \frac{pdo}{ln(rate)} \times ln(base\_odds)
 </div>
 </section>
 <section id="id15">
-<h2>模型报告输出<a class="headerlink" href="#id15" title="此标题的永久链接">¶</a></h2>
+<h2>模型报告输出</h2>
 <p>在 <code class="docutils literal notranslate"><span class="pre">scorecardpipeline</span></code> 中，提供了操作 <code class="docutils literal notranslate"><span class="pre">excel</span></code> 文件的写入器 <code class="docutils literal notranslate"><span class="pre">ExcelWriter</span></code>，支持将文字、表格、图像等过程内容保存至 <code class="docutils literal notranslate"><span class="pre">excel</span></code> 文件中，对相关方法抽象和封装后，能够满足日常大部分数据分析过程中结果保存的需求。</p>
 <p><code class="docutils literal notranslate"><span class="pre">ExcelWriter</span></code>支持调整列宽、调整单元格格式、条件格式、指定位置插入数据、插入图片等功能，且提供了 <code class="docutils literal notranslate"><span class="pre">dataframe2excel</span></code> 来在日常工作中快速保存 <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> 至 <code class="docutils literal notranslate"><span class="pre">excel</span></code> 文件中，并且自动设置样式。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化 Excel 写入器</span>
@@ -1806,7 +1806,7 @@ A &amp;= base\_score + \frac{pdo}{ln(rate)} \times ln(base\_odds)
 </section>
 </section>
 <section id="id16">
-<h1>交流<a class="headerlink" href="#id16" title="此标题的永久链接">¶</a></h1>
+<h1>交流</h1>
 <div style="display: flex; justify-content: space-around;">
     <img width="30%" alt="itlubber" src="https://itlubber.art/upload/itlubber.png"/>
     <img width="30%" alt="itlubber_art" src="https://itlubber.art/upload/itlubber_art.png"/>

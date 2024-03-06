@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.31" />
+    <meta name="docsearch:release" content="0.1.33" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.31 文档</title>
+      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.33 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="genindex.html" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.31 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
         <link rel="next" title="简介" href="quickstart.html" />
     <style>
       :root {
@@ -136,7 +136,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.31">v0.1.31</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -144,8 +144,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.31">
-              <span class="small ms-2">v0.1.31</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
+              <span class="small ms-2">v0.1.33</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -255,10 +255,10 @@
       <main class="nftt-main">
         <article id="content" class="nftt-content" role="main">
     <section id="scorecardpipeline">
-<h1>scorecardpipeline<a class="headerlink" href="#scorecardpipeline" title="此标题的永久链接">¶</a></h1>
+<h1>scorecardpipeline</h1>
 <p><cite>scorecardpipeline</cite> 封装了 <cite>toad</cite>、<cite>scorecardpy</cite>、<cite>optbinning</cite> 等评分卡建模相关组件，<cite>API</cite> 风格与 <cite>sklearn</cite> 高度一致，支持 <cite>pipeline</cite> 式端到端评分卡建模、模型报告输出、导出 <cite>PMML</cite> 文件、超参数搜索等功能</p>
 <section id="id1">
-<h2>快速开始<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h2>
+<h2>快速开始</h2>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -462,7 +462,7 @@
 </div>
 </section>
 <section id="id2">
-<h2>接口文档<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
+<h2>接口文档</h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html">scorecardpipeline</a><ul>
@@ -470,8 +470,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.__init__"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.transform"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.set_fit_request"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureSelection.set_transform_request"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector</span></code></a><ul>
@@ -479,16 +477,12 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.fit"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.transform"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.transform()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.catboost_selector"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.catboost_selector()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.set_fit_request"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector.set_transform_request"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.__init__"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.fit"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.transform"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.set_fit_request"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.StepwiseSelection.set_transform_request"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner"><code class="docutils literal notranslate"><span class="pre">Combiner</span></code></a><ul>
@@ -506,8 +500,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner.corr_plot"><code class="docutils literal notranslate"><span class="pre">Combiner.corr_plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner.badrate_plot"><code class="docutils literal notranslate"><span class="pre">Combiner.badrate_plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner.rules"><code class="docutils literal notranslate"><span class="pre">Combiner.rules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner.set_fit_request"><code class="docutils literal notranslate"><span class="pre">Combiner.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Combiner.set_transform_request"><code class="docutils literal notranslate"><span class="pre">Combiner.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer"><code class="docutils literal notranslate"><span class="pre">WOETransformer</span></code></a><ul>
@@ -515,8 +507,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer.fit"><code class="docutils literal notranslate"><span class="pre">WOETransformer.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer.transform"><code class="docutils literal notranslate"><span class="pre">WOETransformer.transform()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer.rules"><code class="docutils literal notranslate"><span class="pre">WOETransformer.rules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer.set_fit_request"><code class="docutils literal notranslate"><span class="pre">WOETransformer.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.WOETransformer.set_transform_request"><code class="docutils literal notranslate"><span class="pre">WOETransformer.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression</span></code></a><ul>
@@ -529,9 +519,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.summary2"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.summary2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.convert_sparse_matrix"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.convert_sparse_matrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.plot_weights"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.plot_weights()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_decision_function_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_decision_function_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_fit_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ITLubberLogisticRegression.set_score_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_score_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard"><code class="docutils literal notranslate"><span class="pre">ScoreCard</span></code></a><ul>
@@ -553,8 +540,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard.score_hist"><code class="docutils literal notranslate"><span class="pre">ScoreCard.score_hist()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard.class_steps"><code class="docutils literal notranslate"><span class="pre">ScoreCard.class_steps()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard.feature_bin_stats"><code class="docutils literal notranslate"><span class="pre">ScoreCard.feature_bin_stats()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard.set_fit_request"><code class="docutils literal notranslate"><span class="pre">ScoreCard.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ScoreCard.set_transform_request"><code class="docutils literal notranslate"><span class="pre">ScoreCard.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Rule"><code class="docutils literal notranslate"><span class="pre">Rule</span></code></a><ul>
@@ -564,49 +549,22 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Rule.result"><code class="docutils literal notranslate"><span class="pre">Rule.result()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline"><code class="docutils literal notranslate"><span class="pre">Pipeline</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.__init__"><code class="docutils literal notranslate"><span class="pre">Pipeline.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.set_output"><code class="docutils literal notranslate"><span class="pre">Pipeline.set_output()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.get_params"><code class="docutils literal notranslate"><span class="pre">Pipeline.get_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.set_params"><code class="docutils literal notranslate"><span class="pre">Pipeline.set_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.named_steps"><code class="docutils literal notranslate"><span class="pre">Pipeline.named_steps</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.fit"><code class="docutils literal notranslate"><span class="pre">Pipeline.fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.fit_transform"><code class="docutils literal notranslate"><span class="pre">Pipeline.fit_transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.predict"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.fit_predict"><code class="docutils literal notranslate"><span class="pre">Pipeline.fit_predict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.predict_proba"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict_proba()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.decision_function"><code class="docutils literal notranslate"><span class="pre">Pipeline.decision_function()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.score_samples"><code class="docutils literal notranslate"><span class="pre">Pipeline.score_samples()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.predict_log_proba"><code class="docutils literal notranslate"><span class="pre">Pipeline.predict_log_proba()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.transform"><code class="docutils literal notranslate"><span class="pre">Pipeline.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.inverse_transform"><code class="docutils literal notranslate"><span class="pre">Pipeline.inverse_transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.score"><code class="docutils literal notranslate"><span class="pre">Pipeline.score()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.classes_"><code class="docutils literal notranslate"><span class="pre">Pipeline.classes_</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.get_feature_names_out"><code class="docutils literal notranslate"><span class="pre">Pipeline.get_feature_names_out()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.n_features_in_"><code class="docutils literal notranslate"><span class="pre">Pipeline.n_features_in_</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.feature_names_in_"><code class="docutils literal notranslate"><span class="pre">Pipeline.feature_names_in_</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.Pipeline.set_score_request"><code class="docutils literal notranslate"><span class="pre">Pipeline.set_score_request()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.__init__"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.encode_cat_features"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.encode_cat_features()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.get_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.get_dt_rules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.select_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.select_dt_rules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.query_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.query_dt_rules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.insert_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.insert_dt_rules()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.fit"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.transform"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.transform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.report"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.report()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.KS"><code class="docutils literal notranslate"><span class="pre">KS()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.AUC"><code class="docutils literal notranslate"><span class="pre">AUC()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.PSI"><code class="docutils literal notranslate"><span class="pre">PSI()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.F1"><code class="docutils literal notranslate"><span class="pre">F1()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion"><code class="docutils literal notranslate"><span class="pre">FeatureUnion</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.__init__"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.set_output"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.set_output()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.named_transformers"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.named_transformers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.get_params"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.get_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.set_params"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.set_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.get_feature_names_out"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.get_feature_names_out()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.fit"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.fit_transform"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.fit_transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.transform"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.n_features_in_"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.n_features_in_</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.feature_names_in_"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.feature_names_in_</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.FeatureUnion.steps"><code class="docutils literal notranslate"><span class="pre">FeatureUnion.steps</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.make_pipeline"><code class="docutils literal notranslate"><span class="pre">make_pipeline()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.make_union"><code class="docutils literal notranslate"><span class="pre">make_union()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.init_logger"><code class="docutils literal notranslate"><span class="pre">init_logger()</span></code></a></li>
@@ -641,6 +599,7 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.insert_pic2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_pic2sheet()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.insert_rows"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_rows()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.insert_df2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_df2sheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.merge_cells"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.merge_cells()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.check_contain_chinese"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.check_contain_chinese()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.astype_insertvalue"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.astype_insertvalue()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.ExcelWriter.calc_continuous_cnt"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.calc_continuous_cnt()</span></code></a></li>
@@ -664,16 +623,12 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.__init__"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.transform"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.set_fit_request"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureSelection.set_transform_request"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.__init__"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.__init__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.fit"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.transform"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.transform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.set_fit_request"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.StepwiseSelection.set_transform_request"><code class="docutils literal notranslate"><span class="pre">StepwiseSelection.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector</span></code></a><ul>
@@ -681,8 +636,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.fit"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.transform"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.transform()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.catboost_selector"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.catboost_selector()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.set_fit_request"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.FeatureImportanceSelector.set_transform_request"><code class="docutils literal notranslate"><span class="pre">FeatureImportanceSelector.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner"><code class="docutils literal notranslate"><span class="pre">Combiner</span></code></a><ul>
@@ -700,8 +653,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.corr_plot"><code class="docutils literal notranslate"><span class="pre">Combiner.corr_plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.badrate_plot"><code class="docutils literal notranslate"><span class="pre">Combiner.badrate_plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.rules"><code class="docutils literal notranslate"><span class="pre">Combiner.rules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.set_fit_request"><code class="docutils literal notranslate"><span class="pre">Combiner.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.Combiner.set_transform_request"><code class="docutils literal notranslate"><span class="pre">Combiner.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.feature_bin_stats"><code class="docutils literal notranslate"><span class="pre">feature_bin_stats()</span></code></a></li>
@@ -710,8 +661,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.fit"><code class="docutils literal notranslate"><span class="pre">WOETransformer.fit()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.transform"><code class="docutils literal notranslate"><span class="pre">WOETransformer.transform()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.rules"><code class="docutils literal notranslate"><span class="pre">WOETransformer.rules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.set_fit_request"><code class="docutils literal notranslate"><span class="pre">WOETransformer.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.processing.WOETransformer.set_transform_request"><code class="docutils literal notranslate"><span class="pre">WOETransformer.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -727,9 +676,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.summary2"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.summary2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.convert_sparse_matrix"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.convert_sparse_matrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.plot_weights"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.plot_weights()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_decision_function_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_decision_function_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_fit_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ITLubberLogisticRegression.set_score_request"><code class="docutils literal notranslate"><span class="pre">ITLubberLogisticRegression.set_score_request()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard"><code class="docutils literal notranslate"><span class="pre">ScoreCard</span></code></a><ul>
@@ -751,8 +697,6 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.score_hist"><code class="docutils literal notranslate"><span class="pre">ScoreCard.score_hist()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.class_steps"><code class="docutils literal notranslate"><span class="pre">ScoreCard.class_steps()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.feature_bin_stats"><code class="docutils literal notranslate"><span class="pre">ScoreCard.feature_bin_stats()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.set_fit_request"><code class="docutils literal notranslate"><span class="pre">ScoreCard.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.model.ScoreCard.set_transform_request"><code class="docutils literal notranslate"><span class="pre">ScoreCard.set_transform_request()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -797,6 +741,7 @@
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.insert_pic2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_pic2sheet()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.insert_rows"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_rows()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.insert_df2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_df2sheet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.merge_cells"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.merge_cells()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.check_contain_chinese"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.check_contain_chinese()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.astype_insertvalue"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.astype_insertvalue()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.excel_writer.ExcelWriter.calc_continuous_cnt"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.calc_continuous_cnt()</span></code></a></li>
@@ -811,13 +756,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.RuleState"><code class="docutils literal notranslate"><span class="pre">RuleState</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.RuleState.INITIALIZED"><code class="docutils literal notranslate"><span class="pre">RuleState.INITIALIZED</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.RuleState.APPLIED"><code class="docutils literal notranslate"><span class="pre">RuleState.APPLIED</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.RuleStateError"><code class="docutils literal notranslate"><span class="pre">RuleStateError</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.RuleUnAppliedError"><code class="docutils literal notranslate"><span class="pre">RuleUnAppliedError</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.json2expr"><code class="docutils literal notranslate"><span class="pre">json2expr()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.Rule"><code class="docutils literal notranslate"><span class="pre">Rule</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="scorecardpipeline.html#scorecardpipeline.rule.Rule.__init__"><code class="docutils literal notranslate"><span class="pre">Rule.__init__()</span></code></a></li>
@@ -836,7 +774,7 @@
 </div>
 </section>
 <section id="id3">
-<h2>快速查找<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h2>
+<h2>快速查找</h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>

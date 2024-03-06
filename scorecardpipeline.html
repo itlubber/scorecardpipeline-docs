@@ -1474,59 +1474,6 @@ float: best spliter</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scorecardpipeline.make_pipeline">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">make_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sklearn/pipeline.html#make_pipeline"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
-<dd><p>Construct a <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code> from the given estimators.</p>
-<p>This is a shorthand for the <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code> constructor; it does not
-require, and does not permit, naming the estimators. Instead, their names
-will be set to the lowercase of their types automatically.</p>
-<section id="parameters">
-<h2>Parameters</h2>
-<dl class="simple">
-<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>steps<span class="classifier">list of Estimator objects</span></dt><dd><p>List of the scikit-learn estimators that are chained together.</p>
-</dd>
-<dt>memory<span class="classifier">str or object with the joblib.Memory interface, default=None</span></dt><dd><p>Used to cache the fitted transformers of the pipeline. The last step
-will never be cached, even if it is a transformer. By default, no
-caching is performed. If a string is given, it is the path to the
-caching directory. Enabling caching triggers a clone of the transformers
-before fitting. Therefore, the transformer instance given to the
-pipeline cannot be inspected directly. Use the attribute <code class="docutils literal notranslate"><span class="pre">named_steps</span></code>
-or <code class="docutils literal notranslate"><span class="pre">steps</span></code> to inspect estimators within the pipeline. Caching the
-transformers is advantageous when fitting is time consuming.</p>
-</dd>
-<dt>verbose<span class="classifier">bool, default=False</span></dt><dd><p>If True, the time elapsed while fitting each step will be printed as it
-is completed.</p>
-</dd>
-</dl>
-</section>
-<section id="returns">
-<h2>Returns</h2>
-<dl class="simple">
-<dt>p<span class="classifier">Pipeline</span></dt><dd><p>Returns a scikit-learn <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code> object.</p>
-</dd>
-</dl>
-</section>
-<section id="see-also">
-<h2>See Also</h2>
-<dl class="simple">
-<dt>Pipeline<span class="classifier">Class for creating a pipeline of transforms with a final</span></dt><dd><p>estimator.</p>
-</dd>
-</dl>
-</section>
-<section id="examples">
-<h2>Examples</h2>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">GaussianNB</span><span class="p">(</span><span class="n">priors</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
-<span class="go">Pipeline(steps=[(&#39;standardscaler&#39;, StandardScaler()),</span>
-<span class="go">                (&#39;gaussiannb&#39;, GaussianNB())])</span>
-</pre></div>
-</div>
-</section>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.make_union">
 <span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">make_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">transformers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sklearn/pipeline.html#make_union"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>Construct a <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code> from the given transformers.</p>
@@ -1534,10 +1481,10 @@ is completed.</p>
 require, and does not permit, naming the transformers. Instead, they will
 be given names automatically based on their types. It also does not allow
 weighting.</p>
-<section id="id3">
+<section id="parameters">
 <h2>Parameters</h2>
 <dl>
-<dt><a href="#id4"><span class="problematic" id="id5">*</span></a>transformers<span class="classifier">list of estimators</span></dt><dd><p>One or more estimators.</p>
+<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>transformers<span class="classifier">list of estimators</span></dt><dd><p>One or more estimators.</p>
 </dd>
 <dt>n_jobs<span class="classifier">int, default=None</span></dt><dd><p>Number of jobs to run in parallel.
 <code class="docutils literal notranslate"><span class="pre">None</span></code> means 1 unless in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">joblib.parallel_backend</span></code> context.
@@ -1552,7 +1499,7 @@ printed as it is completed.</p>
 </dd>
 </dl>
 </section>
-<section id="id6">
+<section id="returns">
 <h2>Returns</h2>
 <dl class="simple">
 <dt>f<span class="classifier">FeatureUnion</span></dt><dd><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code> object for concatenating the results of multiple
@@ -1560,14 +1507,14 @@ transformer objects.</p>
 </dd>
 </dl>
 </section>
-<section id="id7">
+<section id="see-also">
 <h2>See Also</h2>
 <dl class="simple">
 <dt>FeatureUnion<span class="classifier">Class for concatenating the results of multiple transformer</span></dt><dd><p>objects.</p>
 </dd>
 </dl>
 </section>
-<section id="id8">
+<section id="examples">
 <h2>Examples</h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span><span class="p">,</span> <span class="n">TruncatedSVD</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_union</span>
@@ -4610,7 +4557,6 @@ transformer objects.</p>
 <li><a class="reference internal" href="#scorecardpipeline.AUC"><code class="docutils literal notranslate"><span class="pre">AUC()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.PSI"><code class="docutils literal notranslate"><span class="pre">PSI()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.F1"><code class="docutils literal notranslate"><span class="pre">F1()</span></code></a></li>
-<li><a class="reference internal" href="#scorecardpipeline.make_pipeline"><code class="docutils literal notranslate"><span class="pre">make_pipeline()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.make_union"><code class="docutils literal notranslate"><span class="pre">make_union()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.init_logger"><code class="docutils literal notranslate"><span class="pre">init_logger()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.init_setting"><code class="docutils literal notranslate"><span class="pre">init_setting()</span></code></a></li>

@@ -1143,7 +1143,7 @@
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">estimators</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="make_pipeline"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.make_pipeline">[文档]</a><span class="k">def</span> <span class="nf">make_pipeline</span><span class="p">(</span><span class="o">*</span><span class="n">steps</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">make_pipeline</span><span class="p">(</span><span class="o">*</span><span class="n">steps</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct a :class:`Pipeline` from the given estimators.</span>
 
 <span class="sd">    This is a shorthand for the :class:`Pipeline` constructor; it does not</span>
@@ -1188,7 +1188,7 @@
 <span class="sd">    Pipeline(steps=[(&#39;standardscaler&#39;, StandardScaler()),</span>
 <span class="sd">                    (&#39;gaussiannb&#39;, GaussianNB())])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">_name_estimators</span><span class="p">(</span><span class="n">steps</span><span class="p">),</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">_name_estimators</span><span class="p">(</span><span class="n">steps</span><span class="p">),</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_transform_one</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>

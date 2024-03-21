@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.33" />
+    <meta name="docsearch:release" content="0.1.34" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.33 文档</title>
+      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.34 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="genindex.html" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.33 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.34 文档" href="#" />
         <link rel="prev" title="简介" href="quickstart.html" />
     <style>
       :root {
@@ -136,7 +136,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.33">v0.1.33</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.34">v0.1.34</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -144,8 +144,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.33">
-              <span class="small ms-2">v0.1.33</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.34">
+              <span class="small ms-2">v0.1.34</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -239,6 +239,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.rule_extraction">scorecardpipeline.rule_extraction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
 </ul>
 
@@ -1386,7 +1387,7 @@
 <li><p><strong>max_samples</strong> – 每条组合策略的最大样本占比，默认 1.0，即全部组合策略</p></li>
 <li><p><strong>min_score</strong> – 决策树拟合时最小的auc，如果不满足则停止后续生成决策树</p></li>
 <li><p><strong>verbose</strong> – 是否调试模式，仅在 jupyter 环境有效</p></li>
-<li><p><strong>kwargs</strong> – DecisionTreeClassifier 参数</p></li>
+<li><p><strong>kwargs</strong> – DecisionTreeClassifier 参数，参考 <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -1665,6 +1666,26 @@ float: best spliter</p>
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>
 <dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.sample_lift_transformer">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">sample_lift_transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.7</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#sample_lift_transformer"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>采取好坏样本 sample_rate:1 的抽样方式时，计算抽样样本和原始样本上的 lift 指标</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – 原始数据，需全部为数值型变量</p></li>
+<li><p><strong>rule</strong> – Rule</p></li>
+<li><p><strong>target</strong> – 目标变量名称</p></li>
+<li><p><strong>sample_rate</strong> – 好样本采样比例</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>lift_sam: float, 抽样样本上拒绝人群的lift
+lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2311,11 +2332,12 @@ float: best spliter</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.auto_data_testing_report">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">auto_data_testing_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_summary_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'分析报告'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pictures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['bin',</span> <span class="pre">'ks',</span> <span class="pre">'hist']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_report.html#auto_data_testing_report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">auto_data_testing_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_summary_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'分析报告'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pictures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['bin',</span> <span class="pre">'ks',</span> <span class="pre">'hist']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_report.html#auto_data_testing_report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>自动数据测试报告，用于三方数据评估或自有评分效果评估</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>suffix</strong> – 用于避免未保存excel时，同名图片被覆盖的图片后缀名称</p></li>
 <li><p><strong>corr</strong> – 是否需要评估数值类变量之间的相关性，默认为 False，设置为 True 后会输出变量相关性图和表</p></li>
 <li><p><strong>pictures</strong> – 需要包含的图片，支持 [“ks”, “hist”, “bin”]</p></li>
 <li><p><strong>data</strong> – 需要评估的数据集，需要包含目标变量</p></li>
@@ -3497,11 +3519,12 @@ float: best spliter</p>
 &#64;Site    : itlubber.art</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.auto_report.auto_data_testing_report">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.auto_report.</span></span><span class="sig-name descname"><span class="pre">auto_data_testing_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_summary_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'分析报告'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pictures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['bin',</span> <span class="pre">'ks',</span> <span class="pre">'hist']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_report.html#auto_data_testing_report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.auto_report.</span></span><span class="sig-name descname"><span class="pre">auto_data_testing_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_summary_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'分析报告'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pictures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['bin',</span> <span class="pre">'ks',</span> <span class="pre">'hist']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/auto_report.html#auto_data_testing_report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>自动数据测试报告，用于三方数据评估或自有评分效果评估</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>suffix</strong> – 用于避免未保存excel时，同名图片被覆盖的图片后缀名称</p></li>
 <li><p><strong>corr</strong> – 是否需要评估数值类变量之间的相关性，默认为 False，设置为 True 后会输出变量相关性图和表</p></li>
 <li><p><strong>pictures</strong> – 需要包含的图片，支持 [“ks”, “hist”, “bin”]</p></li>
 <li><p><strong>data</strong> – 需要评估的数据集，需要包含目标变量</p></li>
@@ -3870,6 +3893,26 @@ float: best spliter</p>
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>
 <dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.utils.sample_lift_transformer">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.utils.</span></span><span class="sig-name descname"><span class="pre">sample_lift_transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.7</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#sample_lift_transformer"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>采取好坏样本 sample_rate:1 的抽样方式时，计算抽样样本和原始样本上的 lift 指标</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – 原始数据，需全部为数值型变量</p></li>
+<li><p><strong>rule</strong> – Rule</p></li>
+<li><p><strong>target</strong> – 目标变量名称</p></li>
+<li><p><strong>sample_rate</strong> – 好样本采样比例</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>lift_sam: float, 抽样样本上拒绝人群的lift
+lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4368,6 +4411,103 @@ float: best spliter</p>
 </dd></dl>
 
 </section>
+<section id="module-scorecardpipeline.rule_extraction">
+<span id="scorecardpipeline-rule-extraction"></span><h1>scorecardpipeline.rule_extraction</h1>
+<p>&#64;Time    : 2024/2/29 13:29
+&#64;Author  : itlubber
+&#64;Site    : itlubber.art</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.rule_extraction.</span></span><span class="sig-name descname"><span class="pre">DecisionTreeRuleExtractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['positive',</span> <span class="pre">'negative']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['positive',</span> <span class="pre">'negative']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>决策树自动规则挖掘工具包</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – 数据集中好坏样本标签列名称，默认 target</p></li>
+<li><p><strong>labels</strong> – 好坏样本标签名称，传入一个长度为2的列表，第0个元素为好样本标签，第1个元素为坏样本标签，默认 [“positive”, “negative”]</p></li>
+<li><p><strong>feature_map</strong> – 变量名称及其含义，在后续输出报告和策略信息时增加可读性，默认 {}</p></li>
+<li><p><strong>nan</strong> – 在决策树策略挖掘时，默认空值填充的值，默认 -1</p></li>
+<li><p><strong>max_iter</strong> – 最多支持在数据集上训练多少颗树模型，每次生成一棵树后，会剔除特征重要性最高的特征后，再生成树，默认 128</p></li>
+<li><p><strong>writer</strong> – 在之前程序运行时生成的 ExcelWriter，可以支持传入一个已有的writer，后续所有内容将保存至该workbook中，默认 None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.encode_cat_features">
+<span class="sig-name descname"><span class="pre">encode_cat_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.encode_cat_features"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.get_dt_rules">
+<span class="sig-name descname"><span class="pre">get_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bad_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.get_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.select_dt_rules">
+<span class="sig-name descname"><span class="pre">select_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decision_tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.select_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.query_dt_rules">
+<span class="sig-name descname"><span class="pre">query_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parsed_rules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.query_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.insert_dt_rules">
+<span class="sig-name descname"><span class="pre">insert_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parsed_rules</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(500,</span> <span class="pre">350)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.insert_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>组合策略挖掘</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – 包含标签的数据集</p></li>
+<li><p><strong>max_depth</strong> – 决策树最大深度，即最多组合的特征个数，默认 2</p></li>
+<li><p><strong>lift</strong> – 组合策略最小的lift值，默认 0.，即全部组合策略</p></li>
+<li><p><strong>max_samples</strong> – 每条组合策略的最大样本占比，默认 1.0，即全部组合策略</p></li>
+<li><p><strong>min_score</strong> – 决策树拟合时最小的auc，如果不满足则停止后续生成决策树</p></li>
+<li><p><strong>verbose</strong> – 是否调试模式，仅在 jupyter 环境有效</p></li>
+<li><p><strong>kwargs</strong> – DecisionTreeClassifier 参数，参考 <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.transform"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'组合策略汇总'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.report"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>组合策略插入excel文档</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valid</strong> – 验证数据集</p></li>
+<li><p><strong>sheet</strong> – 保存组合策略的表格sheet名称</p></li>
+<li><p><strong>save</strong> – 保存报告的文件路径</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回每个数据集组合策略命中情况</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-scorecardpipeline.logger">
 <span id="scorecardpipeline-logger"></span><h1>scorecardpipeline.logger</h1>
 <dl class="py function">
@@ -4517,6 +4657,7 @@ float: best spliter</p>
 <li><a class="reference internal" href="#scorecardpipeline.feature_bin_stats"><code class="docutils literal notranslate"><span class="pre">feature_bin_stats()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.extract_feature_bin"><code class="docutils literal notranslate"><span class="pre">extract_feature_bin()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.inverse_feature_bins"><code class="docutils literal notranslate"><span class="pre">inverse_feature_bins()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.sample_lift_transformer"><code class="docutils literal notranslate"><span class="pre">sample_lift_transformer()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.bin_plot"><code class="docutils literal notranslate"><span class="pre">bin_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.corr_plot"><code class="docutils literal notranslate"><span class="pre">corr_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ks_plot"><code class="docutils literal notranslate"><span class="pre">ks_plot()</span></code></a></li>
@@ -4664,6 +4805,7 @@ float: best spliter</p>
 <li><a class="reference internal" href="#scorecardpipeline.utils.csi_plot"><code class="docutils literal notranslate"><span class="pre">csi_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.dataframe_plot"><code class="docutils literal notranslate"><span class="pre">dataframe_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.distribution_plot"><code class="docutils literal notranslate"><span class="pre">distribution_plot()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.utils.sample_lift_transformer"><code class="docutils literal notranslate"><span class="pre">sample_lift_transformer()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a><ul>
@@ -4699,6 +4841,21 @@ float: best spliter</p>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.predict"><code class="docutils literal notranslate"><span class="pre">Rule.predict()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.report"><code class="docutils literal notranslate"><span class="pre">Rule.report()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.result"><code class="docutils literal notranslate"><span class="pre">Rule.result()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-scorecardpipeline.rule_extraction">scorecardpipeline.rule_extraction</a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.__init__"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.encode_cat_features"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.encode_cat_features()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.get_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.get_dt_rules()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.select_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.select_dt_rules()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.query_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.query_dt_rules()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.insert_dt_rules"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.insert_dt_rules()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.fit"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.fit()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.transform"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.transform()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.report"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor.report()</span></code></a></li>
 </ul>
 </li>
 </ul>

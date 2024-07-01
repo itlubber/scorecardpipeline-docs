@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.34" />
+    <meta name="docsearch:release" content="0.1.35" />
     <meta name="docsearch:version" content="" />
     
-      <title>toad.metrics &mdash; scorecardpipeline 0.1.34 文档</title>
+      <title>toad.metrics &mdash; scorecardpipeline 0.1.35 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.34 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.35 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.34">v0.1.34</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.35">v0.1.35</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.34">
-              <span class="small ms-2">v0.1.34</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.35">
+              <span class="small ms-2">v0.1.35</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -260,8 +260,6 @@
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">roc_curve</span>
 
-<span class="kn">from</span> <span class="nn">.merge</span> <span class="kn">import</span> <span class="n">merge</span>
-
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">feature_splits</span><span class="p">,</span>
     <span class="n">iter_df</span><span class="p">,</span>
@@ -321,6 +319,7 @@
         
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bucket&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bucket</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.merge</span> <span class="kn">import</span> <span class="n">merge</span>
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bucket&#39;</span><span class="p">],</span> <span class="n">splits</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">n_bins</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="p">,</span> <span class="n">return_splits</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>

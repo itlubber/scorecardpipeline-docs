@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="scorecardpipeline" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1.35" />
+    <meta name="docsearch:version" content="" />
+    
+      <title>scorecardpipeline.scorecard &mdash; scorecardpipeline 0.1.35 文档</title>
+    
+    <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+          <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/colorsets/sphinx-nefertiti-indigo.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/red-hat-mono/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
+        <link rel="index" title="索引" href="../../genindex.html" />
+        <link rel="search" title="搜索" href="../../search.html" />
+        <link rel="top" title="scorecardpipeline 0.1.35 文档" href="#" />
+        <link rel="up" title="模块代码" href="../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-documentation-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Nunito", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-xxl visually-hidden-focusable overflow-hidden justify-content-start">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2"
+          ><span class="brand-text">scorecardpipeline</span></a>
+        
+        <div class="d-flex d-lg-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-lg-0 px-lg-3">
+    <hr class="d-lg-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-lg-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title text-white fw-bold" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Nefertiti for Sphinx</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-lg-0">
+            <hr class="d-lg-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+              
+              <li class="nav-item col-12 col-lg-auto">
+                <a class="nav-link py-2 py-lg-0 px-0 px-lg-2" href="https://github.com/itlubber/scorecardpipeline" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/itlubber/scorecardpipeline">
+                      itlubber/scorecardpipeline
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none text-white-50">
+              </li>
+              
+              <!-- version_dropdown.html -->
+
+  
+    <li class="nav-item dropdown">
+      <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
+        <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.35">v0.1.35</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
+        <li>
+          <h6 class="dropdown-header">Versions</h6>
+        </li>
+        
+          <li>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.35">
+              <span class="small ms-2">v0.1.35</span>
+              <i class="bi bi-check ms-auto"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+
+  <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-lg-none small ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="small ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="small ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="small ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-xxl nftt-gutter nftt-layout">
+      <aside class="nftt-sidebar">
+        <div class="title d-none d-md-block">
+          <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Table of contents</span>
+        </div>
+        <div id="sidebar" tabindex="-1" class="offcanvas-lg offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+            <!-- danirus sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id2">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id3">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id4">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html#id16">交流</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html">scorecardpipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.rule_extraction">scorecardpipeline.rule_extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+        </div>
+      </aside>
+      <main class="nftt-main">
+        <article id="content" class="nftt-content" role="main">
+    <h1>scorecardpipeline.scorecard 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@Time    : 2024/4/15 16:52</span>
+<span class="sd">@Author  : itlubber</span>
+<span class="sd">@Site    : itlubber.art</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_array</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils.validation</span> <span class="kn">import</span> <span class="n">check_is_fitted</span>
+
+
+<span class="k">class</span> <span class="nc">BaseScoreTransformer</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span> <span class="o">=</span> <span class="n">down_lmt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span> <span class="o">=</span> <span class="n">up_lmt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span> <span class="o">=</span> <span class="n">greater_is_better</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">=</span> <span class="n">cutoff</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">score_clip</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;传入评分分数，根据评分分布情况，返回评分等距分箱规则</span>
+
+<span class="sd">        :param score: 评分数据</span>
+<span class="sd">        :param clip: 区间间隔</span>
+
+<span class="sd">        :return: list，评分分箱规则</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">clip_start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">/</span> <span class="n">clip</span><span class="p">)</span> <span class="o">*</span> <span class="n">clip</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">/</span> <span class="n">clip</span><span class="p">)</span> <span class="o">*</span> <span class="n">clip</span><span class="p">)</span>
+        <span class="n">clip_end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="n">clip</span><span class="p">)</span> <span class="o">*</span> <span class="n">clip</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.99</span><span class="p">)</span> <span class="o">/</span> <span class="n">clip</span><span class="p">)</span> <span class="o">*</span> <span class="n">clip</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">clip_start</span><span class="p">,</span> <span class="n">clip_end</span><span class="p">,</span> <span class="n">clip</span><span class="p">)]</span>
+
+
+<div class="viewcode-block" id="StandardScoreTransformer"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer">[文档]</a><span class="k">class</span> <span class="nc">StandardScoreTransformer</span><span class="p">(</span><span class="n">BaseScoreTransformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stretch the predicted probability to a normal distributed score.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="StandardScoreTransformer.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_score</span><span class="o">=</span><span class="mi">660</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">bad_rate</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">down_lmt</span><span class="o">=</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="n">up_lmt</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="n">greater_is_better</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_score</span> <span class="o">=</span> <span class="n">base_score</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pdo</span> <span class="o">=</span> <span class="n">pdo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rate</span> <span class="o">=</span> <span class="n">rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bad_rate</span> <span class="o">=</span> <span class="n">bad_rate</span></div>
+
+<div class="viewcode-block" id="StandardScoreTransformer.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">base_score</span><span class="p">,</span> <span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_score</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">down_lmt</span> <span class="o">&lt;=</span> <span class="n">base_score</span> <span class="o">&lt;=</span> <span class="n">up_lmt</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;base_score should be greater than </span><span class="si">{}</span><span class="s2"> and less than </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="p">))</span>
+
+        <span class="n">bad_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bad_rate</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="n">bad_rate</span> <span class="o">&lt;=</span> <span class="mf">1.0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bad rate should be greater than e and less than 1!&quot;</span><span class="p">)</span>
+
+        <span class="n">base_odds</span> <span class="o">=</span> <span class="n">bad_rate</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">bad_rate</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdo</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">pdo</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">)</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="n">base_score</span> <span class="o">+</span> <span class="n">B</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">base_odds</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_</span> <span class="o">=</span> <span class="n">A</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_odds</span> <span class="o">=</span> <span class="n">base_odds</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="StandardScoreTransformer.scorecard_scale"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.scorecard_scale">[文档]</a>    <span class="k">def</span> <span class="nf">scorecard_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;输出评分卡基准信息，包含 base_odds、base_score、rate、pdo、A、B</span>
+
+<span class="sd">        :return: pd.DataFrame，评分卡基准信息</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scorecard_kedu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">[</span><span class="s2">&quot;base_odds&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_odds</span><span class="p">,</span> <span class="s2">&quot;根据业务经验设置的基础比率（违约概率/正常概率），估算方法：坏客户占比 / (1 - 样本坏客户占比)&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;base_score&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_score</span><span class="p">,</span> <span class="s2">&quot;基础ODDS对应的分数&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;rate&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">,</span> <span class="s2">&quot;设置分数的倍率&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;pdo&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdo</span><span class="p">,</span> <span class="s2">&quot;表示分数增长PDO时，ODDS值增长到RATE倍&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A_</span><span class="p">,</span> <span class="s2">&quot;补偿值，计算方式：pdo / ln(rate)&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">B_</span><span class="p">,</span> <span class="s2">&quot;刻度，计算方式：base_score - B * ln(base_odds)&quot;</span><span class="p">],</span>
+            <span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;刻度项&quot;</span><span class="p">,</span> <span class="s2">&quot;刻度值&quot;</span><span class="p">,</span> <span class="s2">&quot;备注&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">scorecard_kedu</span></div>
+
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;A_&quot;</span><span class="p">,</span> <span class="s2">&quot;B_&quot;</span><span class="p">])</span>
+        <span class="n">Xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># if not np.all((0 &lt;= Xt) &amp; (Xt &lt;= 1)):</span>
+        <span class="c1">#     raise ValueError (&quot;Input should be probabilities between 0 and 1.&quot;)</span>
+        <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">B_</span>
+        <span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Xt</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">Xt</span><span class="p">))</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">points</span>
+
+<div class="viewcode-block" id="StandardScoreTransformer.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.transform">[文档]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">index</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="StandardScoreTransformer.predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.predict">[文档]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">cutoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">([[</span><span class="mf">0.5</span><span class="p">]])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cutoff point should be within down_lmt and up_lmt!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cutoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">scores</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">scores</span> <span class="o">&gt;</span> <span class="n">cutoff</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;A_&quot;</span><span class="p">,</span> <span class="s2">&quot;B_&quot;</span><span class="p">])</span>
+        <span class="n">Xt</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">((</span><span class="n">down_lmt</span> <span class="o">&lt;=</span> <span class="n">Xt</span><span class="p">),</span> <span class="p">(</span><span class="n">Xt</span> <span class="o">&lt;=</span> <span class="n">up_lmt</span><span class="p">))):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input should be points between </span><span class="si">{}</span><span class="s2"> and </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="p">))</span>
+        <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">B_</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">A</span> <span class="o">-</span> <span class="n">Xt</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">probs</span>
+
+<div class="viewcode-block" id="StandardScoreTransformer.inverse_transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StandardScoreTransformer.inverse_transform">[文档]</a>    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">index</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="k">def</span> <span class="nf">_more_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;allow_nan&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="NPRoundStandardScoreTransformer"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.NPRoundStandardScoreTransformer">[文档]</a><span class="k">class</span> <span class="nc">NPRoundStandardScoreTransformer</span><span class="p">(</span><span class="n">StandardScoreTransformer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NPRoundStandardScoreTransformer.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.NPRoundStandardScoreTransformer.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_score</span><span class="o">=</span><span class="mi">660</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">bad_rate</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">round_decimals</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">round_decimals</span> <span class="o">=</span> <span class="n">round_decimals</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NPRoundStandardScoreTransformer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">base_score</span><span class="o">=</span><span class="n">base_score</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="n">pdo</span><span class="p">,</span> <span class="n">bad_rate</span><span class="o">=</span><span class="n">bad_rate</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="n">up_lmt</span><span class="p">,</span>
+                                                              <span class="n">greater_is_better</span><span class="o">=</span><span class="n">greater_is_better</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">decimals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">round_decimals</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">points</span></div>
+
+
+<div class="viewcode-block" id="RoundStandardScoreTransformer"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RoundStandardScoreTransformer">[文档]</a><span class="k">class</span> <span class="nc">RoundStandardScoreTransformer</span><span class="p">(</span><span class="n">StandardScoreTransformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stretch the predicted probability to a normal distributed score.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RoundStandardScoreTransformer.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.RoundStandardScoreTransformer.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_score</span><span class="o">=</span><span class="mi">660</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">bad_rate</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">round_decimals</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">round_decimals</span> <span class="o">=</span> <span class="n">round_decimals</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RoundStandardScoreTransformer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">base_score</span><span class="o">=</span><span class="n">base_score</span><span class="p">,</span> <span class="n">pdo</span><span class="o">=</span><span class="n">pdo</span><span class="p">,</span> <span class="n">bad_rate</span><span class="o">=</span><span class="n">bad_rate</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="n">up_lmt</span><span class="p">,</span>
+                                                            <span class="n">greater_is_better</span><span class="o">=</span><span class="n">greater_is_better</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">decimals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">round_decimals</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">decimals</span><span class="p">)]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">points</span></div>
+
+
+<div class="viewcode-block" id="BoxCoxScoreTransformer"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer">[文档]</a><span class="k">class</span> <span class="nc">BoxCoxScoreTransformer</span><span class="p">(</span><span class="n">BaseScoreTransformer</span><span class="p">):</span>
+<div class="viewcode-block" id="BoxCoxScoreTransformer.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">down_lmt</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">down_lmt</span><span class="o">=</span><span class="n">down_lmt</span><span class="p">,</span> <span class="n">up_lmt</span><span class="o">=</span><span class="n">up_lmt</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="n">greater_is_better</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_box_cox_optimize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find and return optimal lambda parameter of the Box-Cox transform by MLE, for observed data x.</span>
+
+<span class="sd">        We here use scipy builtins which uses the brent optimizer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># the computation of Lambda is influenced by NaNs so we need to get rid of them</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">lmbda</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">boxcox</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lmbda</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">lmbda</span>
+
+<div class="viewcode-block" id="BoxCoxScoreTransformer.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Box-Cox score transformation can only be applied to strictly positive probabilities&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_box_cox_optimize</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_box_cox_optimize</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lmbda</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span><span class="p">):</span>
+            <span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">boxcox</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">lmbda</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scaler_</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;lambdas_&quot;</span><span class="p">,</span> <span class="s2">&quot;scaler_&quot;</span><span class="p">])</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Box-Cox score transformation can only be applied to strictly positive probabilities&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">X</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lmbda</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span><span class="p">):</span>
+            <span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">boxcox</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">lmbda</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler_</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BoxCoxScoreTransformer.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer.transform">[文档]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">index</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="BoxCoxScoreTransformer.predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer.predict">[文档]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lmbda</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">lmbda</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">**</span> <span class="n">lmbda</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">lmbda</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">scaler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler_</span>
+            <span class="n">p</span> <span class="o">*=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">scale_</span>
+            <span class="n">p</span> <span class="o">+=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">min_</span>
+            <span class="k">if</span> <span class="n">scaler</span><span class="o">.</span><span class="n">clip</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">scaler</span><span class="o">.</span><span class="n">feature_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">p</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">feature_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">scaler</span><span class="o">.</span><span class="n">feature_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">p</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">feature_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">cutoff</span> <span class="o">=</span> <span class="n">p</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cutoff point should be within &#39;down_lmt&#39; and &#39;up_lmt&#39;!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cutoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">scores</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">scores</span> <span class="o">&gt;</span> <span class="n">cutoff</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;lambdas_&quot;</span><span class="p">,</span> <span class="s2">&quot;scaler_&quot;</span><span class="p">])</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">down_lmt</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_lmt</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Box-Cox score inverse transformation can only be applied to strictly bounded scores&quot;</span><span class="p">)</span>
+        <span class="n">X_inv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler_</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lmbda</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas_</span><span class="p">):</span>
+            <span class="n">X_inv</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_box_cox_inverse_tranform</span><span class="p">(</span><span class="n">X_inv</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">lmbda</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">greater_is_better</span><span class="p">:</span>
+            <span class="n">X_inv</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">X_inv</span>
+        <span class="k">return</span> <span class="n">X_inv</span>
+
+<div class="viewcode-block" id="BoxCoxScoreTransformer.inverse_transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BoxCoxScoreTransformer.inverse_transform">[文档]</a>    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inverse_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">columns</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">index</span>
+            <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_box_cox_inverse_tranform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lmbda</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return inverse-transformed input x following Box-Cox inverse transform with parameter lambda&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">lmbda</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x_inv</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">lmbda</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">lmbda</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">x_inv</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../&quot;</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">scorecardpipeline</span> <span class="kn">import</span> <span class="o">*</span>
+
+    <span class="kn">import</span> <span class="nn">h2o</span>
+    <span class="n">h2o</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+    <span class="n">test_select</span> <span class="o">=</span> <span class="n">h2o</span><span class="o">.</span><span class="n">H2OFrame</span><span class="p">(</span><span class="n">load_pickle</span><span class="p">(</span><span class="s2">&quot;/Users/lubberit/Desktop/workspace/scorecardpipeline/examples/model_report/h2o_model/test_select.pkl&quot;</span><span class="p">))</span>
+
+    <span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;/Users/lubberit/Desktop/workspace/scorecardpipeline/examples/model_report/h2o_model/StackedEnsemble_BestOfFamily_1_AutoML_1_20240415_162619&#39;</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">h2o</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+
+    <span class="c1"># score_transform = StandardScoreTransformer(base_score=400, pdo=50, bad_rate=test_select[&quot;target&quot;].mean()[0], greater_is_better=True)</span>
+    <span class="n">score_transform</span> <span class="o">=</span> <span class="n">BoxCoxScoreTransformer</span><span class="p">(</span><span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_select</span><span class="p">)</span><span class="o">.</span><span class="n">as_data_frame</span><span class="p">()[[</span><span class="s2">&quot;p1&quot;</span><span class="p">]]</span>
+    <span class="n">score_transform</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_select</span><span class="p">))</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score_transform</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">score_transform</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
+    <span class="c1"># print(score_transform.scorecard_scale())</span>
+</pre></div>
+</article>
+        
+      </main>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://itlubber.art" class="list-item">itlubber</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline" class="list-item">github</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb" class="list-item">examples</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">scorecardpipeline</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2023, itlubber</li>
+          </ul>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+
+    <script type="text/javascript" src="../../_static/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinx-nefertiti.min.js"></script>
+    
+  </body>
+</html>

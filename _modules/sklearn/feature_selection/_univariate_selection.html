@@ -1,0 +1,1407 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="scorecardpipeline" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.1.35" />
+    <meta name="docsearch:version" content="" />
+    
+      <title>sklearn.feature_selection._univariate_selection &mdash; scorecardpipeline 0.1.35 文档</title>
+    
+    <link rel="stylesheet" href="../../../_static/bootstrap-icons.css" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+          <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../../_static/pygments_dark.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/colorsets/sphinx-nefertiti-indigo.min.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/red-hat-mono/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments_dark.css" />
+        <link rel="index" title="索引" href="../../../genindex.html" />
+        <link rel="search" title="搜索" href="../../../search.html" />
+        <link rel="top" title="scorecardpipeline 0.1.35 文档" href="#" />
+        <link rel="up" title="模块代码" href="../../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Red Hat Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-documentation-font: "Nunito", var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Nunito", var(--nftt-documentation-font);}
+      h1 *, h2 *, h3 *, h4 *, h5 *, h6 * { font-size: inherit; }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-xxl visually-hidden-focusable overflow-hidden justify-content-start">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to docs navigation</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../../index.html"
+              
+              class="navbar-brand p-0 me-0 md-lg-2"
+          ><span class="brand-text">scorecardpipeline</span></a>
+        
+        <div class="d-flex d-lg-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-lg-0 px-lg-3">
+    <hr class="d-lg-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-lg-auto">
+        <form id="nftt-search-form" action="../../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search docs" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title text-white fw-bold" id="nfttNavbarOffcanvasLabel"><span class="brand-text">Nefertiti for Sphinx</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-lg-0">
+            <hr class="d-lg-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+              
+              <li class="nav-item col-12 col-lg-auto">
+                <a class="nav-link py-2 py-lg-0 px-0 px-lg-2" href="https://github.com/itlubber/scorecardpipeline" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/itlubber/scorecardpipeline">
+                      itlubber/scorecardpipeline
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none text-white-50">
+              </li>
+              
+              <!-- version_dropdown.html -->
+
+  
+    <li class="nav-item dropdown">
+      <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
+        <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.35">v0.1.35</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
+        <li>
+          <h6 class="dropdown-header">Versions</h6>
+        </li>
+        
+          <li>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.35">
+              <span class="small ms-2">v0.1.35</span>
+              <i class="bi bi-check ms-auto"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+
+  <li class="nav-item col-12 col-lg-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- colorscheme_dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Toggle light/dark">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-lg-none small ms-2">Toggle light/dark</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Light/dark</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="small ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="small ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span class="small">
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="small ms-3">Default</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-xxl nftt-gutter nftt-layout">
+      <aside class="nftt-sidebar">
+        <div class="title d-none d-md-block">
+          <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Table of contents</span>
+        </div>
+        <div id="sidebar" tabindex="-1" class="offcanvas-lg offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+            <!-- danirus sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title" id="nfttSidebarOffcanvasLabel">
+    Table of contents
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pt-3 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="filter" aria-label="filter">
+    </div>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html#id2">版本说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html#id3">环境安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html#id4">使用示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html#id16">交流</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html">scorecardpipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.utils">scorecardpipeline.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.excel_writer">scorecardpipeline.excel_writer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.rule">scorecardpipeline.rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.rule_extraction">scorecardpipeline.rule_extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scorecardpipeline.html#module-scorecardpipeline.logger">scorecardpipeline.logger</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+        </div>
+      </aside>
+      <main class="nftt-main">
+        <article id="content" class="nftt-content" role="main">
+    <h1>sklearn.feature_selection._univariate_selection 源代码</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Univariate features selection.&quot;&quot;&quot;</span>
+
+<span class="c1"># Authors: V. Michel, B. Thirion, G. Varoquaux, A. Gramfort, E. Duchesnay.</span>
+<span class="c1">#          L. Buitinck, A. Joly</span>
+<span class="c1"># License: BSD 3 clause</span>
+
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Integral</span><span class="p">,</span> <span class="n">Real</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span><span class="p">,</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">issparse</span>
+
+<span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">_fit_context</span>
+<span class="kn">from</span> <span class="nn">..preprocessing</span> <span class="kn">import</span> <span class="n">LabelBinarizer</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">as_float_array</span><span class="p">,</span> <span class="n">check_array</span><span class="p">,</span> <span class="n">check_X_y</span><span class="p">,</span> <span class="n">safe_mask</span><span class="p">,</span> <span class="n">safe_sqr</span>
+<span class="kn">from</span> <span class="nn">..utils._param_validation</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">StrOptions</span><span class="p">,</span> <span class="n">validate_params</span>
+<span class="kn">from</span> <span class="nn">..utils.extmath</span> <span class="kn">import</span> <span class="n">row_norms</span><span class="p">,</span> <span class="n">safe_sparse_dot</span>
+<span class="kn">from</span> <span class="nn">..utils.validation</span> <span class="kn">import</span> <span class="n">check_is_fitted</span>
+<span class="kn">from</span> <span class="nn">._base</span> <span class="kn">import</span> <span class="n">SelectorMixin</span>
+
+
+<span class="k">def</span> <span class="nf">_clean_nans</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fixes Issue #1240: NaNs can&#39;t be properly compared, so change them to the</span>
+<span class="sd">    smallest value of scores&#39;s dtype. -inf seems to be unreliable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># XXX where should this function be called? fit? scoring functions</span>
+    <span class="c1"># themselves?</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">as_float_array</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">scores</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">scores</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">min</span>
+    <span class="k">return</span> <span class="n">scores</span>
+
+
+<span class="c1">######################################################################</span>
+<span class="c1"># Scoring functions</span>
+
+
+<span class="c1"># The following function is a rewriting of scipy.stats.f_oneway</span>
+<span class="c1"># Contrary to the scipy.stats.f_oneway implementation it does not</span>
+<span class="c1"># copy the data while keeping the inputs unchanged.</span>
+<span class="k">def</span> <span class="nf">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform a 1-way ANOVA.</span>
+
+<span class="sd">    The one-way ANOVA tests the null hypothesis that 2 or more groups have</span>
+<span class="sd">    the same population mean. The test is applied to samples from two or</span>
+<span class="sd">    more groups, possibly with differing sizes.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *args : {array-like, sparse matrix}</span>
+<span class="sd">        Sample1, sample2... The sample measurements should be given as</span>
+<span class="sd">        arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f_statistic : float</span>
+<span class="sd">        The computed F-value of the test.</span>
+<span class="sd">    p_value : float</span>
+<span class="sd">        The associated p-value from the F-distribution.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The ANOVA test has important assumptions that must be satisfied in order</span>
+<span class="sd">    for the associated p-value to be valid.</span>
+
+<span class="sd">    1. The samples are independent</span>
+<span class="sd">    2. Each sample is from a normally distributed population</span>
+<span class="sd">    3. The population standard deviations of the groups are all equal. This</span>
+<span class="sd">       property is known as homoscedasticity.</span>
+
+<span class="sd">    If these assumptions are not true for a given set of data, it may still be</span>
+<span class="sd">    possible to use the Kruskal-Wallis H-test (`scipy.stats.kruskal`_) although</span>
+<span class="sd">    with some loss of power.</span>
+
+<span class="sd">    The algorithm is from Heiman[2], pp.394-7.</span>
+
+<span class="sd">    See ``scipy.stats.f_oneway`` that should give the same results while</span>
+<span class="sd">    being less efficient.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Lowry, Richard.  &quot;Concepts and Applications of Inferential</span>
+<span class="sd">           Statistics&quot;. Chapter 14.</span>
+<span class="sd">           http://vassarstats.net/textbook</span>
+
+<span class="sd">    .. [2] Heiman, G.W.  Research Methods in Statistics. 2002.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">as_float_array</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+    <span class="n">n_samples_per_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">])</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">n_samples_per_class</span><span class="p">)</span>
+    <span class="n">ss_alldata</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">safe_sqr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span>
+    <span class="n">sums_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+    <span class="n">square_of_sums_alldata</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums_args</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">square_of_sums_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sums_args</span><span class="p">]</span>
+    <span class="n">sstot</span> <span class="o">=</span> <span class="n">ss_alldata</span> <span class="o">-</span> <span class="n">square_of_sums_alldata</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="n">ssbn</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">ssbn</span> <span class="o">+=</span> <span class="n">square_of_sums_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_samples_per_class</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">ssbn</span> <span class="o">-=</span> <span class="n">square_of_sums_alldata</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+    <span class="n">sswn</span> <span class="o">=</span> <span class="n">sstot</span> <span class="o">-</span> <span class="n">ssbn</span>
+    <span class="n">dfbn</span> <span class="o">=</span> <span class="n">n_classes</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">dfwn</span> <span class="o">=</span> <span class="n">n_samples</span> <span class="o">-</span> <span class="n">n_classes</span>
+    <span class="n">msb</span> <span class="o">=</span> <span class="n">ssbn</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dfbn</span><span class="p">)</span>
+    <span class="n">msw</span> <span class="o">=</span> <span class="n">sswn</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dfwn</span><span class="p">)</span>
+    <span class="n">constant_features_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">msw</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">msb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="n">msb</span><span class="o">.</span><span class="n">size</span> <span class="ow">and</span> <span class="n">constant_features_idx</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Features </span><span class="si">%s</span><span class="s2"> are constant.&quot;</span> <span class="o">%</span> <span class="n">constant_features_idx</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">msb</span> <span class="o">/</span> <span class="n">msw</span>
+    <span class="c1"># flatten matrix to vector in sparse case</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">fdtrc</span><span class="p">(</span><span class="n">dfbn</span><span class="p">,</span> <span class="n">dfwn</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="n">prob</span>
+
+
+<span class="nd">@validate_params</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse matrix&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">f_classif</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the ANOVA F-value for the provided sample.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : {array-like, sparse matrix} of shape (n_samples, n_features)</span>
+<span class="sd">        The set of regressors that will be tested sequentially.</span>
+
+<span class="sd">    y : array-like of shape (n_samples,)</span>
+<span class="sd">        The target vector.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f_statistic : ndarray of shape (n_features,)</span>
+<span class="sd">        F-statistic for each feature.</span>
+
+<span class="sd">    p_values : ndarray of shape (n_features,)</span>
+<span class="sd">        P-values associated with the F-statistic.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">,</span> <span class="s2">&quot;coo&quot;</span><span class="p">])</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">safe_mask</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">==</span> <span class="n">k</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="p">,</span> <span class="n">f_exp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fast replacement for scipy.stats.chisquare.</span>
+
+<span class="sd">    Version from https://github.com/scipy/scipy/pull/2525 with additional</span>
+<span class="sd">    optimizations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f_obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">f_obs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_obs</span><span class="p">)</span>
+    <span class="c1"># Reuse f_obs for chi-squared statistics</span>
+    <span class="n">chisq</span> <span class="o">=</span> <span class="n">f_obs</span>
+    <span class="n">chisq</span> <span class="o">-=</span> <span class="n">f_exp</span>
+    <span class="n">chisq</span> <span class="o">**=</span> <span class="mi">2</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">chisq</span> <span class="o">/=</span> <span class="n">f_exp</span>
+    <span class="n">chisq</span> <span class="o">=</span> <span class="n">chisq</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chisq</span><span class="p">,</span> <span class="n">special</span><span class="o">.</span><span class="n">chdtrc</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">chisq</span><span class="p">)</span>
+
+
+<span class="nd">@validate_params</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse matrix&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">chi2</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute chi-squared stats between each non-negative feature and class.</span>
+
+<span class="sd">    This score can be used to select the `n_features` features with the</span>
+<span class="sd">    highest values for the test chi-squared statistic from X, which must</span>
+<span class="sd">    contain only **non-negative features** such as booleans or frequencies</span>
+<span class="sd">    (e.g., term counts in document classification), relative to the classes.</span>
+
+<span class="sd">    Recall that the chi-square test measures dependence between stochastic</span>
+<span class="sd">    variables, so using this function &quot;weeds out&quot; the features that are the</span>
+<span class="sd">    most likely to be independent of class and therefore irrelevant for</span>
+<span class="sd">    classification.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : {array-like, sparse matrix} of shape (n_samples, n_features)</span>
+<span class="sd">        Sample vectors.</span>
+
+<span class="sd">    y : array-like of shape (n_samples,)</span>
+<span class="sd">        Target vector (class labels).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    chi2 : ndarray of shape (n_features,)</span>
+<span class="sd">        Chi2 statistics for each feature.</span>
+
+<span class="sd">    p_values : ndarray of shape (n_features,)</span>
+<span class="sd">        P-values for each feature.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Complexity of this algorithm is O(n_classes * n_features).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># XXX: we might want to do some of the following in logspace instead for</span>
+    <span class="c1"># numerical stability.</span>
+    <span class="c1"># Converting X to float allows getting better performance for the</span>
+    <span class="c1"># safe_sparse_dot call made below.</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">data</span> <span class="k">if</span> <span class="n">issparse</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="k">else</span> <span class="n">X</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input X must be non-negative.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Use a sparse representation for Y by default to reduce memory usage when</span>
+    <span class="c1"># y has many unique classes.</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">LabelBinarizer</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">observed</span> <span class="o">=</span> <span class="n">safe_sparse_dot</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>  <span class="c1"># n_classes * n_features</span>
+
+    <span class="k">if</span> <span class="n">issparse</span><span class="p">(</span><span class="n">observed</span><span class="p">):</span>
+        <span class="c1"># convert back to a dense array before calling _chisquare</span>
+        <span class="c1"># XXX: could _chisquare be reimplement to accept sparse matrices for</span>
+        <span class="c1"># cases where both n_classes and n_features are large (and X is</span>
+        <span class="c1"># sparse)?</span>
+        <span class="n">observed</span> <span class="o">=</span> <span class="n">observed</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+    <span class="n">feature_count</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">class_prob</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">class_prob</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">feature_count</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_chisquare</span><span class="p">(</span><span class="n">observed</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
+
+
+<span class="nd">@validate_params</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse matrix&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;boolean&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;force_finite&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;boolean&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">r_regression</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute Pearson&#39;s r for each features and the target.</span>
+
+<span class="sd">    Pearson&#39;s r is also known as the Pearson correlation coefficient.</span>
+
+<span class="sd">    Linear model for testing the individual effect of each of many regressors.</span>
+<span class="sd">    This is a scoring function to be used in a feature selection procedure, not</span>
+<span class="sd">    a free standing feature selection procedure.</span>
+
+<span class="sd">    The cross correlation between each regressor and the target is computed</span>
+<span class="sd">    as::</span>
+
+<span class="sd">        E[(X[:, i] - mean(X[:, i])) * (y - mean(y))] / (std(X[:, i]) * std(y))</span>
+
+<span class="sd">    For more on usage see the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    .. versionadded:: 1.0</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : {array-like, sparse matrix} of shape (n_samples, n_features)</span>
+<span class="sd">        The data matrix.</span>
+
+<span class="sd">    y : array-like of shape (n_samples,)</span>
+<span class="sd">        The target vector.</span>
+
+<span class="sd">    center : bool, default=True</span>
+<span class="sd">        Whether or not to center the data matrix `X` and the target vector `y`.</span>
+<span class="sd">        By default, `X` and `y` will be centered.</span>
+
+<span class="sd">    force_finite : bool, default=True</span>
+<span class="sd">        Whether or not to force the Pearson&#39;s R correlation to be finite.</span>
+<span class="sd">        In the particular case where some features in `X` or the target `y`</span>
+<span class="sd">        are constant, the Pearson&#39;s R correlation is not defined. When</span>
+<span class="sd">        `force_finite=False`, a correlation of `np.nan` is returned to</span>
+<span class="sd">        acknowledge this case. When `force_finite=True`, this value will be</span>
+<span class="sd">        forced to a minimal correlation of `0.0`.</span>
+
+<span class="sd">        .. versionadded:: 1.1</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    correlation_coefficient : ndarray of shape (n_features,)</span>
+<span class="sd">        Pearson&#39;s R correlation coefficients of features.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_regression: Univariate linear regression tests returning f-statistic</span>
+<span class="sd">        and p-values.</span>
+<span class="sd">    mutual_info_regression: Mutual information for a continuous target.</span>
+<span class="sd">    f_classif: ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    chi2: Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">,</span> <span class="s2">&quot;coo&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Compute centered values</span>
+    <span class="c1"># Note that E[(x - mean(x))*(y - mean(y))] = E[x*(y - mean(y))], so we</span>
+    <span class="c1"># need not center X</span>
+    <span class="k">if</span> <span class="n">center</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">issparse</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+            <span class="n">X_means</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getA1</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">X_means</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># Compute the scaled standard deviations via moments</span>
+        <span class="n">X_norms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">row_norms</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-</span> <span class="n">n_samples</span> <span class="o">*</span> <span class="n">X_means</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">X_norms</span> <span class="o">=</span> <span class="n">row_norms</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+    <span class="n">correlation_coefficient</span> <span class="o">=</span> <span class="n">safe_sparse_dot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">correlation_coefficient</span> <span class="o">/=</span> <span class="n">X_norms</span>
+        <span class="n">correlation_coefficient</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">force_finite</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">correlation_coefficient</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="c1"># case where the target or some features are constant</span>
+        <span class="c1"># the correlation coefficient(s) is/are set to the minimum (i.e. 0.0)</span>
+        <span class="n">nan_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">correlation_coefficient</span><span class="p">)</span>
+        <span class="n">correlation_coefficient</span><span class="p">[</span><span class="n">nan_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">return</span> <span class="n">correlation_coefficient</span>
+
+
+<span class="nd">@validate_params</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse matrix&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;array-like&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;boolean&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;force_finite&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;boolean&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">f_regression</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Univariate linear regression tests returning F-statistic and p-values.</span>
+
+<span class="sd">    Quick linear model for testing the effect of a single regressor,</span>
+<span class="sd">    sequentially for many regressors.</span>
+
+<span class="sd">    This is done in 2 steps:</span>
+
+<span class="sd">    1. The cross correlation between each regressor and the target is computed</span>
+<span class="sd">       using :func:`r_regression` as::</span>
+
+<span class="sd">           E[(X[:, i] - mean(X[:, i])) * (y - mean(y))] / (std(X[:, i]) * std(y))</span>
+
+<span class="sd">    2. It is converted to an F score and then to a p-value.</span>
+
+<span class="sd">    :func:`f_regression` is derived from :func:`r_regression` and will rank</span>
+<span class="sd">    features in the same order if all the features are positively correlated</span>
+<span class="sd">    with the target.</span>
+
+<span class="sd">    Note however that contrary to :func:`f_regression`, :func:`r_regression`</span>
+<span class="sd">    values lie in [-1, 1] and can thus be negative. :func:`f_regression` is</span>
+<span class="sd">    therefore recommended as a feature selection criterion to identify</span>
+<span class="sd">    potentially predictive feature for a downstream classifier, irrespective of</span>
+<span class="sd">    the sign of the association with the target variable.</span>
+
+<span class="sd">    Furthermore :func:`f_regression` returns p-values while</span>
+<span class="sd">    :func:`r_regression` does not.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : {array-like, sparse matrix} of shape (n_samples, n_features)</span>
+<span class="sd">        The data matrix.</span>
+
+<span class="sd">    y : array-like of shape (n_samples,)</span>
+<span class="sd">        The target vector.</span>
+
+<span class="sd">    center : bool, default=True</span>
+<span class="sd">        Whether or not to center the data matrix `X` and the target vector `y`.</span>
+<span class="sd">        By default, `X` and `y` will be centered.</span>
+
+<span class="sd">    force_finite : bool, default=True</span>
+<span class="sd">        Whether or not to force the F-statistics and associated p-values to</span>
+<span class="sd">        be finite. There are two cases where the F-statistic is expected to not</span>
+<span class="sd">        be finite:</span>
+
+<span class="sd">        - when the target `y` or some features in `X` are constant. In this</span>
+<span class="sd">          case, the Pearson&#39;s R correlation is not defined leading to obtain</span>
+<span class="sd">          `np.nan` values in the F-statistic and p-value. When</span>
+<span class="sd">          `force_finite=True`, the F-statistic is set to `0.0` and the</span>
+<span class="sd">          associated p-value is set to `1.0`.</span>
+<span class="sd">        - when a feature in `X` is perfectly correlated (or</span>
+<span class="sd">          anti-correlated) with the target `y`. In this case, the F-statistic</span>
+<span class="sd">          is expected to be `np.inf`. When `force_finite=True`, the F-statistic</span>
+<span class="sd">          is set to `np.finfo(dtype).max` and the associated p-value is set to</span>
+<span class="sd">          `0.0`.</span>
+
+<span class="sd">        .. versionadded:: 1.1</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    f_statistic : ndarray of shape (n_features,)</span>
+<span class="sd">        F-statistic for each feature.</span>
+
+<span class="sd">    p_values : ndarray of shape (n_features,)</span>
+<span class="sd">        P-values associated with the F-statistic.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    r_regression: Pearson&#39;s R between label/feature for regression tasks.</span>
+<span class="sd">    f_classif: ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    chi2: Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    SelectKBest: Select features based on the k highest scores.</span>
+<span class="sd">    SelectFpr: Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFdr: Select features based on an estimated false discovery rate.</span>
+<span class="sd">    SelectFwe: Select features based on family-wise error rate.</span>
+<span class="sd">    SelectPercentile: Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">correlation_coefficient</span> <span class="o">=</span> <span class="n">r_regression</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="n">force_finite</span>
+    <span class="p">)</span>
+    <span class="n">deg_of_freedom</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">center</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">corr_coef_squared</span> <span class="o">=</span> <span class="n">correlation_coefficient</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+        <span class="n">f_statistic</span> <span class="o">=</span> <span class="n">corr_coef_squared</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">corr_coef_squared</span><span class="p">)</span> <span class="o">*</span> <span class="n">deg_of_freedom</span>
+        <span class="n">p_values</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">f_statistic</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">deg_of_freedom</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">force_finite</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">f_statistic</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="c1"># case where there is a perfect (anti-)correlation</span>
+        <span class="c1"># f-statistics can be set to the maximum and p-values to zero</span>
+        <span class="n">mask_inf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">f_statistic</span><span class="p">)</span>
+        <span class="n">f_statistic</span><span class="p">[</span><span class="n">mask_inf</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">f_statistic</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>
+        <span class="c1"># case where the target or some features are constant</span>
+        <span class="c1"># f-statistics would be minimum and thus p-values large</span>
+        <span class="n">mask_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">f_statistic</span><span class="p">)</span>
+        <span class="n">f_statistic</span><span class="p">[</span><span class="n">mask_nan</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">p_values</span><span class="p">[</span><span class="n">mask_nan</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">f_statistic</span><span class="p">,</span> <span class="n">p_values</span>
+
+
+<span class="c1">######################################################################</span>
+<span class="c1"># Base classes</span>
+
+
+<span class="k">class</span> <span class="nc">_BaseFilter</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">,</span> <span class="n">BaseEstimator</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the univariate feature selection.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues) or a single array with scores.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;score_func&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">callable</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_func</span> <span class="o">=</span> <span class="n">score_func</span>
+
+    <span class="nd">@_fit_context</span><span class="p">(</span><span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run score function on (X, y) and get the appropriate features.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, n_features)</span>
+<span class="sd">            The training input samples.</span>
+
+<span class="sd">        y : array-like of shape (n_samples,)</span>
+<span class="sd">            The target values (class labels in classification, real numbers in</span>
+<span class="sd">            regression).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : object</span>
+<span class="sd">            Returns the instance itself.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+            <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">],</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_params</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">score_func_ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">score_func</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score_func_ret</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">=</span> <span class="n">score_func_ret</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">score_func_ret</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_more_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;requires_y&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+
+<span class="c1">######################################################################</span>
+<span class="c1"># Specific filters</span>
+<span class="c1">######################################################################</span>
+<span class="k">class</span> <span class="nc">SelectPercentile</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Select features according to a percentile of the highest scores.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues) or a single array with scores.</span>
+<span class="sd">        Default is f_classif (see below &quot;See Also&quot;). The default function only</span>
+<span class="sd">        works with classification tasks.</span>
+
+<span class="sd">        .. versionadded:: 0.18</span>
+
+<span class="sd">    percentile : int, default=10</span>
+<span class="sd">        Percent of features to keep.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores, None if `score_func` returned only scores.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    mutual_info_classif : Mutual information for a discrete target.</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    mutual_info_regression : Mutual information for a continuous target.</span>
+<span class="sd">    SelectKBest : Select features based on the k highest scores.</span>
+<span class="sd">    SelectFpr : Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFdr : Select features based on an estimated false discovery rate.</span>
+<span class="sd">    SelectFwe : Select features based on family-wise error rate.</span>
+<span class="sd">    GenericUnivariateSelect : Univariate feature selector with configurable</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Ties between features with equal scores will be broken in an unspecified</span>
+<span class="sd">    way.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_digits</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import SelectPercentile, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_digits(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (1797, 64)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = SelectPercentile(chi2, percentile=10).fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (1797, 7)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;percentile&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Interval</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)],</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">percentile</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span> <span class="o">=</span> <span class="n">percentile</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># Cater for NaNs</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">_clean_nans</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">)</span>
+        <span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="mi">100</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">scores</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+        <span class="n">ties</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">scores</span> <span class="o">==</span> <span class="n">threshold</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ties</span><span class="p">):</span>
+            <span class="n">max_feats</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">percentile</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="n">kept_ties</span> <span class="o">=</span> <span class="n">ties</span><span class="p">[:</span> <span class="n">max_feats</span> <span class="o">-</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()]</span>
+            <span class="n">mask</span><span class="p">[</span><span class="n">kept_ties</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">mask</span>
+
+
+<div class="viewcode-block" id="SelectKBest"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.SelectKBest">[文档]</a><span class="k">class</span> <span class="nc">SelectKBest</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Select features according to the k highest scores.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues) or a single array with scores.</span>
+<span class="sd">        Default is f_classif (see below &quot;See Also&quot;). The default function only</span>
+<span class="sd">        works with classification tasks.</span>
+
+<span class="sd">        .. versionadded:: 0.18</span>
+
+<span class="sd">    k : int or &quot;all&quot;, default=10</span>
+<span class="sd">        Number of top features to select.</span>
+<span class="sd">        The &quot;all&quot; option bypasses selection, for use in a parameter search.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores, None if `score_func` returned only scores.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif: ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    mutual_info_classif: Mutual information for a discrete target.</span>
+<span class="sd">    chi2: Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression: F-value between label/feature for regression tasks.</span>
+<span class="sd">    mutual_info_regression: Mutual information for a continuous target.</span>
+<span class="sd">    SelectPercentile: Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    SelectFpr : Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFdr : Select features based on an estimated false discovery rate.</span>
+<span class="sd">    SelectFwe : Select features based on family-wise error rate.</span>
+<span class="sd">    GenericUnivariateSelect : Univariate feature selector with configurable</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Ties between features with equal scores will be broken in an unspecified</span>
+<span class="sd">    way.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_digits</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import SelectKBest, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_digits(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (1797, 64)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = SelectKBest(chi2, k=20).fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (1797, 20)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">StrOptions</span><span class="p">({</span><span class="s2">&quot;all&quot;</span><span class="p">}),</span> <span class="n">Interval</span><span class="p">(</span><span class="n">Integral</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)],</span>
+    <span class="p">}</span>
+
+<div class="viewcode-block" id="SelectKBest.__init__"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.SelectKBest.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">&gt;</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;k should be &lt;= n_features = </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">; &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="si">}</span><span class="s2">. Use k=&#39;all&#39; to return all features.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="n">_clean_nans</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">)</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+            <span class="c1"># Request a stable sort. Mergesort takes more memory (~40MB per</span>
+            <span class="c1"># megafeature on x86-64).</span>
+            <span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;mergesort&quot;</span><span class="p">)[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="p">:]]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">mask</span></div>
+
+
+<span class="k">class</span> <span class="nc">SelectFpr</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter: Select the pvalues below alpha based on a FPR test.</span>
+
+<span class="sd">    FPR test stands for False Positive Rate test. It controls the total</span>
+<span class="sd">    amount of false detections.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues).</span>
+<span class="sd">        Default is f_classif (see below &quot;See Also&quot;). The default function only</span>
+<span class="sd">        works with classification tasks.</span>
+
+<span class="sd">    alpha : float, default=5e-2</span>
+<span class="sd">        Features with p-values less than `alpha` are selected.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    mutual_info_classif: Mutual information for a discrete target.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    mutual_info_regression : Mutual information for a continuous target.</span>
+<span class="sd">    SelectPercentile : Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    SelectKBest : Select features based on the k highest scores.</span>
+<span class="sd">    SelectFdr : Select features based on an estimated false discovery rate.</span>
+<span class="sd">    SelectFwe : Select features based on family-wise error rate.</span>
+<span class="sd">    GenericUnivariateSelect : Univariate feature selector with configurable</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import SelectFpr, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (569, 30)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = SelectFpr(chi2, alpha=0.01).fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (569, 16)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Interval</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)],</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">5e-2</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span>
+
+
+<span class="k">class</span> <span class="nc">SelectFdr</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter: Select the p-values for an estimated false discovery rate.</span>
+
+<span class="sd">    This uses the Benjamini-Hochberg procedure. ``alpha`` is an upper bound</span>
+<span class="sd">    on the expected false discovery rate.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues).</span>
+<span class="sd">        Default is f_classif (see below &quot;See Also&quot;). The default function only</span>
+<span class="sd">        works with classification tasks.</span>
+
+<span class="sd">    alpha : float, default=5e-2</span>
+<span class="sd">        The highest uncorrected p-value for features to keep.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    mutual_info_classif : Mutual information for a discrete target.</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    mutual_info_regression : Mutual information for a continuous target.</span>
+<span class="sd">    SelectPercentile : Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    SelectKBest : Select features based on the k highest scores.</span>
+<span class="sd">    SelectFpr : Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFwe : Select features based on family-wise error rate.</span>
+<span class="sd">    GenericUnivariateSelect : Univariate feature selector with configurable</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    https://en.wikipedia.org/wiki/False_discovery_rate</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import SelectFdr, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (569, 30)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = SelectFdr(chi2, alpha=0.01).fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (569, 16)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Interval</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)],</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">5e-2</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">)</span>
+        <span class="n">sv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">)</span>
+        <span class="n">selected</span> <span class="o">=</span> <span class="n">sv</span><span class="p">[</span>
+            <span class="n">sv</span> <span class="o">&lt;=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_features</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">selected</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">&lt;=</span> <span class="n">selected</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">SelectFwe</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter: Select the p-values corresponding to Family-wise error rate.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues).</span>
+<span class="sd">        Default is f_classif (see below &quot;See Also&quot;). The default function only</span>
+<span class="sd">        works with classification tasks.</span>
+
+<span class="sd">    alpha : float, default=5e-2</span>
+<span class="sd">        The highest uncorrected p-value for features to keep.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    SelectPercentile : Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    SelectKBest : Select features based on the k highest scores.</span>
+<span class="sd">    SelectFpr : Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFdr : Select features based on an estimated false discovery rate.</span>
+<span class="sd">    GenericUnivariateSelect : Univariate feature selector with configurable</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import SelectFwe, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (569, 30)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = SelectFwe(chi2, alpha=0.01).fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (569, 15)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Interval</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)],</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">5e-2</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">)</span>
+
+
+<span class="c1">######################################################################</span>
+<span class="c1"># Generic filter</span>
+<span class="c1">######################################################################</span>
+
+
+<span class="c1"># TODO this class should fit on either p-values or scores,</span>
+<span class="c1"># depending on the mode.</span>
+<span class="k">class</span> <span class="nc">GenericUnivariateSelect</span><span class="p">(</span><span class="n">_BaseFilter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Univariate feature selector with configurable strategy.</span>
+
+<span class="sd">    Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    score_func : callable, default=f_classif</span>
+<span class="sd">        Function taking two arrays X and y, and returning a pair of arrays</span>
+<span class="sd">        (scores, pvalues). For modes &#39;percentile&#39; or &#39;kbest&#39; it can return</span>
+<span class="sd">        a single array scores.</span>
+
+<span class="sd">    mode : {&#39;percentile&#39;, &#39;k_best&#39;, &#39;fpr&#39;, &#39;fdr&#39;, &#39;fwe&#39;}, default=&#39;percentile&#39;</span>
+<span class="sd">        Feature selection mode.</span>
+
+<span class="sd">    param : &quot;all&quot;, float or int, default=1e-5</span>
+<span class="sd">        Parameter of the corresponding mode.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scores_ : array-like of shape (n_features,)</span>
+<span class="sd">        Scores of features.</span>
+
+<span class="sd">    pvalues_ : array-like of shape (n_features,)</span>
+<span class="sd">        p-values of feature scores, None if `score_func` returned scores only.</span>
+
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        Number of features seen during :term:`fit`.</span>
+
+<span class="sd">        .. versionadded:: 0.24</span>
+
+<span class="sd">    feature_names_in_ : ndarray of shape (`n_features_in_`,)</span>
+<span class="sd">        Names of features seen during :term:`fit`. Defined only when `X`</span>
+<span class="sd">        has feature names that are all strings.</span>
+
+<span class="sd">        .. versionadded:: 1.0</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    f_classif : ANOVA F-value between label/feature for classification tasks.</span>
+<span class="sd">    mutual_info_classif : Mutual information for a discrete target.</span>
+<span class="sd">    chi2 : Chi-squared stats of non-negative features for classification tasks.</span>
+<span class="sd">    f_regression : F-value between label/feature for regression tasks.</span>
+<span class="sd">    mutual_info_regression : Mutual information for a continuous target.</span>
+<span class="sd">    SelectPercentile : Select features based on percentile of the highest</span>
+<span class="sd">        scores.</span>
+<span class="sd">    SelectKBest : Select features based on the k highest scores.</span>
+<span class="sd">    SelectFpr : Select features based on a false positive rate test.</span>
+<span class="sd">    SelectFdr : Select features based on an estimated false discovery rate.</span>
+<span class="sd">    SelectFwe : Select features based on family-wise error rate.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.feature_selection import GenericUnivariateSelect, chi2</span>
+<span class="sd">    &gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; X.shape</span>
+<span class="sd">    (569, 30)</span>
+<span class="sd">    &gt;&gt;&gt; transformer = GenericUnivariateSelect(chi2, mode=&#39;k_best&#39;, param=20)</span>
+<span class="sd">    &gt;&gt;&gt; X_new = transformer.fit_transform(X, y)</span>
+<span class="sd">    &gt;&gt;&gt; X_new.shape</span>
+<span class="sd">    (569, 20)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_selection_modes</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;percentile&quot;</span><span class="p">:</span> <span class="n">SelectPercentile</span><span class="p">,</span>
+        <span class="s2">&quot;k_best&quot;</span><span class="p">:</span> <span class="n">SelectKBest</span><span class="p">,</span>
+        <span class="s2">&quot;fpr&quot;</span><span class="p">:</span> <span class="n">SelectFpr</span><span class="p">,</span>
+        <span class="s2">&quot;fdr&quot;</span><span class="p">:</span> <span class="n">SelectFdr</span><span class="p">,</span>
+        <span class="s2">&quot;fwe&quot;</span><span class="p">:</span> <span class="n">SelectFwe</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">_parameter_constraints</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">**</span><span class="n">_BaseFilter</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+        <span class="s2">&quot;mode&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">StrOptions</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">_selection_modes</span><span class="o">.</span><span class="n">keys</span><span class="p">()))],</span>
+        <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Interval</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">),</span> <span class="n">StrOptions</span><span class="p">({</span><span class="s2">&quot;all&quot;</span><span class="p">})],</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;percentile&quot;</span><span class="p">,</span> <span class="n">param</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">score_func</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param</span> <span class="o">=</span> <span class="n">param</span>
+
+    <span class="k">def</span> <span class="nf">_make_selector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selector</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selection_modes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">](</span><span class="n">score_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">score_func</span><span class="p">)</span>
+
+        <span class="c1"># Now perform some acrobatics to set the right named parameter in</span>
+        <span class="c1"># the selector</span>
+        <span class="n">possible_params</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">_get_param_names</span><span class="p">()</span>
+        <span class="n">possible_params</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;score_func&quot;</span><span class="p">)</span>
+        <span class="n">selector</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">possible_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">selector</span>
+
+    <span class="k">def</span> <span class="nf">_more_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;preserves_dtype&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="nf">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_make_selector</span><span class="p">()</span><span class="o">.</span><span class="n">_check_params</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_support_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">selector</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_selector</span><span class="p">()</span>
+        <span class="n">selector</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span>
+        <span class="n">selector</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span>
+        <span class="k">return</span> <span class="n">selector</span><span class="o">.</span><span class="n">_get_support_mask</span><span class="p">()</span>
+</pre></div>
+</article>
+        
+      </main>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://itlubber.art" class="list-item">itlubber</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline" class="list-item">github</a>
+          </li>
+        
+          
+          
+          <li class="d-inline">
+            <a href="https://github.com/itlubber/scorecardpipeline/blob/main/examples/scorecard_samples.ipynb" class="list-item">examples</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="Nefertiti-for-Sphinx">
+          <span class="fs-6 fw-bold">scorecardpipeline</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2023, itlubber</li>
+          </ul>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+
+    <script type="text/javascript" src="../../../_static/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../../_static/sphinx-nefertiti.min.js"></script>
+    
+  </body>
+</html>

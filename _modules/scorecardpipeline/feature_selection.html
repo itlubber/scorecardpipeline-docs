@@ -231,6 +231,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html">scorecardpipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.processing">scorecardpipeline.processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.feature_selection">scorecardpipeline.feature_selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.model">scorecardpipeline.model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_eda">scorecardpipeline.auto_eda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scorecardpipeline.html#module-scorecardpipeline.auto_report">scorecardpipeline.auto_report</a></li>
@@ -296,24 +297,24 @@
 <span class="kn">from</span> <span class="nn">.processing</span> <span class="kn">import</span> <span class="n">Combiner</span>
 
 
-<span class="k">class</span> <span class="nc">SelectorMixin</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="SelectorMixin"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.SelectorMixin">[文档]</a><span class="k">class</span> <span class="nc">SelectorMixin</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SelectorMixin.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.SelectorMixin.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dropped</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="kc">None</span></div>
 
-    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="SelectorMixin.transform"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.SelectorMixin.transform">[文档]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;select_columns&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">x</span><span class="p">[[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">[[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span></div>
     
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span>
 
-    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">pass</span>
+<div class="viewcode-block" id="SelectorMixin.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.SelectorMixin.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">pass</span></div></div>
 
 
 <div class="viewcode-block" id="TypeSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.TypeSelector">[文档]</a><span class="k">class</span> <span class="nc">TypeSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
@@ -380,19 +381,19 @@
         <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<span class="k">def</span> <span class="nf">value_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="value_ratio"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.value_ratio">[文档]</a><span class="k">def</span> <span class="nf">value_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">_get_mask</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">_get_mask</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">_get_mask</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">mode_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="mode_ratio"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.mode_ratio">[文档]</a><span class="k">def</span> <span class="nf">mode_ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
     <span class="n">summary</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="n">dropna</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">summary</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">summary</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="NullSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.NullSelector">[文档]</a><span class="k">class</span> <span class="nc">NullSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
@@ -460,7 +461,7 @@
         <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<span class="k">class</span> <span class="nc">CardinalitySelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="CardinalitySelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.CardinalitySelector">[文档]</a><span class="k">class</span> <span class="nc">CardinalitySelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Feature selection via categorical feature&#39;s cardinality.</span>
 
 <span class="sd">    **参考样例**</span>
@@ -471,13 +472,13 @@
 <span class="sd">    &gt;&gt;&gt; cs = CardinalitySelector(threshold=2)</span>
 <span class="sd">    &gt;&gt;&gt; cs.fit_transform(x)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="CardinalitySelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.CardinalitySelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="n">exclude</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dropna</span> <span class="o">=</span> <span class="n">dropna</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropna</span> <span class="o">=</span> <span class="n">dropna</span></div>
 
-    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
+<div class="viewcode-block" id="CardinalitySelector.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.CardinalitySelector.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">:</span>
@@ -492,10 +493,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">dropped</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([(</span><span class="n">col</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;cardinality &gt;= </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="s2">&quot;rm_reason&quot;</span><span class="p">])</span>
-        <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<span class="k">def</span> <span class="nf">IV</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<div class="viewcode-block" id="IV"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.IV">[文档]</a><span class="k">def</span> <span class="nf">IV</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
     <span class="n">event_mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="n">nonevent_mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">1</span>
     <span class="n">event_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">event_mask</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">regularization</span>
@@ -515,7 +516,7 @@
     <span class="n">nonevent_rates</span> <span class="o">/=</span> <span class="n">nonevent_tot</span>
     <span class="n">ivs</span> <span class="o">=</span> <span class="p">(</span><span class="n">event_rates</span> <span class="o">-</span> <span class="n">nonevent_rates</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">event_rates</span> <span class="o">/</span> <span class="n">nonevent_rates</span><span class="p">)</span>
     <span class="n">ivs</span><span class="p">[</span><span class="n">bad_pos</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ivs</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ivs</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span></div>
 
 
 <span class="k">def</span> <span class="nf">_IV</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -570,7 +571,7 @@
         <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<span class="k">def</span> <span class="nf">LIFT</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+<div class="viewcode-block" id="LIFT"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.LIFT">[文档]</a><span class="k">def</span> <span class="nf">LIFT</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate lift according to label data.</span>
 
 <span class="sd">    **参考样例**</span>
@@ -593,7 +594,7 @@
         <span class="n">hit_bad_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">((</span><span class="n">_y_true</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">_y_pred</span><span class="p">)</span>
         <span class="n">score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hit_bad_rate</span> <span class="o">/</span> <span class="n">base_bad_rate</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">score</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="LiftSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.LiftSelector">[文档]</a><span class="k">class</span> <span class="nc">LiftSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
@@ -689,14 +690,14 @@
         <span class="k">return</span> <span class="bp">self</span></div></div>
 
 
-<span class="k">def</span> <span class="nf">VIF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">missing</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="VIF"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.VIF">[文档]</a><span class="k">def</span> <span class="nf">VIF</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">missing</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">columns</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
     <span class="n">lr</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">lr</span><span class="p">)(</span><span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">vif</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_pred</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
 
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">vif</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">vif</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="VIFSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.VIFSelector">[文档]</a><span class="k">class</span> <span class="nc">VIFSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
@@ -830,10 +831,10 @@
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">PSI</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="s1">&#39;2*n_jobs&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="PSI"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.PSI">[文档]</a><span class="k">def</span> <span class="nf">PSI</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="s1">&#39;2*n_jobs&#39;</span><span class="p">):</span>
     <span class="n">parallel</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="n">pre_dispatch</span><span class="p">)</span>
     <span class="n">scores</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span><span class="n">delayed</span><span class="p">(</span><span class="n">_psi_score</span><span class="p">)(</span><span class="n">train</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">test</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">scores</span>
+    <span class="k">return</span> <span class="n">scores</span></div>
 
 
 <div class="viewcode-block" id="PSISelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.PSISelector">[文档]</a><span class="k">class</span> <span class="nc">PSISelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
@@ -1132,31 +1133,31 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">support_mask_</span></div>
 
 
-<span class="k">class</span> <span class="nc">BorutaSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="BorutaSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BorutaSelector">[文档]</a><span class="k">class</span> <span class="nc">BorutaSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BorutaSelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.BorutaSelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># 对原始特征进行复制一份，并且将其按行进行随机打乱，称为Shadow Feature。将Shadow Feature与原始特征Real Feature进行横向拼接在一起，使用某种模型（随机森林、GBDT）进行计算特征重要性。将Shadow Feature中重要性最高的值为基准，删除Real Feature中重要性低于其的特征。多重复几个迭代。（一般来说随机生成的特征效果不如原始的，因此可以以Shadow Feature的特征重要性作为基准来判断Real Feature的好坏）</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div></div>
 
 
-<span class="k">class</span> <span class="nc">MICSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="viewcode-block" id="MICSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.MICSelector">[文档]</a><span class="k">class</span> <span class="nc">MICSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
 
 
-<span class="k">class</span> <span class="nc">FeatureImportanceSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="viewcode-block" id="FeatureImportanceSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.FeatureImportanceSelector">[文档]</a><span class="k">class</span> <span class="nc">FeatureImportanceSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
 
 
-<span class="k">class</span> <span class="nc">StabilitySelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="viewcode-block" id="StabilitySelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.StabilitySelector">[文档]</a><span class="k">class</span> <span class="nc">StabilitySelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
 
 
-<span class="k">class</span> <span class="nc">REFSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="viewcode-block" id="REFSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.REFSelector">[文档]</a><span class="k">class</span> <span class="nc">REFSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
 
 
-<span class="k">class</span> <span class="nc">SequentialFeatureSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="viewcode-block" id="SequentialFeatureSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.SequentialFeatureSelector">[文档]</a><span class="k">class</span> <span class="nc">SequentialFeatureSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
+    <span class="k">pass</span></div>
 
 
 <span class="c1"># class SelectFromModel(SelectorMixin):</span>

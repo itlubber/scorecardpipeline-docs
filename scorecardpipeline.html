@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.35" />
+    <meta name="docsearch:release" content="0.1.36" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.35 文档</title>
+      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.36 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="genindex.html" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.35 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.36 文档" href="#" />
         <link rel="prev" title="简介" href="quickstart.html" />
     <style>
       :root {
@@ -136,7 +136,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.35">v0.1.35</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.36">v0.1.36</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -144,8 +144,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.35">
-              <span class="small ms-2">v0.1.35</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.36">
+              <span class="small ms-2">v0.1.36</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -1325,6 +1325,12 @@
 <span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule.html#Rule.result"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.Rule.save">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule.html#Rule.save"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>保存规则结果至excel中，参数与 <a class="reference external" href="https://scorecardpipeline.itlubber.art/scorecardpipeline.html#scorecardpipeline.dataframe2excel">https://scorecardpipeline.itlubber.art/scorecardpipeline.html#scorecardpipeline.dataframe2excel</a> 一致</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -2385,6 +2391,41 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.NumExprDerive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">NumExprDerive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">derivings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_engineering.html#NumExprDerive"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></p>
+<p>Derive features by expressions.</p>
+<p><strong>参考样例</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; from scorecardpipeline.feature_engineering import NumExprDerive
+&gt;&gt;&gt; X = pd.DataFrame({&quot;f0&quot;: [2, 1.0, 3], &quot;f1&quot;: [np.inf, 2, 3], &quot;f2&quot;: [2, 3, 4], &quot;f3&quot;: [2.1, 1.4, -6.2]})
+&gt;&gt;&gt; fd = NumExprDerive(derivings=[(&quot;f4&quot;, &quot;where(f1&gt;1, 0, 1)&quot;), (&quot;f5&quot;、&quot;f1+f2&quot;), (&quot;f6&quot;, &quot;sin(f1)&quot;), (&quot;f7&quot;, &quot;abs(f3)&quot;))
+&gt;&gt;&gt; fd.fit_transform(X)
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NumExprDerive.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">derivings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_engineering.html#NumExprDerive.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>derivings</strong> – list, default=None. Each entry is a (name, expr) pair representing a deriving rule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NumExprDerive.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_engineering.html#NumExprDerive.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NumExprDerive.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_engineering.html#NumExprDerive.transform"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="scorecardpipeline.StandardScoreTransformer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">StandardScoreTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">660</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bad_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_lmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_lmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">greater_is_better</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/scorecard.html#StandardScoreTransformer"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">BaseScoreTransformer</span></code></p>
@@ -2478,6 +2519,314 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <dt class="sig sig-object py" id="scorecardpipeline.BoxCoxScoreTransformer.inverse_transform">
 <span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/scorecard.html#BoxCoxScoreTransformer.inverse_transform"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.TypeSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">TypeSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype_include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#TypeSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.TypeSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype_include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#TypeSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.TypeSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#TypeSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.RegexSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">RegexSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#RegexSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.RegexSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#RegexSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.RegexSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#RegexSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.ModeSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">ModeSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ModeSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ModeSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ModeSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ModeSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ModeSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.NullSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">NullSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NullSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NullSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.InformationValueSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">InformationValueSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#InformationValueSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.InformationValueSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#InformationValueSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.InformationValueSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#InformationValueSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.LiftSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">LiftSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#LiftSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<p>Feature selection via lift score.</p>
+<p><strong>属性字段</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>threshold</strong> – float. The threshold value used for feature selection.</p>
+</dd>
+</dl>
+<p>:param <a href="#id5"><span class="problematic" id="id6">scores_</span></a> : array-like of shape (n_features,). Lift scores of features.
+:param select_columns : array-like
+:param dropped : DataFrame</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.LiftSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#LiftSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – target</p></li>
+<li><p><strong>threshold</strong> – float or str (default=3.0). Feature which has a lift score greater than <cite>threshold</cite> will be kept.</p></li>
+<li><p><strong>n_jobs</strong> – int or None, (default=None). Number of parallel.</p></li>
+<li><p><strong>methods</strong> – Combiner’s methods</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.LiftSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#LiftSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.VarianceSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">VarianceSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VarianceSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<p>Feature selector that removes all low-variance features.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.VarianceSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VarianceSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.VarianceSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VarianceSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.VIFSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">VIFSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VIFSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.VIFSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VIFSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>VIF越高，多重共线性的影响越严重, 在金融风险中我们使用经验法则:若VIF&gt;4，则我们认为存在多重共线性, 计算比较消耗资源, 如果数据维度较大的情况下, 尽量不要使用</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exclude</strong> – 数据集中需要强制保留的变量</p></li>
+<li><p><strong>threshold</strong> – 阈值, VIF 大于 threshold 即剔除该特征</p></li>
+<li><p><strong>missing</strong> – 缺失值默认填充 -1</p></li>
+<li><p><strong>n_jobs</strong> – 线程数</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.VIFSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#VIFSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.CorrSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">CorrSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pearson'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#CorrSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.CorrSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pearson'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#CorrSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.CorrSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#CorrSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.PSISelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">PSISelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#PSISelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.PSISelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#PSISelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.PSISelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#PSISelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.NullImportanceSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">NullImportanceSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_runs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullImportanceSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NullImportanceSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_runs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullImportanceSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.NullImportanceSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#NullImportanceSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.TargetPermutationSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">TargetPermutationSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_runs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#TargetPermutationSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<a class="reference internal" href="#scorecardpipeline.NullImportanceSelector" title="scorecardpipeline.feature_selection.NullImportanceSelector"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullImportanceSelector</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.TargetPermutationSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'target'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_runs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#TargetPermutationSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scorecardpipeline.ExhaustiveSelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">ExhaustiveSelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'accuracy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ExhaustiveSelector"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">SelectorMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MetaEstimatorMixin</span></code></p>
+<p>Exhaustive Feature Selection for Classification and Regression.</p>
+<p><strong>属性字段</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subset_info</strong> – list of dicts. A list of dictionary with the following keys: ‘support_mask’, mask array of the selected features ‘cv_scores’, cross validate scores</p></li>
+<li><p><strong>support_mask</strong> – array-like of booleans. Array of final chosen features</p></li>
+<li><p><strong>best_idx</strong> – array-like, shape = [n_predictions]. Feature Indices of the selected feature subsets.</p></li>
+<li><p><strong>best_score</strong> – float. Cross validation average score of the selected subset.</p></li>
+<li><p><strong>best_feature_indices</strong> – array-like, shape = (n_features,), Feature indices of the selected feature subsets.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>参考样例</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scorecardpipeline.feature_selection</span> <span class="kn">import</span> <span class="n">ExhaustiveSelector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">efs</span> <span class="o">=</span> <span class="n">ExhaustiveSelector</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">min_features</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">efs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">ExhaustiveFeatureSelector(estimator=KNeighborsClassifier(n_neighbors=3), max_features=4)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">efs</span><span class="o">.</span><span class="n">best_score_</span>
+<span class="go">0.9733333333333333</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">efs</span><span class="o">.</span><span class="n">best_idx_</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ExhaustiveSelector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'accuracy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_dispatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2*n_jobs'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ExhaustiveSelector.__init__"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimator</strong> – scikit-learn classifier or regressor</p></li>
+<li><p><strong>min_features</strong> – int (default: 1). Minimum number of features to select</p></li>
+<li><p><strong>max_features</strong> – int (default: 1). Maximum number of features to select</p></li>
+<li><p><strong>verbose</strong> – bool (default: True). Prints progress as the number of epochs to stdout.</p></li>
+<li><p><strong>scoring</strong> – str, (default=’_passthrough_scorer’). Scoring metric in faccuracy, f1, precision, recall, roc_auc) for classifiers, {‘mean_absolute_error’, ‘mean_squared_error’, ‘median_absolute_error’, ‘r2’} for regressors, or a callable object or function with signature <code class="docutils literal notranslate"><span class="pre">scorer(estimator,</span> <span class="pre">X,</span> <span class="pre">y)</span></code>.</p></li>
+<li><p><strong>cv</strong> – int (default: 5). Scikit-learn cross-validation generator or <cite>int</cite>, If estimator is a classifier (or y consists of integer class labels), stratified k-fold is performed, and regular k-fold cross-validation otherwise. No cross-validation if cv is None, False, or 0.</p></li>
+<li><p><strong>n_jobs</strong> – int (default: 1). The number of CPUs to use for evaluating different feature subsets in parallel. -1 means ‘all CPUs’.</p></li>
+<li><p><strong>pre_dispatch</strong> – int, or string (default: ‘2*n_jobs’). Controls the number of jobs that get dispatched during parallel execution if <cite>n_jobs &gt; 1</cite> or <cite>n_jobs=-1</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ExhaustiveSelector.ncr">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ncr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ExhaustiveSelector.ncr"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>Return the number of combinations of length r from n items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – int, Total number of items</p></li>
+<li><p><strong>r</strong> – int, Number of items to select from n</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of combinations, integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ExhaustiveSelector.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/feature_selection.html#ExhaustiveSelector.fit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>Perform feature selection and learn model from training data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – array-like of shape (n_samples, n_features)</p></li>
+<li><p><strong>y</strong> – array-like of shape (n_samples, ), Target values.</p></li>
+<li><p><strong>groups</strong> – array-like of shape (n_samples,), Group labels for the samples used while splitting the dataset into train/test set. Passed to the fit method of the cross-validator.</p></li>
+<li><p><strong>fit_params</strong> – dict, Parameters to pass to the fit method of classifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>ExhaustiveFeatureSelector</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -4554,6 +4903,12 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule.html#Rule.result"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.rule.Rule.save">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule.html#Rule.save"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>保存规则结果至excel中，参数与 <a class="reference external" href="https://scorecardpipeline.itlubber.art/scorecardpipeline.html#scorecardpipeline.dataframe2excel">https://scorecardpipeline.itlubber.art/scorecardpipeline.html#scorecardpipeline.dataframe2excel</a> 一致</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -4775,6 +5130,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.Rule.predict"><code class="docutils literal notranslate"><span class="pre">Rule.predict()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.Rule.report"><code class="docutils literal notranslate"><span class="pre">Rule.report()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.Rule.result"><code class="docutils literal notranslate"><span class="pre">Rule.result()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.Rule.save"><code class="docutils literal notranslate"><span class="pre">Rule.save()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#scorecardpipeline.DecisionTreeRuleExtractor"><code class="docutils literal notranslate"><span class="pre">DecisionTreeRuleExtractor</span></code></a><ul>
@@ -4841,6 +5197,12 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.dataframe2excel"><code class="docutils literal notranslate"><span class="pre">dataframe2excel()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.auto_eda_sweetviz"><code class="docutils literal notranslate"><span class="pre">auto_eda_sweetviz()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.auto_data_testing_report"><code class="docutils literal notranslate"><span class="pre">auto_data_testing_report()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.NumExprDerive"><code class="docutils literal notranslate"><span class="pre">NumExprDerive</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.NumExprDerive.__init__"><code class="docutils literal notranslate"><span class="pre">NumExprDerive.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.NumExprDerive.fit"><code class="docutils literal notranslate"><span class="pre">NumExprDerive.fit()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.NumExprDerive.transform"><code class="docutils literal notranslate"><span class="pre">NumExprDerive.transform()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#scorecardpipeline.StandardScoreTransformer"><code class="docutils literal notranslate"><span class="pre">StandardScoreTransformer</span></code></a><ul>
 <li><a class="reference internal" href="#scorecardpipeline.StandardScoreTransformer.__init__"><code class="docutils literal notranslate"><span class="pre">StandardScoreTransformer.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.StandardScoreTransformer.fit"><code class="docutils literal notranslate"><span class="pre">StandardScoreTransformer.fit()</span></code></a></li>
@@ -4864,6 +5226,71 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.BoxCoxScoreTransformer.transform"><code class="docutils literal notranslate"><span class="pre">BoxCoxScoreTransformer.transform()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.BoxCoxScoreTransformer.predict"><code class="docutils literal notranslate"><span class="pre">BoxCoxScoreTransformer.predict()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.BoxCoxScoreTransformer.inverse_transform"><code class="docutils literal notranslate"><span class="pre">BoxCoxScoreTransformer.inverse_transform()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.TypeSelector"><code class="docutils literal notranslate"><span class="pre">TypeSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.TypeSelector.__init__"><code class="docutils literal notranslate"><span class="pre">TypeSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.TypeSelector.fit"><code class="docutils literal notranslate"><span class="pre">TypeSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.RegexSelector"><code class="docutils literal notranslate"><span class="pre">RegexSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.RegexSelector.__init__"><code class="docutils literal notranslate"><span class="pre">RegexSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.RegexSelector.fit"><code class="docutils literal notranslate"><span class="pre">RegexSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.ModeSelector"><code class="docutils literal notranslate"><span class="pre">ModeSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.ModeSelector.__init__"><code class="docutils literal notranslate"><span class="pre">ModeSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.ModeSelector.fit"><code class="docutils literal notranslate"><span class="pre">ModeSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.NullSelector"><code class="docutils literal notranslate"><span class="pre">NullSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.NullSelector.__init__"><code class="docutils literal notranslate"><span class="pre">NullSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.NullSelector.fit"><code class="docutils literal notranslate"><span class="pre">NullSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.InformationValueSelector"><code class="docutils literal notranslate"><span class="pre">InformationValueSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.InformationValueSelector.__init__"><code class="docutils literal notranslate"><span class="pre">InformationValueSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.InformationValueSelector.fit"><code class="docutils literal notranslate"><span class="pre">InformationValueSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.LiftSelector"><code class="docutils literal notranslate"><span class="pre">LiftSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.LiftSelector.__init__"><code class="docutils literal notranslate"><span class="pre">LiftSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.LiftSelector.fit"><code class="docutils literal notranslate"><span class="pre">LiftSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.VarianceSelector"><code class="docutils literal notranslate"><span class="pre">VarianceSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.VarianceSelector.__init__"><code class="docutils literal notranslate"><span class="pre">VarianceSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.VarianceSelector.fit"><code class="docutils literal notranslate"><span class="pre">VarianceSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.VIFSelector"><code class="docutils literal notranslate"><span class="pre">VIFSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.VIFSelector.__init__"><code class="docutils literal notranslate"><span class="pre">VIFSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.VIFSelector.fit"><code class="docutils literal notranslate"><span class="pre">VIFSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.CorrSelector"><code class="docutils literal notranslate"><span class="pre">CorrSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.CorrSelector.__init__"><code class="docutils literal notranslate"><span class="pre">CorrSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.CorrSelector.fit"><code class="docutils literal notranslate"><span class="pre">CorrSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.PSISelector"><code class="docutils literal notranslate"><span class="pre">PSISelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.PSISelector.__init__"><code class="docutils literal notranslate"><span class="pre">PSISelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.PSISelector.fit"><code class="docutils literal notranslate"><span class="pre">PSISelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.NullImportanceSelector"><code class="docutils literal notranslate"><span class="pre">NullImportanceSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.NullImportanceSelector.__init__"><code class="docutils literal notranslate"><span class="pre">NullImportanceSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.NullImportanceSelector.fit"><code class="docutils literal notranslate"><span class="pre">NullImportanceSelector.fit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.TargetPermutationSelector"><code class="docutils literal notranslate"><span class="pre">TargetPermutationSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.TargetPermutationSelector.__init__"><code class="docutils literal notranslate"><span class="pre">TargetPermutationSelector.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scorecardpipeline.ExhaustiveSelector"><code class="docutils literal notranslate"><span class="pre">ExhaustiveSelector</span></code></a><ul>
+<li><a class="reference internal" href="#scorecardpipeline.ExhaustiveSelector.__init__"><code class="docutils literal notranslate"><span class="pre">ExhaustiveSelector.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.ExhaustiveSelector.ncr"><code class="docutils literal notranslate"><span class="pre">ExhaustiveSelector.ncr()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.ExhaustiveSelector.fit"><code class="docutils literal notranslate"><span class="pre">ExhaustiveSelector.fit()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -5017,6 +5444,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.predict"><code class="docutils literal notranslate"><span class="pre">Rule.predict()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.report"><code class="docutils literal notranslate"><span class="pre">Rule.report()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.rule.Rule.result"><code class="docutils literal notranslate"><span class="pre">Rule.result()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.rule.Rule.save"><code class="docutils literal notranslate"><span class="pre">Rule.save()</span></code></a></li>
 </ul>
 </li>
 </ul>

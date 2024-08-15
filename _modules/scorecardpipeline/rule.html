@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.35" />
+    <meta name="docsearch:release" content="0.1.36" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.35 文档</title>
+      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.36 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.35 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.36 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.35">v0.1.35</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.36">v0.1.36</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.35">
-              <span class="small ms-2">v0.1.35</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.36">
+              <span class="small ms-2">v0.1.36</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -270,6 +270,7 @@
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span>
 
 <span class="kn">from</span> <span class="nn">.processing</span> <span class="kn">import</span> <span class="n">feature_bin_stats</span><span class="p">,</span> <span class="n">Combiner</span>
+<span class="kn">from</span> <span class="nn">.excel_writer</span> <span class="kn">import</span> <span class="n">dataframe2excel</span>
 
 
 <span class="k">def</span> <span class="nf">_get_context</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
@@ -416,7 +417,7 @@
                 <span class="n">rule_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">temp</span><span class="p">),</span> <span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">prior_tables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">return_cols</span><span class="p">)</span>
-                <span class="n">rule_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">datasets</span><span class="p">),</span> <span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
+                <span class="n">rule_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s2">&quot;命中&quot;</span><span class="p">,</span> <span class="s2">&quot;未命中&quot;</span><span class="p">),</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()})</span>
 
             <span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
             <span class="n">combiner</span><span class="o">.</span><span class="n">load</span><span class="p">({</span><span class="n">rule_expr</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;命中&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;未命中&quot;</span><span class="p">]]})</span>
@@ -659,7 +660,28 @@
             <span class="k">return</span> <span class="n">r</span>
         <span class="n">r</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
         <span class="n">r</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">RuleState</span><span class="o">.</span><span class="n">APPLIED</span>
-        <span class="k">return</span> <span class="n">r</span></div>
+        <span class="k">return</span> <span class="n">r</span>
+
+<div class="viewcode-block" id="Rule.save"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.save">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">excel_writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">merge_column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percent_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">condition_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_format</span><span class="o">=</span><span class="s2">&quot;#,##0&quot;</span><span class="p">,</span> <span class="n">color_cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">start_row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;保存规则结果至excel中，参数与 https://scorecardpipeline.itlubber.art/scorecardpipeline.html#scorecardpipeline.dataframe2excel 一致</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">merge_column</span><span class="p">:</span>
+            <span class="n">merge_column</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">merge_column</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">merge_column</span><span class="p">)]</span>
+        
+        <span class="k">if</span> <span class="n">percent_cols</span><span class="p">:</span>
+            <span class="n">percent_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">percent_cols</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">percent_cols</span><span class="p">)]</span>
+            
+        <span class="k">if</span> <span class="n">condition_cols</span><span class="p">:</span>
+            <span class="n">condition_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">condition_cols</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">condition_cols</span><span class="p">)]</span>
+        
+        <span class="k">if</span> <span class="n">custom_cols</span><span class="p">:</span>
+            <span class="n">custom_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">custom_cols</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">custom_cols</span><span class="p">)]</span>
+        
+        <span class="k">if</span> <span class="n">color_cols</span><span class="p">:</span>
+            <span class="n">color_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">color_cols</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">color_cols</span><span class="p">)]</span>
+        
+        <span class="n">dataframe2excel</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="n">excel_writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="n">sheet_name</span><span class="p">,</span> <span class="n">merge_column</span><span class="o">=</span><span class="n">merge_column</span><span class="p">,</span> <span class="n">percent_cols</span><span class="o">=</span><span class="n">percent_cols</span><span class="p">,</span> <span class="n">condition_cols</span><span class="o">=</span><span class="n">condition_cols</span><span class="p">,</span> <span class="n">custom_cols</span><span class="o">=</span><span class="n">custom_cols</span><span class="p">,</span> <span class="n">custom_format</span><span class="o">=</span><span class="n">custom_format</span><span class="p">,</span> <span class="n">color_cols</span><span class="o">=</span><span class="n">color_cols</span><span class="p">,</span> <span class="n">start_col</span><span class="o">=</span><span class="n">start_col</span><span class="p">,</span> <span class="n">start_row</span><span class="o">=</span><span class="n">start_row</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
 </pre></div>
 </article>
         

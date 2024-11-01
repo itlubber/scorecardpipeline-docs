@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.36" />
+    <meta name="docsearch:release" content="0.1.37" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.utils &mdash; scorecardpipeline 0.1.36 文档</title>
+      <title>scorecardpipeline.utils &mdash; scorecardpipeline 0.1.37 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.36 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.36">v0.1.36</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.36">
-              <span class="small ms-2">v0.1.36</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
+              <span class="small ms-2">v0.1.37</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -268,6 +268,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">six</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">joblib</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -350,7 +351,7 @@
         <span class="k">return</span> <span class="n">init_logger</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="load_pickle"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.load_pickle">[文档]</a><span class="k">def</span> <span class="nf">load_pickle</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+<div class="viewcode-block" id="load_pickle"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.load_pickle">[文档]</a><span class="k">def</span> <span class="nf">load_pickle</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;joblib&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    导入 pickle 文件</span>
 
@@ -358,17 +359,37 @@
 
 <span class="sd">    :return: pickle 文件的内容</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+    <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;joblib&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;dill&quot;</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">dill</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dill</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pickle&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;engine 目前只支持 [joblib, dill, pickle], 不支持 </span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="save_pickle"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.save_pickle">[文档]</a><span class="k">def</span> <span class="nf">save_pickle</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<div class="viewcode-block" id="save_pickle"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.save_pickle">[文档]</a><span class="k">def</span> <span class="nf">save_pickle</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;joblib&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    保持数据至 pickle 文件</span>
 
 <span class="sd">    :param obj: 需要保存的数据</span>
 <span class="sd">    :param file: 文件路径</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span></div>
+    <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;joblib&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;dill&quot;</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">dill</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dill</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pickle&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;engine 目前只支持 [joblib, dill, pickle], 不支持 </span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="germancredit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.germancredit">[文档]</a><span class="k">def</span> <span class="nf">germancredit</span><span class="p">():</span>
@@ -1087,6 +1108,36 @@
     <span class="n">lift_ori</span> <span class="o">=</span> <span class="n">bad_rj</span> <span class="o">/</span> <span class="p">(</span><span class="n">bad_rj</span> <span class="o">+</span> <span class="n">bad_ps</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">sample_rate</span> <span class="o">*</span> <span class="n">bad_ps</span> <span class="o">+</span> <span class="n">good_ps</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sample_rate</span> <span class="o">*</span> <span class="n">bad_rj</span> <span class="o">+</span> <span class="n">good_rj</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">lift_sam</span><span class="p">,</span> <span class="n">lift_ori</span></div>
+
+
+<div class="viewcode-block" id="tasks_executor"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.tasks_executor">[文档]</a><span class="k">def</span> <span class="nf">tasks_executor</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">pool</span><span class="o">=</span><span class="s2">&quot;thread&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;多进程或多线程任务执行</span>
+
+<span class="sd">    :param tasks: 任务</span>
+<span class="sd">    :param n_jobs: 线城池或进程池数量</span>
+<span class="sd">    :param pool: 类型，默认 thread 线城池,</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;执行任务数必须大于0&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pool</span> <span class="o">==</span> <span class="s2">&quot;joblib&quot;</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">wait</span><span class="p">,</span> <span class="n">ALL_COMPLETED</span>
+    <span class="k">if</span> <span class="n">pool</span> <span class="o">==</span> <span class="s2">&quot;thread&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">n_jobs</span> <span class="k">if</span> <span class="n">n_jobs</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">pool</span> <span class="o">==</span> <span class="s2">&quot;process&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">n_jobs</span> <span class="k">if</span> <span class="n">n_jobs</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">_tasks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+        <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+    <span class="n">wait</span><span class="p">(</span><span class="n">_tasks</span><span class="p">,</span> <span class="n">return_when</span><span class="o">=</span><span class="n">ALL_COMPLETED</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">result</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">_tasks</span><span class="p">]</span></div>
 </pre></div>
 </article>
         

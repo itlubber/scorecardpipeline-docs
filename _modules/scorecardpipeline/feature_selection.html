@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.36" />
+    <meta name="docsearch:release" content="0.1.37" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.feature_selection &mdash; scorecardpipeline 0.1.36 文档</title>
+      <title>scorecardpipeline.feature_selection &mdash; scorecardpipeline 0.1.37 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.36 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.36">v0.1.36</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.36">
-              <span class="small ms-2">v0.1.36</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
+              <span class="small ms-2">v0.1.37</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -497,12 +497,17 @@
 
 
 <div class="viewcode-block" id="IV"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.IV">[文档]</a><span class="k">def</span> <span class="nf">IV</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="n">uniques</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">n_cats</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniques</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_cats</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+
     <span class="n">event_mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="n">nonevent_mask</span> <span class="o">=</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">1</span>
     <span class="n">event_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">event_mask</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">regularization</span>
     <span class="n">nonevent_tot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">nonevent_mask</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">regularization</span>
-    <span class="n">uniques</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">n_cats</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniques</span><span class="p">)</span>
+
     <span class="n">event_rates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_cats</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
     <span class="n">nonevent_rates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_cats</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">uniques</span><span class="p">):</span>
@@ -532,13 +537,13 @@
 
 <div class="viewcode-block" id="InformationValueSelector"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.InformationValueSelector">[文档]</a><span class="k">class</span> <span class="nc">InformationValueSelector</span><span class="p">(</span><span class="n">SelectorMixin</span><span class="p">):</span>
 
-<div class="viewcode-block" id="InformationValueSelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.InformationValueSelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="InformationValueSelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.InformationValueSelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combiner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dropped</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">combiner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">regularization</span> <span class="o">=</span> <span class="n">regularization</span>
@@ -554,16 +559,18 @@
             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="p">:</span>
+            <span class="n">xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
             <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="n">temp</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
             <span class="n">xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">xt</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        
+
         <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">_IV</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">regularization</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">regularization</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">xt</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">_calculate_threshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="p">])</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]))</span>
@@ -582,6 +589,9 @@
 <span class="sd">    &gt;&gt;&gt; LIFT(y_true, y_pred) # (5 / 7) / (6 / 9)</span>
 <span class="sd">    1.0714285714285716</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+
     <span class="n">_y_true</span> <span class="o">=</span> <span class="n">column_or_1d</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
     <span class="n">base_bad_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
 
@@ -606,13 +616,13 @@
 <span class="sd">    :param scores_ : array-like of shape (n_features,). Lift scores of features.</span>
 <span class="sd">    :param select_columns : array-like</span>
 <span class="sd">    :param dropped : DataFrame</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="LiftSelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.LiftSelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="LiftSelector.__init__"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.LiftSelector.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combiner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :param target: target</span>
 <span class="sd">        :param threshold: float or str (default=3.0). Feature which has a lift score greater than `threshold` will be kept.</span>
 <span class="sd">        :param n_jobs: int or None, (default=None). Number of parallel.</span>
+<span class="sd">        :param combiner: Combiner</span>
 <span class="sd">        :param methods: Combiner&#39;s methods</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -620,6 +630,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span> <span class="o">=</span> <span class="n">n_jobs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">methods</span> <span class="o">=</span> <span class="n">methods</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">combiner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span></div>
 
 <div class="viewcode-block" id="LiftSelector.fit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.LiftSelector.fit">[文档]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">):</span>
@@ -630,17 +641,24 @@
             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="p">:</span>
+            <span class="n">xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
             <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="n">temp</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">methods</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
             <span class="n">xt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">xt</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">LIFT</span><span class="p">)(</span><span class="n">x</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">xt</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">xt</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="c1"># _lift = {}</span>
+        <span class="c1"># for c in tqdm(xt.columns):</span>
+        <span class="c1">#     _lift[c] = LIFT(xt[c], y)</span>
+        <span class="c1"># self.scores_ = pd.Series(_lift)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">LIFT</span><span class="p">)(</span><span class="n">xt</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">xt</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">xt</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">_calculate_threshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="p">])</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dropped</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([(</span><span class="n">col</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;LIFT &lt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">xt</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_columns</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="s2">&quot;rm_reason&quot;</span><span class="p">])</span>
@@ -753,12 +771,18 @@
             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="n">_weight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+                <span class="n">_weight_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+                <span class="n">_weight</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">_weight_columns</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">_weight_columns</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_weight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">sort_values</span><span class="p">())]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">_weight</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
 
         <span class="n">corr</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span> <span class="o">=</span> <span class="n">corr</span>
@@ -862,7 +886,7 @@
                 <span class="k">elif</span> <span class="s2">&quot;target&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">temp</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
                     <span class="n">temp</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
             <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">combiner</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exclude</span><span class="p">:</span>

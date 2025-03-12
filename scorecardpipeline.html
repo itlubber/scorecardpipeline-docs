@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.37" />
+    <meta name="docsearch:release" content="0.1.38" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.37 文档</title>
+      <title>scorecardpipeline &mdash; scorecardpipeline 0.1.38 文档</title>
     
     <link rel="stylesheet" href="_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -28,7 +28,7 @@
           <link rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
         <link rel="index" title="索引" href="genindex.html" />
         <link rel="search" title="搜索" href="search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
         <link rel="prev" title="简介" href="quickstart.html" />
     <style>
       :root {
@@ -136,7 +136,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -144,8 +144,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
-              <span class="small ms-2">v0.1.37</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
+              <span class="small ms-2">v0.1.38</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -725,6 +725,34 @@
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>
 <dd class="field-even"><p>pd.DataFrame，WOE转换后的数据集</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.WOETransformer.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/processing.html#WOETransformer.export"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>特征分箱器导出 json 保存</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_json</strong> – json 文件的路径</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict，特征分箱信息</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.WOETransformer.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_json</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/processing.html#WOETransformer.load"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>特征分箱器加载离线保存的 json 文件</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>from_json</strong> – json 文件的路径</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>Combiner，特征分箱器</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1366,7 +1394,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scorecardpipeline.DecisionTreeRuleExtractor.get_dt_rules">
-<span class="sig-name descname"><span class="pre">get_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.get_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-name descname"><span class="pre">get_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.get_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1571,16 +1599,23 @@ float: best spliter</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.get_column_letter">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">get_column_letter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/openpyxl/utils/cell.html#get_column_letter"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
-<dd><p>Convert a column index into a column letter
-(3 -&gt; ‘C’)</p>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">get_column_letter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/openpyxl/utils/cell.html#get_column_letter"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>Convert decimal column position to its ASCII (base 26) form.</p>
+<p>Because column indices are 1-based, strides are actually pow(26, n) + 26
+Hence, a correction is applied between pow(26, n) and pow(26, 2) + 26 to
+prevent and additional column letter being prepended</p>
+<p>“A” == 1 == pow(26, 0)
+“Z” == 26 == pow(26, 0) + 26 // decimal equivalent 10
+“AA” == 27 == pow(26, 1) + 1
+“ZZ” == 702 == pow(26, 2) + 26 // decimal equivalent 100</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.column_index_from_string">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">column_index_from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/openpyxl/utils/cell.html#column_index_from_string"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
-<dd><p>Convert a column name into a numerical index
-(‘A’ -&gt; 1)</p>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">column_index_from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/openpyxl/utils/cell.html#column_index_from_string"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>Convert ASCII column name (base 26) to decimal with 1-based index</p>
+<p>Characters represent descending multiples of powers of 26</p>
+<p>“AFZ” == 26 * pow(26, 0) + 6 * pow(26, 1) + 1 * pow(26, 2)</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1702,6 +1737,16 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.feature_describe">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">feature_describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cardinality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#feature_describe"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.groupby_feature_describe">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">groupby_feature_describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#groupby_feature_describe"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.bin_plot">
@@ -1974,6 +2019,20 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><p><strong>worksheet</strong> – 当前选择调整数值显示格式的sheet</p></li>
 <li><p><strong>space</strong> – 单元格范围</p></li>
 <li><p><strong>_format</strong> – 显示格式，参考 openpyxl</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.ExcelWriter.set_freeze_panes">
+<span class="sig-name descname"><span class="pre">set_freeze_panes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.set_freeze_panes"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>设置数值显示格式</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>worksheet</strong> – 当前选择调整数值显示格式的sheet</p></li>
+<li><p><strong>space</strong> – 单元格范围</p></li>
 </ul>
 </dd>
 </dl>
@@ -2279,7 +2338,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.dataframe2excel">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">dataframe2excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(600,</span> <span class="pre">350)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#dataframe2excel"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.</span></span><span class="sig-name descname"><span class="pre">dataframe2excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(600,</span> <span class="pre">350)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#dataframe2excel"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>向excel文件中插入指定样式的dataframe数据</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
@@ -2292,6 +2351,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><p><strong>figsize</strong> – 插入图像的大小，为了统一排版，目前仅支持设置一个图片大小，默认: (600, 350) (长度, 高度)</p></li>
 <li><p><strong>header</strong> – 是否存储dataframe的header，暂不支持多级表头</p></li>
 <li><p><strong>theme_color</strong> – 主题色</p></li>
+<li><p><strong>condition_color</strong> – 条件格式主题颜色，不传默认为 theme_color</p></li>
 <li><p><strong>fill</strong> – 是否使用单元个颜色填充样式还是使用边框样式</p></li>
 <li><p><strong>percent_cols</strong> – 需要显示为百分数的列，仅修改显示格式，不更改数值</p></li>
 <li><p><strong>condition_cols</strong> – 需要显示条件格式的列（无边框渐变数据条）</p></li>
@@ -3453,6 +3513,34 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.processing.WOETransformer.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/processing.html#WOETransformer.export"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>特征分箱器导出 json 保存</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_json</strong> – json 文件的路径</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict，特征分箱信息</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.processing.WOETransformer.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_json</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/processing.html#WOETransformer.load"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>特征分箱器加载离线保存的 json 文件</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>from_json</strong> – json 文件的路径</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>Combiner，特征分箱器</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="scorecardpipeline.processing.WOETransformer.rules">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rules</span></span></dt>
@@ -4598,6 +4686,16 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.utils.feature_describe">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.utils.</span></span><span class="sig-name descname"><span class="pre">feature_describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cardinality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#feature_describe"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scorecardpipeline.utils.groupby_feature_describe">
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.utils.</span></span><span class="sig-name descname"><span class="pre">groupby_feature_describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#groupby_feature_describe"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.utils.germancredit">
 <span class="sig-prename descclassname"><span class="pre">scorecardpipeline.utils.</span></span><span class="sig-name descname"><span class="pre">germancredit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/utils.html#germancredit"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>加载德国信贷数据集 German Credit Data</p>
@@ -4992,6 +5090,20 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="scorecardpipeline.excel_writer.ExcelWriter.set_freeze_panes">
+<span class="sig-name descname"><span class="pre">set_freeze_panes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.set_freeze_panes"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<dd><p>设置数值显示格式</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>worksheet</strong> – 当前选择调整数值显示格式的sheet</p></li>
+<li><p><strong>space</strong> – 单元格范围</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="scorecardpipeline.excel_writer.ExcelWriter.get_sheet_by_name">
 <span class="sig-name descname"><span class="pre">get_sheet_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#ExcelWriter.get_sheet_by_name"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>获取sheet名称为name的工作簿，如果不存在，则从初始模版文件中拷贝一个名称为name的sheet</p>
@@ -5291,7 +5403,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="scorecardpipeline.excel_writer.dataframe2excel">
-<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.excel_writer.</span></span><span class="sig-name descname"><span class="pre">dataframe2excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(600,</span> <span class="pre">350)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#dataframe2excel"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">scorecardpipeline.excel_writer.</span></span><span class="sig-name descname"><span class="pre">dataframe2excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2639E9'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#,##0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(600,</span> <span class="pre">350)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/excel_writer.html#dataframe2excel"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd><p>向excel文件中插入指定样式的dataframe数据</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
@@ -5304,6 +5416,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><p><strong>figsize</strong> – 插入图像的大小，为了统一排版，目前仅支持设置一个图片大小，默认: (600, 350) (长度, 高度)</p></li>
 <li><p><strong>header</strong> – 是否存储dataframe的header，暂不支持多级表头</p></li>
 <li><p><strong>theme_color</strong> – 主题色</p></li>
+<li><p><strong>condition_color</strong> – 条件格式主题颜色，不传默认为 theme_color</p></li>
 <li><p><strong>fill</strong> – 是否使用单元个颜色填充样式还是使用边框样式</p></li>
 <li><p><strong>percent_cols</strong> – 需要显示为百分数的列，仅修改显示格式，不更改数值</p></li>
 <li><p><strong>condition_cols</strong> – 需要显示条件格式的列（无边框渐变数据条）</p></li>
@@ -5473,7 +5586,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="scorecardpipeline.rule_extraction.DecisionTreeRuleExtractor.get_dt_rules">
-<span class="sig-name descname"><span class="pre">get_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.get_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
+<span class="sig-name descname"><span class="pre">get_dt_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scorecardpipeline/rule_extraction.html#DecisionTreeRuleExtractor.get_dt_rules"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -5613,6 +5726,8 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.WOETransformer.__init__"><code class="docutils literal notranslate"><span class="pre">WOETransformer.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.WOETransformer.fit"><code class="docutils literal notranslate"><span class="pre">WOETransformer.fit()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.WOETransformer.transform"><code class="docutils literal notranslate"><span class="pre">WOETransformer.transform()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.WOETransformer.export"><code class="docutils literal notranslate"><span class="pre">WOETransformer.export()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.WOETransformer.load"><code class="docutils literal notranslate"><span class="pre">WOETransformer.load()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.WOETransformer.rules"><code class="docutils literal notranslate"><span class="pre">WOETransformer.rules</span></code></a></li>
 </ul>
 </li>
@@ -5687,6 +5802,8 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.extract_feature_bin"><code class="docutils literal notranslate"><span class="pre">extract_feature_bin()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.inverse_feature_bins"><code class="docutils literal notranslate"><span class="pre">inverse_feature_bins()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.sample_lift_transformer"><code class="docutils literal notranslate"><span class="pre">sample_lift_transformer()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.feature_describe"><code class="docutils literal notranslate"><span class="pre">feature_describe()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.groupby_feature_describe"><code class="docutils literal notranslate"><span class="pre">groupby_feature_describe()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.bin_plot"><code class="docutils literal notranslate"><span class="pre">bin_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.corr_plot"><code class="docutils literal notranslate"><span class="pre">corr_plot()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ks_plot"><code class="docutils literal notranslate"><span class="pre">ks_plot()</span></code></a></li>
@@ -5700,6 +5817,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.add_conditional_formatting"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.add_conditional_formatting()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.set_column_width"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_column_width()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.set_number_format"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_number_format()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.set_freeze_panes"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_freeze_panes()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.get_sheet_by_name"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.get_sheet_by_name()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.move_sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.move_sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.ExcelWriter.insert_hyperlink2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_hyperlink2sheet()</span></code></a></li>
@@ -5864,6 +5982,8 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.__init__"><code class="docutils literal notranslate"><span class="pre">WOETransformer.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.fit"><code class="docutils literal notranslate"><span class="pre">WOETransformer.fit()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.transform"><code class="docutils literal notranslate"><span class="pre">WOETransformer.transform()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.export"><code class="docutils literal notranslate"><span class="pre">WOETransformer.export()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.load"><code class="docutils literal notranslate"><span class="pre">WOETransformer.load()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.processing.WOETransformer.rules"><code class="docutils literal notranslate"><span class="pre">WOETransformer.rules</span></code></a></li>
 </ul>
 </li>
@@ -6012,6 +6132,8 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.utils.init_setting"><code class="docutils literal notranslate"><span class="pre">init_setting()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.load_pickle"><code class="docutils literal notranslate"><span class="pre">load_pickle()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.save_pickle"><code class="docutils literal notranslate"><span class="pre">save_pickle()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.utils.feature_describe"><code class="docutils literal notranslate"><span class="pre">feature_describe()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.utils.groupby_feature_describe"><code class="docutils literal notranslate"><span class="pre">groupby_feature_describe()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.germancredit"><code class="docutils literal notranslate"><span class="pre">germancredit()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.round_float"><code class="docutils literal notranslate"><span class="pre">round_float()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.utils.feature_bins"><code class="docutils literal notranslate"><span class="pre">feature_bins()</span></code></a></li>
@@ -6035,6 +6157,7 @@ lift_ori: float, 原始样本上拒绝人群的lift</p>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.add_conditional_formatting"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.add_conditional_formatting()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.set_column_width"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_column_width()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.set_number_format"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_number_format()</span></code></a></li>
+<li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.set_freeze_panes"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.set_freeze_panes()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.get_sheet_by_name"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.get_sheet_by_name()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.move_sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.move_sheet()</span></code></a></li>
 <li><a class="reference internal" href="#scorecardpipeline.excel_writer.ExcelWriter.insert_hyperlink2sheet"><code class="docutils literal notranslate"><span class="pre">ExcelWriter.insert_hyperlink2sheet()</span></code></a></li>

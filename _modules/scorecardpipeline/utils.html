@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.37" />
+    <meta name="docsearch:release" content="0.1.38" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.utils &mdash; scorecardpipeline 0.1.37 文档</title>
+      <title>scorecardpipeline.utils &mdash; scorecardpipeline 0.1.38 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
-              <span class="small ms-2">v0.1.37</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
+              <span class="small ms-2">v0.1.38</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -274,13 +274,16 @@
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span>
 <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">PercentFormatter</span><span class="p">,</span> <span class="n">FuncFormatter</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+
 <span class="kn">import</span> <span class="nn">toad</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
 <span class="kn">from</span> <span class="nn">optbinning</span> <span class="kn">import</span> <span class="n">OptimalBinning</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 
 <span class="kn">from</span> <span class="nn">.logger</span> <span class="kn">import</span> <span class="n">init_logger</span>
 
@@ -390,6 +393,78 @@
             <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;engine 目前只支持 [joblib, dill, pickle], 不支持 </span><span class="si">{</span><span class="n">engine</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="feature_describe"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.feature_describe">[文档]</a><span class="k">def</span> <span class="nf">feature_describe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">feature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cardinality</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">feature</span> <span class="ow">and</span> <span class="n">feature</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;feature </span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2"> must in columns.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cardinality</span> <span class="ow">and</span> <span class="n">cardinality</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cardinality must grater 1&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">percentiles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">percentiles</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">feature</span><span class="p">:</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">missing</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">cardinality</span> <span class="ow">and</span> <span class="n">series</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">cardinality</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+        <span class="n">describe</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;样本数&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">),</span>
+            <span class="s2">&quot;非空数&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+            <span class="s2">&quot;查得率&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="n">describe</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">series</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">&#39;缺失值&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">))</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">describe</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">feature</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">describe</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;样本数&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">),</span>
+            <span class="s2">&quot;非空数&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+            <span class="s2">&quot;查得率&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">series</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+            <span class="s2">&quot;最小值&quot;</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+            <span class="s2">&quot;平均值&quot;</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+            <span class="s2">&quot;最大值&quot;</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+            <span class="c1"># &quot;众数&quot;: series.mode()[0],</span>
+        <span class="p">}</span>
+        <span class="n">quantile</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">percentiles</span><span class="p">)</span>
+        <span class="n">quantile</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">percentiles</span><span class="p">]</span>
+        <span class="n">describe</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">quantile</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">describe</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">feature</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s1">&#39;样本数&#39;</span><span class="p">,</span> <span class="s1">&#39;非空数&#39;</span><span class="p">,</span> <span class="s1">&#39;查得率&#39;</span><span class="p">,</span> <span class="s1">&#39;最小值&#39;</span><span class="p">,</span> <span class="s1">&#39;平均值&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">percentiles</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;最大值&#39;</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="groupby_feature_describe"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.groupby_feature_describe">[文档]</a><span class="k">def</span> <span class="nf">groupby_feature_describe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="n">by</span><span class="p">]</span>
+
+    <span class="n">describe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__feature_describe</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">_p</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">feature_describe</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="n">f</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([[</span><span class="n">f</span><span class="p">],</span> <span class="n">temp</span><span class="o">.</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">_p</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">temp</span>
+
+    <span class="k">def</span> <span class="nf">_feature_describe</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">_p</span><span class="p">,</span> <span class="n">_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_p</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">_p</span> <span class="o">=</span> <span class="n">_p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">__describe</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">__feature_describe</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">_p</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">_p</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">__describe</span><span class="p">)(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">f</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_by</span><span class="p">))[</span><span class="n">_p</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">_feature_describe</span><span class="p">)(</span><span class="n">group</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">_by</span><span class="o">=</span><span class="n">by</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">by</span><span class="p">)):</span>
+        <span class="n">describe</span><span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">by</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">describe</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">describe</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="n">describe</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;特征名称&quot;</span><span class="p">,</span> <span class="s2">&quot;统计指标&quot;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">describe</span></div>
 
 
 <div class="viewcode-block" id="germancredit"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.germancredit">[文档]</a><span class="k">def</span> <span class="nf">germancredit</span><span class="p">():</span>

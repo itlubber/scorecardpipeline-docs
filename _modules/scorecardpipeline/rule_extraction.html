@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.37" />
+    <meta name="docsearch:release" content="0.1.38" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.rule_extraction &mdash; scorecardpipeline 0.1.37 文档</title>
+      <title>scorecardpipeline.rule_extraction &mdash; scorecardpipeline 0.1.38 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
-              <span class="small ms-2">v0.1.37</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
+              <span class="small ms-2">v0.1.38</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -339,48 +339,34 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">X</span></div>
 
-<div class="viewcode-block" id="DecisionTreeRuleExtractor.get_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.get_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">get_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
-        <span class="n">tree_</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span>
-        <span class="n">left</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_left</span>
-        <span class="n">right</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_right</span>
-        <span class="n">feature_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">2</span> <span class="k">else</span> <span class="s2">&quot;undefined!&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">]</span>
+<div class="viewcode-block" id="DecisionTreeRuleExtractor.get_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.get_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">get_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
         <span class="n">rules</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
-        <span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>  <span class="c1"># 搜每个节点的规则</span>
-            <span class="k">nonlocal</span> <span class="n">rules</span>
-
-            <span class="k">if</span> <span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>  <span class="c1"># 非叶子节点,搜索每个节点的规则</span>
-                <span class="n">name</span> <span class="o">=</span> <span class="n">feature_name</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
-                <span class="n">thd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">decimal</span><span class="p">)</span>
-                <span class="n">s</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &lt;= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">thd</span><span class="p">))</span>
-                <span class="c1"># 左子</span>
-                <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># 搜每个节点的规则</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_left</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="c1"># 非叶子节点,搜索每个节点的规则</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="n">node</span><span class="p">]]</span>
+                <span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">threshold</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">decimal</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">parent</span><span class="p">:</span>
+                    <span class="n">recurse</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_left</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">parent</span> <span class="o">&amp;</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &lt;= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)))</span>
+                    <span class="n">recurse</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_right</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">parent</span> <span class="o">&amp;</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)))</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">s</span>
+                    <span class="n">recurse</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_left</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &lt;= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)))</span>
+                    <span class="n">recurse</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">children_right</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent</span>
 
-                <span class="n">recurse</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
-
-                <span class="n">s</span> <span class="o">=</span> <span class="n">Rule</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">thd</span><span class="p">))</span>
-                <span class="c1"># 右子</span>
-                <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">rules</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">s</span>
-                <span class="n">recurse</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
-
-        <span class="n">recurse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">recurse</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">rules</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="DecisionTreeRuleExtractor.select_dt_rules"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.DecisionTreeRuleExtractor.select_dt_rules">[文档]</a>    <span class="k">def</span> <span class="nf">select_dt_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decision_tree</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dt_rules</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dt_rules</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">viz_model</span> <span class="o">=</span> <span class="n">dtreeviz</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
                                        <span class="n">X_train</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
                                        <span class="n">y_train</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-                                       <span class="n">feature_names</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                                       <span class="n">feature_names</span><span class="o">=</span><span class="n">decision_tree</span><span class="o">.</span><span class="n">feature_names_in_</span><span class="p">,</span>
                                        <span class="n">target_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
                                        <span class="n">class_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
                                        <span class="p">)</span>

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.37" />
+    <meta name="docsearch:release" content="0.1.38" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.37 文档</title>
+      <title>scorecardpipeline.rule &mdash; scorecardpipeline 0.1.38 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
-              <span class="small ms-2">v0.1.37</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
+              <span class="small ms-2">v0.1.38</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -363,28 +363,32 @@
 <div class="viewcode-block" id="Rule.predict"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.Rule.predict">[文档]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">part</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>  <span class="c1"># dict预测对应part_dict 、字符串表达式对应&quot;、&quot;其他情况报错</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Rule can only predict on DataFrame.&quot;</span><span class="p">)</span>
-        <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>  <span class="c1"># 取数据的列名</span>
-        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="s2">&quot;allow-nan&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># dict部分</span>
-            <span class="k">if</span> <span class="n">part</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">part_dict</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Part : </span><span class="si">{}</span><span class="s2"> not in [&#39;if&#39;,&#39;then&#39;,&#39;else&#39;]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">part</span><span class="p">))</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="n">part</span><span class="p">]:</span>  <span class="c1"># 没有返回值的情况[]</span>
-                <span class="k">return</span> <span class="nb">list</span><span class="p">()</span>
-            <span class="n">dict2expr</span> <span class="o">=</span> <span class="n">json2expr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">[</span><span class="n">part</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">feature_names</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dict2expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># 返回Value (类型已经做过转换),对其扩充 --&gt; [value] * Len(X)</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">dict2expr</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>  <span class="c1"># 表达式在进行计算</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="n">_apply_expr_on_array</span><span class="p">(</span><span class="n">dict2expr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>  <span class="c1"># result 只有一个数值时，对其扩充 --&gt; [value] * len(X)</span>
-                    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># 字符串表达式部分</span>
-            <span class="k">if</span> <span class="n">part</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;The part of the expression must be &quot;&quot;&#39;</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">_apply_expr_on_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Rule currently only supports dict and expression&quot;</span><span class="p">)</span>
+        
+        <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">force_all_finite</span><span class="o">=</span><span class="s2">&quot;allow-nan&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
+        
+        <span class="c1"># feature_names = X.columns.values.tolist()  # 取数据的列名</span>
+        <span class="c1"># X = X.select_dtypes(&quot;number&quot;) # 仅支持数值型变量</span>
+        <span class="c1"># X = check_array(X, dtype=None, ensure_2d=True, force_all_finite=&quot;allow-nan&quot;)</span>
+        <span class="c1"># if isinstance(self.expr, dict):  # dict部分</span>
+        <span class="c1">#     if part not in part_dict:</span>
+        <span class="c1">#         raise TypeError(&quot;Part : {} not in [&#39;if&#39;,&#39;then&#39;,&#39;else&#39;]&quot;.format(part))</span>
+        <span class="c1">#     if not self.expr[part]:  # 没有返回值的情况[]</span>
+        <span class="c1">#         return list()</span>
+        <span class="c1">#     dict2expr = json2expr(self.expr[part], X.shape[1], feature_names)</span>
+        <span class="c1">#     if not isinstance(dict2expr, str):  # 返回Value (类型已经做过转换),对其扩充 --&gt; [value] * Len(X)</span>
+        <span class="c1">#         result = [dict2expr] * len(X)</span>
+        <span class="c1">#     else:  # 表达式在进行计算</span>
+        <span class="c1">#         result = ne.evaluate(dict2expr, local_dict={name: X[:, i] for i, name in enumerate(feature_names)})</span>
+        <span class="c1">#         result = result.tolist()</span>
+        <span class="c1">#         if not isinstance(result, list):  # result 只有一个数值时，对其扩充 --&gt; [value] * len(X)</span>
+        <span class="c1">#             result = [result] * len(X)</span>
+        <span class="c1"># elif isinstance(self.expr, str):  # 字符串表达式部分</span>
+        <span class="c1">#     if part != &quot;&quot;:</span>
+        <span class="c1">#         raise TypeError(&#39;The part of the expression must be &quot;&quot;&#39;)</span>
+        <span class="c1">#     result = ne.evaluate(self.expr, local_dict={name: X[:, i] for i, name in enumerate(feature_names)})</span>
+        <span class="c1"># else:</span>
+        <span class="c1">#     raise TypeError(&quot;Rule currently only supports dict and expression&quot;)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">result_</span> <span class="o">=</span> <span class="n">result</span>
 

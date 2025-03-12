@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.37" />
+    <meta name="docsearch:release" content="0.1.38" />
     <meta name="docsearch:version" content="" />
     
-      <title>openpyxl.utils.cell &mdash; scorecardpipeline 0.1.37 文档</title>
+      <title>openpyxl.utils.cell &mdash; scorecardpipeline 0.1.38 文档</title>
     
     <link rel="stylesheet" href="../../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../../genindex.html" />
         <link rel="search" title="搜索" href="../../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.37 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
         <link rel="up" title="模块代码" href="../../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.37">v0.1.37</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.37">
-              <span class="small ms-2">v0.1.37</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
+              <span class="small ms-2">v0.1.38</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -255,13 +255,15 @@
       <main class="nftt-main">
         <article id="content" class="nftt-content" role="main">
     <h1>openpyxl.utils.cell 源代码</h1><div class="highlight"><pre>
-<span></span><span class="c1"># Copyright (c) 2010-2021 openpyxl</span>
+<span></span><span class="c1"># Copyright (c) 2010-2024 openpyxl</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Collection of utilities used within the package and also available for client code</span>
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_uppercase</span><span class="p">,</span> <span class="n">digits</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">digits</span>
 
 <span class="kn">from</span> <span class="nn">.exceptions</span> <span class="kn">import</span> <span class="n">CellCoordinatesException</span>
 
@@ -328,56 +330,67 @@
     <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_get_column_letter</span><span class="p">(</span><span class="n">col_idx</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a column number into a column letter (3 -&gt; &#39;C&#39;)</span>
+<span class="n">__decimal_to_alpha</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ascii_uppercase</span><span class="p">)</span>
 
-<span class="sd">    Right shift the column col_idx by 26 to find column letters in reverse</span>
-<span class="sd">    order.  These numbers are 1-based, and can be converted to ASCII</span>
-<span class="sd">    ordinals by adding 64.</span>
+<div class="viewcode-block" id="get_column_letter"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.get_column_letter">[文档]</a><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_column_letter</span><span class="p">(</span><span class="n">col_idx</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert decimal column position to its ASCII (base 26) form.</span>
 
+<span class="sd">    Because column indices are 1-based, strides are actually pow(26, n) + 26</span>
+<span class="sd">    Hence, a correction is applied between pow(26, n) and pow(26, 2) + 26 to</span>
+<span class="sd">    prevent and additional column letter being prepended</span>
+
+<span class="sd">    &quot;A&quot; == 1 == pow(26, 0)</span>
+<span class="sd">    &quot;Z&quot; == 26 == pow(26, 0) + 26 // decimal equivalent 10</span>
+<span class="sd">    &quot;AA&quot; == 27 == pow(26, 1) + 1</span>
+<span class="sd">    &quot;ZZ&quot; == 702 == pow(26, 2) + 26 // decimal equivalent 100</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># these indicies corrospond to A -&gt; ZZZ and include all allowed</span>
-    <span class="c1"># columns</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">col_idx</span> <span class="o">&lt;=</span> <span class="mi">18278</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid column index </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">col_idx</span><span class="p">))</span>
-    <span class="n">letters</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">col_idx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">col_idx</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">__decimal_to_alpha</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="n">col_idx</span><span class="p">:</span>
         <span class="n">col_idx</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">col_idx</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
-        <span class="c1"># check for exact division and borrow if needed</span>
-        <span class="k">if</span> <span class="n">remainder</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">remainder</span> <span class="o">=</span> <span class="mi">26</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">__decimal_to_alpha</span><span class="p">[</span><span class="n">remainder</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">remainder</span><span class="p">:</span>
             <span class="n">col_idx</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">remainder</span><span class="o">+</span><span class="mi">64</span><span class="p">))</span>
-    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">letters</span><span class="p">))</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
 
 
-<span class="n">_COL_STRING_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">_STRING_COL_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">18279</span><span class="p">):</span>
-    <span class="n">col</span> <span class="o">=</span> <span class="n">_get_column_letter</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="n">_STRING_COL_CACHE</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span>
-    <span class="n">_COL_STRING_CACHE</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+<span class="n">__alpha_to_decimal</span> <span class="o">=</span> <span class="p">{</span><span class="n">letter</span><span class="p">:</span><span class="n">pos</span> <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ascii_uppercase</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+<span class="n">__powers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">676</span><span class="p">)</span>
 
+<div class="viewcode-block" id="column_index_from_string"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.column_index_from_string">[文档]</a><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">column_index_from_string</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert ASCII column name (base 26) to decimal with 1-based index</span>
 
-<div class="viewcode-block" id="get_column_letter"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.get_column_letter">[文档]</a><span class="k">def</span> <span class="nf">get_column_letter</span><span class="p">(</span><span class="n">idx</span><span class="p">,):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a column index into a column letter</span>
-<span class="sd">    (3 -&gt; &#39;C&#39;)</span>
+<span class="sd">    Characters represent descending multiples of powers of 26</span>
+
+<span class="sd">    &quot;AFZ&quot; == 26 * pow(26, 0) + 6 * pow(26, 1) + 1 * pow(26, 2)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_STRING_COL_CACHE</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid column index </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span></div>
-
-
-<div class="viewcode-block" id="column_index_from_string"><a class="viewcode-back" href="../../../scorecardpipeline.html#scorecardpipeline.column_index_from_string">[文档]</a><span class="k">def</span> <span class="nf">column_index_from_string</span><span class="p">(</span><span class="n">str_col</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a column name into a numerical index</span>
-<span class="sd">    (&#39;A&#39; -&gt; 1)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># we use a function argument to get indexed name lookup</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_COL_STRING_CACHE</span><span class="p">[</span><span class="n">str_col</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
-    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> is not a valid column name&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">str_col</span><span class="p">))</span></div>
+    <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&#39; is not a valid column name. Column names are from A to ZZZ&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">power</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">__powers</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">__alpha_to_decimal</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="n">pos</span> <span class="o">*</span> <span class="n">power</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">18279</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">idx</span></div>
 
 
 <span class="k">def</span> <span class="nf">range_boundaries</span><span class="p">(</span><span class="n">range_string</span><span class="p">):</span>
@@ -449,14 +462,14 @@
 
 <span class="k">def</span> <span class="nf">coordinate_to_tuple</span><span class="p">(</span><span class="n">coordinate</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Convert an Excel style coordinate to (row, colum) tuple</span>
+<span class="sd">    Convert an Excel style coordinate to (row, column) tuple</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coordinate</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>
             <span class="k">break</span>
-    <span class="n">col</span> <span class="o">=</span> <span class="n">coordinate</span><span class="p">[:</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="n">coordinate</span><span class="p">[:</span><span class="n">idx</span><span class="p">]</span>
     <span class="n">row</span> <span class="o">=</span> <span class="n">coordinate</span><span class="p">[</span><span class="n">idx</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">_COL_STRING_CACHE</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">column_index_from_string</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">range_to_tuple</span><span class="p">(</span><span class="n">range_string</span><span class="p">):</span>

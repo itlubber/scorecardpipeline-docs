@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="docsearch:name" content="scorecardpipeline" />
     <meta name="docsearch:package_type" content="" />
-    <meta name="docsearch:release" content="0.1.38" />
+    <meta name="docsearch:release" content="0.1.38.02" />
     <meta name="docsearch:version" content="" />
     
-      <title>scorecardpipeline.processing &mdash; scorecardpipeline 0.1.38 文档</title>
+      <title>scorecardpipeline.processing &mdash; scorecardpipeline 0.1.38.02 文档</title>
     
     <link rel="stylesheet" href="../../_static/bootstrap-icons.css" type="text/css" />
           <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
@@ -26,7 +26,7 @@
           <link rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css" />
         <link rel="index" title="索引" href="../../genindex.html" />
         <link rel="search" title="搜索" href="../../search.html" />
-        <link rel="top" title="scorecardpipeline 0.1.38 文档" href="#" />
+        <link rel="top" title="scorecardpipeline 0.1.38.02 文档" href="#" />
         <link rel="up" title="模块代码" href="../index.html" />
     <style>
       :root {
@@ -134,7 +134,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link d-flex py-2 px-0 px-lg-2 dropdown-toggle align-items-center" id="snftt-version" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Select version">
         <span id="snftt-version-text" class="d-lg-none small">scorecardpipeline</span>
-        <span class="small ms-2" data-snftt-version-active="v0.1.38">v0.1.38</span>
+        <span class="small ms-2" data-snftt-version-active="v0.1.38.02">v0.1.38.02</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-version-text">
         <li>
@@ -142,8 +142,8 @@
         </li>
         
           <li>
-            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38">
-              <span class="small ms-2">v0.1.38</span>
+            <a class="dropdown-item d-flex align-items-center justify-content-between" aria-pressed="false" href="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version-url="https://itlubber.github.io/scorecardpipeline-docs" data-snftt-version="v0.1.38.02">
+              <span class="small ms-2">v0.1.38.02</span>
               <i class="bi bi-check ms-auto"></i>
             </a>
           </li>
@@ -1243,6 +1243,39 @@
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transformer</span><span class="o">.</span><span class="n">_rules</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="feature_efficiency_analysis"><a class="viewcode-back" href="../../scorecardpipeline.html#scorecardpipeline.feature_efficiency_analysis">[文档]</a><span class="k">def</span> <span class="nf">feature_efficiency_analysis</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">overdue</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MOB1&quot;</span><span class="p">],</span> <span class="n">dpd</span><span class="o">=</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">greate_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">auto_feature_tables</span> <span class="o">=</span> <span class="n">feature_bin_stats</span><span class="p">(</span>
+        <span class="n">data</span>
+        <span class="p">,</span> <span class="n">feature</span>
+        <span class="p">,</span> <span class="n">min_bin_size</span><span class="o">=</span><span class="mf">0.01</span>
+        <span class="p">,</span> <span class="n">overdue</span><span class="o">=</span><span class="n">overdue</span><span class="p">,</span> <span class="n">dpd</span><span class="o">=</span><span class="n">dpd</span>
+        <span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;mdlp&quot;</span>
+        <span class="p">,</span> <span class="n">max_n_bins</span><span class="o">=</span><span class="mi">10</span>
+        <span class="p">,</span> <span class="n">del_grey</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;样本数 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> 坏样本率 </span><span class="si">{</span><span class="nb">round</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="n">overdue</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">dpd</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="c1"># , greate_is_better=greate_is_better</span>
+        <span class="p">,</span> <span class="n">return_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">,</span> <span class="s2">&quot;坏样本率&quot;</span><span class="p">,</span> <span class="s2">&quot;LIFT值&quot;</span><span class="p">,</span> <span class="s2">&quot;累积LIFT值&quot;</span><span class="p">,</span> <span class="s2">&quot;分档KS值&quot;</span><span class="p">]</span>
+        <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span>
+
+    <span class="n">quantile_feature_tables</span> <span class="o">=</span> <span class="n">feature_bin_stats</span><span class="p">(</span>
+        <span class="n">data</span>
+        <span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">rules</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span> <span class="k">if</span> <span class="n">greate_is_better</span> <span class="k">else</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">])</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+        <span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;mdlp&quot;</span><span class="p">,</span> <span class="n">overdue</span><span class="o">=</span><span class="n">overdue</span><span class="p">,</span> <span class="n">dpd</span><span class="o">=</span><span class="n">dpd</span><span class="p">,</span> <span class="n">max_n_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">greate_is_better</span><span class="o">=</span><span class="n">greate_is_better</span><span class="p">,</span> <span class="n">min_bin_size</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">return_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;坏样本数&quot;</span><span class="p">,</span> <span class="s2">&quot;坏样本率&quot;</span><span class="p">,</span> <span class="s2">&quot;LIFT值&quot;</span><span class="p">,</span> <span class="s2">&quot;累积LIFT值&quot;</span><span class="p">,</span> <span class="s2">&quot;分档KS值&quot;</span><span class="p">]</span>
+        <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ks</span><span class="p">:</span>
+        <span class="n">ks_plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">feature</span><span class="p">])[</span><span class="n">feature</span><span class="p">],</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">feature</span><span class="p">])[</span><span class="n">overdue</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">dpd</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">auto_feature_tables</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">quantile_feature_tables</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">auto_feature_tables</span><span class="p">,</span> <span class="n">quantile_feature_tables</span></div>
 </pre></div>
 </article>
         
